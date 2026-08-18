@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+.npm/
+.pnpm-store/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Build / production files
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Local configuration
+*.local
+
+# Coverage
+coverage/
+
+# Generated files
+*.map
+
+# Large media / recordings
+*.mp4
+*.mov
+*.avi
+*.mkv
