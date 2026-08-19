@@ -1,0 +1,185 @@
+:root {
+  /* =========================================================
+     R.K. ARYA COLLEGE — DESIGN TOKENS
+     ========================================================= */
+
+  /* ---------------------------------------------------------
+     BRAND COLORS
+     --------------------------------------------------------- */
+
+  --color-primary: #82080c;
+  --color-primary-dark: #5c0003;
+  --color-primary-light: #a61b20;
+
+  --color-gold: #e5c175;
+  --color-gold-dark: #b8860b;
+  --color-gold-light: #f5d061;
+
+  /* ---------------------------------------------------------
+     BACKGROUNDS
+     --------------------------------------------------------- */
+
+  --color-bg: #f8f5f0;
+  --color-bg-soft: #faf7f2;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f3efe8;
+
+  /* ---------------------------------------------------------
+     TEXT
+     --------------------------------------------------------- */
+
+  --color-text: #1f1f1f;
+  --color-text-secondary: #666666;
+  --color-text-muted: #888888;
+  --color-text-light: rgba(255, 255, 255, 0.75);
+  --color-text-white: #ffffff;
+
+  /* ---------------------------------------------------------
+     BORDERS
+     --------------------------------------------------------- */
+
+  --color-border: #e8e1d8;
+  --color-border-light: rgba(130, 8, 12, 0.08);
+  --color-border-gold: rgba(229, 193, 117, 0.3);
+
+  /* ---------------------------------------------------------
+     OVERLAYS
+     --------------------------------------------------------- */
+
+  --overlay-dark: rgba(0, 0, 0, 0.55);
+  --overlay-darker: rgba(0, 0, 0, 0.75);
+  --overlay-light: rgba(255, 255, 255, 0.08);
+
+  /* ---------------------------------------------------------
+     GRADIENTS
+     --------------------------------------------------------- */
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
+
+  --gradient-gold: linear-gradient(
+    135deg,
+    #fff099 0%,
+    #f1c40f 25%,
+    var(--color-gold) 50%,
+    var(--color-gold-dark) 75%,
+    var(--color-gold-light) 100%
+  );
+
+  --gradient-hero: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.55) 55%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+
+  /* ---------------------------------------------------------
+     TYPOGRAPHY
+     --------------------------------------------------------- */
+
+  --font-heading: "Playfair Display", serif;
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
+
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ---------------------------------------------------------
+     SPACING
+     4px / 8px BASE SCALE
+     --------------------------------------------------------- */
+
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+  --space-20: 5rem; /* 80px */
+  --space-24: 6rem; /* 96px */
+
+  /* ---------------------------------------------------------
+     SECTION SPACING
+     --------------------------------------------------------- */
+
+  --section-padding-y: clamp(4rem, 7vw, 6rem);
+  --section-padding-x: clamp(1.25rem, 5vw, 4rem);
+
+  --container-width: 80rem;
+
+  /* ---------------------------------------------------------
+     BORDER RADIUS
+     --------------------------------------------------------- */
+
+  --radius-sm: 0.5rem; /* 8px */
+  --radius-md: 0.75rem; /* 12px */
+  --radius-lg: 1rem; /* 16px */
+  --radius-xl: 1.25rem; /* 20px */
+  --radius-2xl: 1.5rem; /* 24px */
+  --radius-full: 9999px;
+
+  /* ---------------------------------------------------------
+     SHADOWS
+     --------------------------------------------------------- */
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+
+  --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.04);
+
+  --shadow-primary: 0 20px 50px rgba(130, 8, 12, 0.15);
+
+  --shadow-gold: 0 8px 20px rgba(229, 193, 117, 0.2);
+
+  /* ---------------------------------------------------------
+     TRANSITIONS
+     --------------------------------------------------------- */
+
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ---------------------------------------------------------
+     COMPONENT SIZES
+     --------------------------------------------------------- */
+
+  --navbar-height: 4.5rem;
+  --topbar-height: 2.25rem;
+
+  --button-height: 3rem;
+  --input-height: 3rem;
+
+  /* ---------------------------------------------------------
+     Z-INDEX
+     --------------------------------------------------------- */
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 500;
+  --z-overlay: 900;
+  --z-modal: 1000;
+}
