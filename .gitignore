@@ -49,6 +49,7 @@ coverage/
 
 # Large media / recordings
 *.mp4
+!assets/videos/sec.mp4
 *.mov
 *.avi
 *.mkv
