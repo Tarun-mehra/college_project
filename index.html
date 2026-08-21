@@ -21,19 +21,6 @@
       rel="stylesheet"
     />
 
-    <style>
-      /* Ensure hero video covers full screen nicely across browsers */
-      .hero-video {
-        object-fit: cover;
-        object-position: center;
-        width: 100%;
-        height: 100%;
-      }
-      /* Hide native video UI for background usage */
-      .hero-video::-webkit-media-controls {
-        display: none !important;
-      }
-    </style>
   </head>
 
   <body>
@@ -43,37 +30,37 @@
           class="topbar w-full h-9 px-4 md:px-8 flex items-center justify-between bg-[#7a0000] text-white text-xs"
         >
           <div class="flex items-center gap-5">
-            <a href="#" class="hover:text-yellow-200 transition-colors">
+            <a href="pages/student-resources/index.html" class="hover:text-yellow-200 transition-colors">
               News & Announcements
             </a>
 
-            <a href="#" class="hover:text-yellow-200 transition-colors">
+            <a href="pages/student-resources/index.html" class="hover:text-yellow-200 transition-colors">
               Notice Board
             </a>
 
             <a
-              href="https://rkac.ac.in/admissions"
+              href="pages/programmes/index.html"
               class="hover:text-yellow-200 transition-colors"
             >
               Admissions
             </a>
 
-            <a href="#" class="hover:text-yellow-200 transition-colors">
+            <a href="pages/student-resources/examination-policy.html" class="hover:text-yellow-200 transition-colors">
               Results
             </a>
           </div>
 
           <div class="flex items-center gap-5">
-            <a href="#" class="hover:text-yellow-200 transition-colors">
+            <a href="pages/student-resources/index.html" class="hover:text-yellow-200 transition-colors">
               Examination
             </a>
 
-            <a href="#" class="hover:text-yellow-200 transition-colors">
+            <a href="pages/student-resources/index.html" class="hover:text-yellow-200 transition-colors">
               Student Login
             </a>
 
             <a
-              href="https://rkac.ac.in/contact/"
+              href="pages/contact/index.html"
               class="hover:text-yellow-200 transition-colors"
             >
               Contact
@@ -87,7 +74,7 @@
         >
           <div class="flex items-center gap-3 shrink-0">
             <img
-              src="icon.svg"
+              src="assets/icons/icon.svg"
               alt="College Logo"
               class="w-14 h-14 md:w-16 md:h-16 object-contain"
             />
@@ -111,23 +98,32 @@
             class="flex flex-wrap items-center justify-end gap-2 bg-transparent"
           >
             <div class="nav-item relative">
-              <button
-                class="nav-main px-3 py-2 text-sm font-medium text-white hover:bg-transparent"
-                data-key="home"
+              <a
+                href="index.html"
+                class="px-3 py-2 text-sm font-medium text-white hover:bg-transparent"
               >
                 Home
+              </a>
+            </div>
+
+            <div class="nav-item relative">
+              <button
+                class="nav-main px-3 py-2 text-sm font-medium text-white hover:bg-transparent"
+                data-key="about"
+              >
+                About
               </button>
 
               <div
                 class="submenu hidden absolute mt-4 right-0 bg-white text-black rounded shadow-lg w-64 p-3"
               >
-                <a href="#" class="block px-2 py-1">About Us</a>
-                <a href="#" class="block px-2 py-1">President-Message</a>
-                <a href="#" class="block px-2 py-1">Principal-Message</a>
-                <a href="#" class="block px-2 py-1">Mission and Vision</a>
-                <a href="#" class="block px-2 py-1">Administration</a>
-                <a href="#" class="block px-2 py-1">Academic Committees</a>
-                <a href="#" class="block px-2 py-1">Organogram</a>
+                <a href="pages/about/index.html" class="block px-2 py-1">About Us</a>
+                <a href="pages/about/president-message.html" class="block px-2 py-1">President-Message</a>
+                <a href="pages/about/principal-message.html" class="block px-2 py-1">Principal-Message</a>
+                <a href="pages/about/mission-vision.html" class="block px-2 py-1">Mission and Vision</a>
+                <a href="pages/about/administration.html" class="block px-2 py-1">Administration</a>
+                <a href="pages/about/academic-committees.html" class="block px-2 py-1">Academic Committees</a>
+                <a href="pages/about/organogram.html" class="block px-2 py-1">Organogram</a>
               </div>
             </div>
 
@@ -143,10 +139,10 @@
               <div
                 class="submenu hidden absolute mt-4 right-0 bg-white text-black rounded shadow-lg w-56 p-3"
               >
-                <a href="#" class="block px-2 py-1">Programme Directory</a>
-                <a href="#" class="block px-2 py-1">Course Outcome</a>
-                <a href="#" class="block px-2 py-1">Reservation Policy</a>
-                <a href="#" class="block px-2 py-1">Prospectus</a>
+                <a href="pages/programmes/index.html" class="block px-2 py-1">Programme Directory</a>
+                <a href="pages/programmes/course-outcomes.html" class="block px-2 py-1">Course Outcome</a>
+                <a href="pages/programmes/reservation-policy.html" class="block px-2 py-1">Reservation Policy</a>
+                <a href="pages/programmes/prospectus.html" class="block px-2 py-1">Prospectus</a>
               </div>
             </div>
 
@@ -161,12 +157,12 @@
               <div
                 class="submenu hidden absolute mt-4 right-0 bg-white text-black rounded shadow-lg w-56 p-3"
               >
-                <a href="#" class="block px-2 py-1">Faculty of Commerce</a>
-                <a href="#" class="block px-2 py-1"
+                <a href="pages/faculty/commerce.html" class="block px-2 py-1">Faculty of Commerce</a>
+                <a href="pages/faculty/computer-science.html" class="block px-2 py-1"
                   >Faculty of Computer Science</a
                 >
-                <a href="#" class="block px-2 py-1">Faculty of Sciences</a>
-                <a href="#" class="block px-2 py-1">Faculty of Humanities</a>
+                <a href="pages/faculty/sciences.html" class="block px-2 py-1">Faculty of Sciences</a>
+                <a href="pages/faculty/humanities.html" class="block px-2 py-1">Faculty of Humanities</a>
               </div>
             </div>
 
@@ -181,18 +177,18 @@
               <div
                 class="submenu hidden absolute mt-4 right-0 bg-white text-black rounded shadow-lg w-64 p-3"
               >
-                <a href="#" class="block px-2 py-1">Standard Club</a>
-                <a href="#" class="block px-2 py-1">NSS</a>
-                <a href="#" class="block px-2 py-1">NCC</a>
-                <a href="#" class="block px-2 py-1">Infrastructure</a>
-                <a href="#" class="block px-2 py-1">Seminar Halls</a>
-                <a href="#" class="block px-2 py-1">Anti Ragging</a>
-                <a href="#" class="block px-2 py-1">Cafeteria</a>
-                <a href="#" class="block px-2 py-1">Library</a>
-                <a href="#" class="block px-2 py-1">Scholarships</a>
-                <a href="#" class="block px-2 py-1">Sports</a>
-                <a href="#" class="block px-2 py-1">Laboratories</a>
-                <a href="#" class="block px-2 py-1">Gym</a>
+                <a href="pages/facilities/standard-club.html" class="block px-2 py-1">Standard Club</a>
+                <a href="pages/facilities/nss.html" class="block px-2 py-1">NSS</a>
+                <a href="pages/facilities/ncc.html" class="block px-2 py-1">NCC</a>
+                <a href="pages/facilities/infrastructure.html" class="block px-2 py-1">Infrastructure</a>
+                <a href="pages/facilities/seminar-halls.html" class="block px-2 py-1">Seminar Halls</a>
+                <a href="pages/facilities/anti-ragging.html" class="block px-2 py-1">Anti Ragging</a>
+                <a href="pages/facilities/cafeteria.html" class="block px-2 py-1">Cafeteria</a>
+                <a href="pages/facilities/library.html" class="block px-2 py-1">Library</a>
+                <a href="pages/facilities/scholarships.html" class="block px-2 py-1">Scholarships</a>
+                <a href="pages/facilities/sports.html" class="block px-2 py-1">Sports</a>
+                <a href="pages/facilities/laboratories.html" class="block px-2 py-1">Laboratories</a>
+                <a href="pages/facilities/gym.html" class="block px-2 py-1">Gym</a>
               </div>
             </div>
 
@@ -207,11 +203,11 @@
               <div
                 class="submenu hidden absolute mt-4 right-0 bg-white text-black rounded shadow-lg w-56 p-3"
               >
-                <a href="#" class="block px-2 py-1">Old Ques Paper</a>
-                <a href="#" class="block px-2 py-1">Study Material</a>
-                <a href="#" class="block px-2 py-1">Rules of Library</a>
-                <a href="#" class="block px-2 py-1">General Rules</a>
-                <a href="#" class="block px-2 py-1">Policy for Examination</a>
+                <a href="pages/student-resources/previous-papers.html" class="block px-2 py-1">Old Ques Paper</a>
+                <a href="pages/student-resources/study-material.html" class="block px-2 py-1">Study Material</a>
+                <a href="pages/student-resources/library-rules.html" class="block px-2 py-1">Rules of Library</a>
+                <a href="pages/student-resources/general-rules.html" class="block px-2 py-1">General Rules</a>
+                <a href="pages/student-resources/examination-policy.html" class="block px-2 py-1">Policy for Examination</a>
               </div>
             </div>
 
@@ -226,10 +222,10 @@
               <div
                 class="submenu hidden absolute mt-4 right-0 bg-white text-black rounded shadow-lg w-56 p-3"
               >
-                <a href="#" class="block px-2 py-1">Student Feedback</a>
-                <a href="#" class="block px-2 py-1">Alumni Feedback</a>
-                <a href="#" class="block px-2 py-1">Teacher Feedback</a>
-                <a href="#" class="block px-2 py-1">Employers Feedback</a>
+                <a href="pages/feedback/student.html" class="block px-2 py-1">Student Feedback</a>
+                <a href="pages/feedback/alumni.html" class="block px-2 py-1">Alumni Feedback</a>
+                <a href="pages/feedback/teacher.html" class="block px-2 py-1">Teacher Feedback</a>
+                <a href="pages/feedback/employers.html" class="block px-2 py-1">Employers Feedback</a>
               </div>
             </div>
 
@@ -252,21 +248,21 @@
                   <div
                     class="submenu nested hidden ml-2 mt-1 bg-white rounded p-2"
                   >
-                    <a href="#" class="block px-2 py-1">2020-2021</a>
-                    <a href="#" class="block px-2 py-1">2021-2022</a>
-                    <a href="#" class="block px-2 py-1">2022-2023</a>
-                    <a href="#" class="block px-2 py-1">2023-2024</a>
+                    <a href="pages/naac/aqar.html" class="block px-2 py-1">2020-2021</a>
+                    <a href="pages/naac/aqar.html" class="block px-2 py-1">2021-2022</a>
+                    <a href="pages/naac/aqar.html" class="block px-2 py-1">2022-2023</a>
+                    <a href="pages/naac/aqar.html" class="block px-2 py-1">2023-2024</a>
                   </div>
                 </div>
 
-                <a href="#" class="block px-2 py-1">DVV</a>
-                <a href="#" class="block px-2 py-1">SSR</a>
+                <a href="pages/naac/dvv.html" class="block px-2 py-1">DVV</a>
+                <a href="pages/naac/ssr.html" class="block px-2 py-1">SSR</a>
               </div>
             </div>
 
             <div class="nav-item relative">
               <a
-                href="https://rkac.ac.in/contact/"
+                href="pages/contact/index.html"
                 class="px-3 py-2 text-sm font-medium text-white hover:bg-transparent"
               >
                 Contact
@@ -289,550 +285,2331 @@
         </nav>
       </div>
 
-      <!-- HERO SECTION: sec.mp4 full-screen background video -->
+
+<!-- =========================================================
+     HERO SECTION
+     R.K. ARYA COLLEGE
+     ========================================================= -->
+
+<section
+  id="hero"
+  class="hero relative flex min-h-[calc(100svh-80px)] w-full items-center overflow-hidden bg-black"
+>
+
+  <!-- =======================================================
+       BACKGROUND VIDEO
+       ======================================================= -->
+
+  <video
+    class="hero-video absolute inset-0 h-full w-full object-cover"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="https://rkac.ac.in/wp-content/uploads/2026/02/DSC_6142-1536x1017.jpg"
+    aria-hidden="true"
+  >
+
+    <source
+      src="assets/videos/sec.mp4"
+      type="video/mp4"
+    />
+
+    <!-- Fallback -->
+    <img
+      src="https://rkac.ac.in/wp-content/uploads/2026/02/DSC_6142-1536x1017.jpg"
+      alt="R.K. Arya College campus building"
+      class="absolute inset-0 h-full w-full object-cover"
+    />
+
+  </video>
+
+
+  <!-- =======================================================
+       VIDEO OVERLAY
+       ======================================================= -->
+
+  <!-- Overall darkening -->
+
+  <div
+    class="absolute inset-0 bg-black/25"
+  ></div>
+
+
+  <!-- Left readability gradient -->
+
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/15"
+  ></div>
+
+
+  <!-- Bottom fade -->
+
+  <div
+    class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/60 to-transparent"
+  ></div>
+
+
+  <!-- =======================================================
+       HERO CONTENT
+       ======================================================= -->
+
+  <div
+    class="relative z-10 w-full px-6 py-20 sm:px-10 md:px-16 lg:px-20"
+  >
+
+    <div
+      class="mx-auto w-full max-w-7xl"
+    >
+
       <div
-        class="hero relative w-full min-h-svh overflow-hidden flex items-center justify-start px-6 md:px-16 py-24"
+        class="max-w-[720px]"
       >
-        <!-- Full-screen background video -->
-        <video
-          class="hero-video absolute inset-0 w-full h-full object-cover"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-          poster="https://rkac.ac.in/wp-content/uploads/2026/02/DSC_6142-1536x1017.jpg"
-        >
-          <source src="assets/videos/sec.mp4" type="video/mp4" />
-          <!-- Fallback image if video fails to load / unsupported -->
-          <img
-            src="https://rkac.ac.in/wp-content/uploads/2026/02/DSC_6142-1536x1017.jpg"
-            alt="College campus building"
-            class="absolute inset-0 w-full h-full object-cover"
-          />
-        </video>
 
-        <!-- Dark gradient overlay for readability -->
+
+        <!-- =================================================
+             BADGE
+             ================================================= -->
+
         <div
-          class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30"
-        ></div>
+          class="mb-5 inline-flex items-center gap-2.5 rounded-full border border-[#e5c175]/35 bg-[#82080c]/75 px-4 py-2 backdrop-blur-md"
+        >
 
-        <div class="relative z-10 max-w-4xl pt-20">
-          <div
-            class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#82080c]/80 border border-[#e5c175]/40 backdrop-blur-md mb-6"
+          <span
+            class="h-2 w-2 rounded-full bg-[#e5c175]"
+          ></span>
+
+          <span
+            class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#e5c175] sm:text-xs"
           >
-            <span class="w-2 h-2 rounded-full bg-[#e5c175]"></span>
-            <span
-              class="text-xs font-semibold uppercase tracking-widest text-[#e5c175]"
-              >Established 1946 • NAAC Accredited</span
-            >
-          </div>
-          <h1
-            class="hero-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-playfair leading-[1.1] tracking-tight text-white mb-6"
+            Established 1946
+          </span>
+
+          <span
+            class="h-3 w-px bg-white/20"
+          ></span>
+
+          <span
+            class="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/80 sm:text-xs"
           >
-            <span class="block text-white">Quality Education,</span>
-            <span class="block text-gold-shine font-cormorant italic mt-1"
-              >Accessible to All</span
-            >
-          </h1>
-          <p
-            class="text-lg md:text-xl text-gray-200 font-light max-w-2xl leading-relaxed"
-          >
-            Empowering minds through academic excellence, character building,
-            and timeless values for over 75 years.
-          </p>
+            NAAC Accredited
+          </span>
+
         </div>
+
+
+        <!-- =================================================
+             HEADING
+             ================================================= -->
+
+        <h1
+          class="hero-heading font-playfair font-semibold leading-[0.98] tracking-[-0.025em] text-white"
+        >
+
+          <span
+            class="block text-[clamp(2.8rem,5.5vw,5.5rem)]"
+          >
+            Quality Education,
+          </span>
+
+          <span
+            class="mt-2 block font-cormorant text-[clamp(2.9rem,5.8vw,5.7rem)] font-semibold italic leading-[0.9] text-[#e5c175]"
+          >
+            Accessible to All
+          </span>
+
+        </h1>
+
+
+        <!-- =================================================
+             DIVIDER
+             ================================================= -->
+
+        <div
+          class="mt-6 flex items-center gap-3"
+        >
+
+          <span
+            class="h-px w-14 bg-[#e5c175]"
+          ></span>
+
+          <span
+            class="h-1.5 w-1.5 rounded-full bg-[#e5c175]"
+          ></span>
+
+          <span
+            class="h-px w-8 bg-[#e5c175]/40"
+          ></span>
+
+        </div>
+
+
+        <!-- =================================================
+             DESCRIPTION
+             ================================================= -->
+
+        <p
+          class="mt-6 max-w-[620px] text-base font-light leading-7 text-white/80 sm:text-lg sm:leading-8"
+        >
+          Empowering minds through academic excellence, character building,
+          and timeless values for over 75 years.
+        </p>
+
+
+        <!-- =================================================
+             ACTIONS
+             ================================================= -->
+
+        <div
+          class="mt-7 flex flex-col gap-3 sm:flex-row"
+        >
+
+          <a
+            href="#about"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-[#e5c175] px-6 py-3 text-sm font-semibold text-[#3d0709] transition duration-300 hover:-translate-y-0.5 hover:bg-[#f0d28f]"
+          >
+            Discover Our Legacy
+
+            <svg
+              class="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14M13 6l6 6-6 6"
+              />
+
+            </svg>
+
+          </a>
+
+
+          <a
+            href="#leadership"
+            class="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition duration-300 hover:border-[#e5c175]/50 hover:bg-white/10"
+          >
+            Leadership
+          </a>
+
+        </div>
+
+
       </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       SCROLL INDICATOR
+       ======================================================= -->
+
+  <a
+    href="#about"
+    class="absolute bottom-7 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/60 transition hover:text-[#e5c175] md:flex"
+    aria-label="Scroll to About section"
+  >
+
+    <span
+      class="text-[9px] font-medium uppercase tracking-[0.25em]"
+    >
+      Explore
+    </span>
+
+    <span
+      class="hero-scroll-line h-8 w-px bg-white/25"
+    ></span>
+
+  </a>
+
+</section>
+
+
+<!-- =========================================================
+     HERO STYLES
+     ========================================================= -->
+
+
 
       <div class="overlay hidden"></div>
-      <div class="message message-box py-20 md:py-24 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto w-full">
-          <div class="text-center mb-12 md:mb-16">
-            <span
-              class="text-xs font-semibold uppercase tracking-widest text-[#e5c175] bg-white/10 px-4 py-1.5 rounded-full border border-[#e5c175]/30"
-              >Leadership & Vision</span
-            >
-            <h2
-              class="text-4xl md:text-5xl font-bold font-playfair text-white mt-4"
-            >
-              Messages from Leadership
-            </h2>
-          </div>
+<section
+  id="about"
+  class="about relative w-full overflow-hidden bg-[#f8f5ef] text-[#2b1712]"
+>
+  <!-- =========================================================
+       DECORATIVE BACKGROUND
+       ========================================================= -->
 
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div class="message-card p-8 md:p-10 flex flex-col justify-between">
-              <div>
-                <div class="text-[#e5c175] mb-6">
-                  <svg
-                    class="w-10 h-10 opacity-80"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-                    />
-                  </svg>
-                </div>
-                <p
-                  class="message-text text-base md:text-lg mb-8 font-light italic"
-                >
-                  Working with our students has been the greatest pleasure.
-                  We've built something truly special—a space where excellence
-                  isn't just taught, it's lived. From our classrooms to our
-                  grounds, every resource exists to help you become not just
-                  successful, but responsible and grounded.
-                  <br /><br />
-                  Swami Dayanand Sarswati's ideals guide us: hard work,
-                  brotherhood, scientific thinking. Our legacy speaks for
-                  itself—achievers across business, sports, politics, and
-                  beyond.
-                  <br /><br />
-                  I'd be lost without this team and their hunger to build
-                  something great. Join us. Let's shape your future together.
-                </p>
-              </div>
-              <div
-                class="flex items-center gap-4 pt-6 border-t border-white/10"
-              >
-                <img
-                  class="w-16 h-16 message-author-img rounded-full object-cover shrink-0"
-                  src="https://rkac.ac.in/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-11-at-12.10.53-PM-1536x1017.jpeg"
-                  alt="Dr. Puneet Aneja"
-                />
-                <div>
-                  <h3 class="text-xl font-bold font-playfair text-[#e5c175]">
-                    Dr. Puneet Aneja
-                  </h3>
-                  <h4
-                    class="text-xs uppercase tracking-wider text-white/80 font-semibold"
-                  >
-                    Principal
-                  </h4>
-                </div>
-              </div>
-            </div>
+  <div
+    class="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#82080c]/5 blur-3xl"
+  ></div>
 
-            <div class="message-card p-8 md:p-10 flex flex-col justify-between">
-              <div>
-                <div class="text-[#e5c175] mb-6">
-                  <svg
-                    class="w-10 h-10 opacity-80"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-                    />
-                  </svg>
-                </div>
-                <p
-                  class="message-text text-base md:text-lg mb-8 font-light italic"
-                >
-                  A pioneer in quality education since 1946. We excel in
-                  academics, sports, and co-curricular activities, rooted in
-                  Swami Dayanand Sarswati's ideals of hard work, brotherhood,
-                  scientific thinking, and discipline. Our mission is to
-                  transform students into achievers who are self-reliant,
-                  progressive, socially responsible, and morally strong. We
-                  provide modern infrastructure—cutting-edge laboratories,
-                  high-tech facilities, vast grounds, and a dedicated Women
-                  Wing. Our alumni have excelled across business, politics,
-                  international sports, education, art, cinema, and theater.
-                  Join us—a unique portal blending tradition and modernity to
-                  launch your future.
-                </p>
-              </div>
-              <div
-                class="flex items-center gap-4 pt-6 border-t border-white/10"
-              >
-                <img
-                  class="w-16 h-16 message-author-img rounded-full object-cover shrink-0"
-                  src="https://rkac.ac.in/wp-content/uploads/2026/02/Vinod-Bhardwaj.jpg"
-                  alt="Shri Vinod Bhardwaj"
-                />
-                <div>
-                  <h3 class="text-xl font-bold font-playfair text-[#e5c175]">
-                    Shri Vinod Bhardwaj
-                  </h3>
-                  <h4
-                    class="text-xs uppercase tracking-wider text-white/80 font-semibold"
-                  >
-                    President, Managing Committee
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="courses-section py-20 md:py-24 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-12 md:mb-16">
-            <span
-              class="text-xs font-semibold uppercase tracking-widest text-[#82080c] bg-[#82080c]/10 px-4 py-1.5 rounded-full border border-[#82080c]/20"
-              >Academic Programmes</span
-            >
-            <h2
-              class="text-4xl md:text-6xl font-bold font-playfair text-gray-900 mt-4 mb-4"
-            >
-              Our Featured Courses
-            </h2>
-            <p
-              class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed"
-            >
-              Discover degree programs crafted to empower your career with
-              technical expertise and leadership.
-            </p>
-          </div>
+  <div
+    class="pointer-events-none absolute -right-40 top-[45%] h-[500px] w-[500px] rounded-full bg-[#e5c175]/10 blur-3xl"
+  ></div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div
-              class="course-card-enhanced p-6 flex flex-col justify-between group"
-            >
-              <div>
-                <div
-                  class="relative overflow-hidden rounded-2xl mb-6 aspect-video"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1699495592088-f63b5d1b1e83?q=80&w=870&auto=format&fit=crop"
-                    alt="BCA"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <span class="course-badge absolute top-3 left-3"
-                    >UG Degree</span
-                  >
-                </div>
-                <h3
-                  class="text-2xl font-bold font-playfair text-gray-900 mb-3 group-hover:text-[#82080c] transition-colors"
-                >
-                  Bachelor of Computer Applications (BCA)
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                  Gain essential business knowledge, leadership skills, and
-                  programming expertise to excel in corporate and tech sectors
-                  worldwide.
-                </p>
-              </div>
-              <div>
-                <div
-                  class="flex items-center justify-between text-xs text-gray-500 font-semibold mb-6 pt-4 border-t border-gray-100"
-                >
-                  <span>Duration: 3 Years</span>
-                  <span>Full Time</span>
-                </div>
-                <a
-                  href="https://rkac.ac.in/bca"
-                  class="course-btn-action w-full flex items-center justify-center gap-2 py-3 px-6 rounded-full text-sm"
-                >
-                  <span>Read More</span>
-                  <svg
-                    class="w-4 h-4 transition-transform duration-300"
-                    viewBox="0 0 16 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                      fill="#82080c"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
 
-            <div
-              class="course-card-enhanced p-6 flex flex-col justify-between group"
-            >
-              <div>
-                <div
-                  class="relative overflow-hidden rounded-2xl mb-6 aspect-video"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1612214495858-4f32b96155a7?q=80&w=873&auto=format&fit=crop"
-                    alt="M.SC"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <span class="course-badge absolute top-3 left-3"
-                    >PG Degree</span
-                  >
-                </div>
-                <h3
-                  class="text-2xl font-bold font-playfair text-gray-900 mb-3 group-hover:text-[#82080c] transition-colors"
-                >
-                  Master's in Computer Science (M.SC)
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                  Master advanced computing, technologies, and complex
-                  problem-solving to innovate across tech industries.
-                </p>
-              </div>
-              <div>
-                <div
-                  class="flex items-center justify-between text-xs text-gray-500 font-semibold mb-6 pt-4 border-t border-gray-100"
-                >
-                  <span>Duration: 2 Years</span>
-                  <span>Full Time</span>
-                </div>
-                <a
-                  href="https://rkac.ac.in/msc"
-                  class="course-btn-action w-full flex items-center justify-center gap-2 py-3 px-6 rounded-full text-sm"
-                >
-                  <span>Read More</span>
-                  <svg
-                    class="w-4 h-4 transition-transform duration-300"
-                    viewBox="0 0 16 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                      fill="#82080c"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
+  <!-- =========================================================
+       HERO / TITLE
+       ========================================================= -->
 
-            <div
-              class="course-card-enhanced p-6 flex flex-col justify-between group"
-            >
-              <div>
-                <div
-                  class="relative overflow-hidden rounded-2xl mb-6 aspect-video"
-                >
-                  <img
-                    src="https://plus.unsplash.com/premium_photo-1661347859297-859b8ae1d7c5?w=500&auto=format&fit=crop"
-                    alt="M.COM"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <span class="course-badge absolute top-3 left-3"
-                    >PG Degree</span
-                  >
-                </div>
-                <h3
-                  class="text-2xl font-bold font-playfair text-gray-900 mb-3 group-hover:text-[#82080c] transition-colors"
-                >
-                  Master of Commerce (M.COM)
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                  Focus on HRM, Business Studies, Marketing Management,
-                  Financial Management, Managerial Economics, and Accounting.
-                </p>
-              </div>
-              <div>
-                <div
-                  class="flex items-center justify-between text-xs text-gray-500 font-semibold mb-6 pt-4 border-t border-gray-100"
-                >
-                  <span>Duration: 2 Years</span>
-                  <span>Full Time</span>
-                </div>
-                <a
-                  href="https://rkac.ac.in/mcom"
-                  class="course-btn-action w-full flex items-center justify-center gap-2 py-3 px-6 rounded-full text-sm"
-                >
-                  <span>Read More</span>
-                  <svg
-                    class="w-4 h-4 transition-transform duration-300"
-                    viewBox="0 0 16 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                      fill="#82080c"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="why py-20 md:py-24 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-12 md:mb-16">
-            <span
-              class="text-xs font-semibold uppercase tracking-widest text-[#82080c] bg-[#82080c]/10 px-4 py-1.5 rounded-full border border-[#82080c]/20"
-              >Campus Life & Excellence</span
-            >
-            <h2
-              class="text-4xl md:text-6xl font-bold font-playfair text-gray-900 mt-4 mb-4"
-            >
-              Why Choose R.K. Arya College?
-            </h2>
-            <p
-              class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed"
-            >
-              Shaping visionary leaders who thrive in today's evolving global
-              environment.
-            </p>
-          </div>
+  <div
+    class="relative flex min-h-[70vh] items-center justify-center px-6 py-24 sm:px-10 lg:px-20"
+  >
+    <div class="absolute inset-0 overflow-hidden">
+      <div
+        class="absolute left-[8%] top-[20%] h-2 w-2 rounded-full bg-[#e5c175]"
+      ></div>
 
-          <div class="why-video-box mb-20">
-            <!-- BUG FIX: removed pointer-events-none so controls work -->
-            <video
-              class="w-full h-auto object-cover"
-              src="assets/videos/sec.mp4"
-              controls
-              autoplay
-              loop
-              muted
-              playsinline
-              preload="metadata"
-            ></video>
-          </div>
+      <div
+        class="absolute right-[12%] top-[35%] h-3 w-3 rounded-full bg-[#82080c]/30"
+      ></div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div class="why-feature-card flex items-start gap-6">
-              <div
-                class="why-icon-badge w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
-              >
-                <svg
-                  class="w-7 h-7 text-[#e5c175]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                  ></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold font-playfair text-gray-900 mb-3">
-                  Modern Learning Environment
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                  Experience state-of-the-art classrooms, labs, and facilities
-                  designed to enhance creativity, collaboration, and innovation.
-                </p>
-              </div>
-            </div>
+      <div
+        class="absolute bottom-[20%] left-[25%] h-2 w-2 rounded-full bg-[#82080c]/40"
+      ></div>
+    </div>
 
-            <div class="why-feature-card flex items-start gap-6">
-              <div
-                class="why-icon-badge w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
-              >
-                <svg
-                  class="w-7 h-7 text-[#e5c175]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-                  ></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold font-playfair text-gray-900 mb-3">
-                  World-Class Faculty
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                  Learn from professors and industry experts dedicated to
-                  mentoring and inspiring you to achieve your highest potential.
-                </p>
-              </div>
-            </div>
+    <div class="relative z-10 mx-auto max-w-7xl text-center">
 
-            <div class="why-feature-card flex items-start gap-6">
-              <div
-                class="why-icon-badge w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
-              >
-                <svg
-                  class="w-7 h-7 text-[#e5c175]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 4.354a4 4 0 110 5.292M19.5 13H4.5M12 20v-4m0-4V8"
-                  ></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold font-playfair text-gray-900 mb-3">
-                  Diverse & Inclusive Community
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                  Join a vibrant, multicultural student body that fosters global
-                  perspectives and lifelong friendships.
-                </p>
-              </div>
-            </div>
+      <p
+        class="about-reveal mb-6 text-sm font-semibold uppercase tracking-[0.35em] text-[#82080c]"
+      >
+        Our Heritage • Our Foundation
+      </p>
 
-            <div class="why-feature-card flex items-start gap-6">
-              <div
-                class="why-icon-badge w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
-              >
-                <svg
-                  class="w-7 h-7 text-[#e5c175]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  ></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold font-playfair text-gray-900 mb-3">
-                  Career-Focused Education
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                  Our programs integrate real-world projects, internships, and
-                  industry connections to prepare you for immediate success
-                  after graduation.
-                </p>
-              </div>
-            </div>
-          </div>
+      <h1
+        class="about-reveal font-playfair text-6xl font-semibold uppercase leading-[0.9] tracking-tight sm:text-7xl md:text-8xl lg:text-[10rem]"
+      >
+        About
+        <span class="block text-[#82080c]">Us</span>
+      </h1>
+
+      <div
+        class="about-reveal mx-auto mt-10 h-px w-24 bg-[#e5c175]"
+      ></div>
+
+      <p
+        class="about-reveal mx-auto mt-8 max-w-2xl text-base leading-8 text-[#5f514c] sm:text-lg"
+      >
+        Rooted in Vedic values, inspired by education, and committed to
+        character development and social progress.
+      </p>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       MAHARISHI DAYANAND SECTION
+       ========================================================= -->
+
+  <div
+    class="relative mx-auto max-w-7xl px-6 pb-28 sm:px-10 lg:px-20"
+  >
+
+    <div
+      class="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20"
+    >
+
+      <!-- IMAGE AREA -->
+
+      <div
+        class="about-image-group relative mx-auto w-full max-w-xl"
+      >
+
+        <div
+          class="absolute -inset-4 rounded-[2rem] border border-[#e5c175]/50"
+        ></div>
+
+        <div
+          class="absolute -bottom-6 -right-6 h-32 w-32 rounded-full border border-[#82080c]/20"
+        ></div>
+
+        <div
+          class="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#e9dfd2] shadow-2xl"
+        >
+
+          <!-- Maharishi image 1 -->
+          <img
+            src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202402/remembering-maharshi-dayanand-saraswati--arya-samaj-founder-and-social-reformer-125351156-3x4.jpg?VersionId=A_itSMPA9LxzyiPugkWuAGcvtlmGN6YE"
+            alt="Maharishi Dayanand Saraswati"
+            class="about-history-image absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+          />
+
+          <!-- Maharishi image 2 -->
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Dayanand_Saraswati.jpg"
+            alt="Maharishi Dayanand Saraswati historical portrait"
+            class="about-history-image absolute inset-0 h-full w-full object-cover opacity-0"
+            loading="lazy"
+          />
 
           <div
-            class="flex flex-col sm:flex-row gap-5 justify-center items-center"
-          >
-            <a
-              href="https://rkac.ac.in/admissions"
-              class="w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-sm text-white bg-[#82080c] hover:bg-[#5c0003] transition-colors shadow-lg text-center flex items-center justify-center gap-2"
+            class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"
+          ></div>
+
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.25em] text-[#e5c175]"
             >
-              <span>Apply Now</span>
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </a>
-            <a
-              href="https://rkac.ac.in/programme-directory"
-              class="w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-sm text-[#82080c] bg-white border-2 border-[#82080c] hover:bg-gray-50 transition-colors shadow-sm text-center"
+              Founder of Arya Samaj
+            </p>
+
+            <h3
+              class="mt-2 font-playfair text-2xl font-semibold"
             >
-              <span>Learn More</span>
-            </a>
+              Maharishi Dayanand Saraswati
+            </h3>
+
           </div>
+
         </div>
+
+
+        <!-- Floating date -->
+
+        <div
+          class="about-floating absolute -bottom-8 -left-5 rounded-2xl border border-[#e5c175]/40 bg-white px-6 py-5 shadow-xl"
+        >
+
+          <p
+            class="text-xs font-semibold uppercase tracking-widest text-[#82080c]"
+          >
+            Arya Samaj
+          </p>
+
+          <p
+            class="mt-1 font-playfair text-3xl font-bold text-[#2b1712]"
+          >
+            1875
+          </p>
+
+          <p class="text-xs text-[#746761]">
+            Mumbai
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTENT -->
+
+      <div>
+
+        <p
+          class="about-reveal text-sm font-semibold uppercase tracking-[0.3em] text-[#82080c]"
+        >
+          The Vision Behind Our Foundation
+        </p>
+
+        <h2
+          class="about-reveal mt-4 font-playfair text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl"
+        >
+          Education as the
+          <span class="text-[#82080c]">
+            foundation of character.
+          </span>
+        </h2>
+
+        <div
+          class="mt-8 space-y-6 text-[17px] leading-8 text-[#5f514c]"
+        >
+
+          <p class="about-reveal">
+            Maharishi Dayanand Saraswati, in pursuance of Vedic values of
+            tolerance, compassion, sharing and respect, founded Arya Samaj on
+            April 10, 1875, at Mumbai and subsequently established its
+            influence in Lahore in 1877.
+          </p>
+
+          <p class="about-reveal">
+            His vision of education took the form of
+            <strong class="font-semibold text-[#2b1712]">
+              Vedic Schools and Gurukuls
+            </strong>
+            which placed emphasis on Vedic values, culture and religion,
+            alongside the development of knowledge and character.
+          </p>
+
+          <p class="about-reveal">
+            Maharishi Dayanand was a pioneer of social reform and an ardent
+            advocate of Vedic culture. He insisted upon the physical, moral
+            and social progress of humanity, placing education at the centre
+            of character development.
+          </p>
+
+          <p class="about-reveal">
+            According to this philosophy, the development of character is
+            based on the achievement of knowledge. The aim of education is
+            therefore not merely to provide information, but to give true
+            knowledge to the individual and enable that person to conduct
+            life properly.
+          </p>
+
+          <p class="about-reveal">
+            His teachings emphasized that society must recognize education
+            as a primary concern of the state. Following this philosophy,
+            particularly the
+            <strong class="font-semibold text-[#82080c]">
+              Eighth Principle of Arya Samaj
+            </strong>,
+            a number of dedicated Arya Samajists realized the need for an
+            institution of higher learning in Nawanshahr Doaba.
+          </p>
+
+        </div>
+
+
+        <!-- Quote -->
+
+        <div
+          class="about-reveal mt-10 border-l-4 border-[#e5c175] bg-white/70 px-6 py-5 shadow-sm"
+        >
+
+          <p
+            class="font-playfair text-xl italic leading-8 text-[#2b1712]"
+          >
+            “The aim of education is to give true knowledge to the individual
+            and thus enable him to conduct properly.”
+          </p>
+
+          <p
+            class="mt-3 text-xs font-semibold uppercase tracking-widest text-[#82080c]"
+          >
+            — Educational Philosophy
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       VEDIC VALUES
+       ========================================================= -->
+
+  <div
+    class="relative border-y border-[#2b1712]/10 bg-white/50"
+  >
+
+    <div
+      class="mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-20"
+    >
+
+      <div class="mx-auto max-w-3xl text-center">
+
+        <p
+          class="about-reveal text-sm font-semibold uppercase tracking-[0.3em] text-[#82080c]"
+        >
+          Values That Guide Us
+        </p>
+
+        <h2
+          class="about-reveal mt-4 font-playfair text-4xl font-semibold sm:text-5xl"
+        >
+          Rooted in Vedic Values
+        </h2>
+
+      </div>
+
+
+      <div
+        class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+      >
+
+        <!-- Tolerance -->
+
+        <div
+          class="value-card group rounded-2xl border border-[#2b1712]/10 bg-[#f8f5ef] p-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+        >
+
+          <div
+            class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#82080c] text-xl text-white"
+          >
+            ॐ
+          </div>
+
+          <h3 class="font-playfair text-2xl font-semibold">
+            Tolerance
+          </h3>
+
+          <p
+            class="mt-3 text-sm leading-7 text-[#746761]"
+          >
+            Respecting differences while maintaining harmony and mutual
+            understanding.
+          </p>
+
+        </div>
+
+
+        <!-- Compassion -->
+
+        <div
+          class="value-card group rounded-2xl border border-[#2b1712]/10 bg-[#f8f5ef] p-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+        >
+
+          <div
+            class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#82080c] text-xl text-white"
+          >
+            ✦
+          </div>
+
+          <h3 class="font-playfair text-2xl font-semibold">
+            Compassion
+          </h3>
+
+          <p
+            class="mt-3 text-sm leading-7 text-[#746761]"
+          >
+            Building a society where empathy, kindness and service guide
+            human relationships.
+          </p>
+
+        </div>
+
+
+        <!-- Sharing -->
+
+        <div
+          class="value-card group rounded-2xl border border-[#2b1712]/10 bg-[#f8f5ef] p-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+        >
+
+          <div
+            class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#82080c] text-xl text-white"
+          >
+            ∞
+          </div>
+
+          <h3 class="font-playfair text-2xl font-semibold">
+            Sharing
+          </h3>
+
+          <p
+            class="mt-3 text-sm leading-7 text-[#746761]"
+          >
+            Sharing knowledge, resources and opportunities for the progress
+            of the wider community.
+          </p>
+
+        </div>
+
+
+        <!-- Respect -->
+
+        <div
+          class="value-card group rounded-2xl border border-[#2b1712]/10 bg-[#f8f5ef] p-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+        >
+
+          <div
+            class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#82080c] text-xl text-white"
+          >
+            ◈
+          </div>
+
+          <h3 class="font-playfair text-2xl font-semibold">
+            Respect
+          </h3>
+
+          <p
+            class="mt-3 text-sm leading-7 text-[#746761]"
+          >
+            Recognizing the dignity, knowledge and contribution of every
+            individual.
+          </p>
+
+        </div>
+
       </div>
     </div>
+  </div>
+
+
+  <!-- =========================================================
+       HISTORY TIMELINE
+       ========================================================= -->
+
+  <div
+    class="mx-auto max-w-7xl px-6 py-28 sm:px-10 lg:px-20"
+  >
+
+    <div
+      class="grid gap-16 lg:grid-cols-[0.7fr_1.3fr]"
+    >
+
+      <!-- LEFT HEADING -->
+
+      <div
+        class="lg:sticky lg:top-28 lg:self-start"
+      >
+
+        <p
+          class="about-reveal text-sm font-semibold uppercase tracking-[0.3em] text-[#82080c]"
+        >
+          Our Journey
+        </p>
+
+        <h2
+          class="about-reveal mt-4 font-playfair text-5xl font-semibold leading-tight"
+        >
+          From a
+          <span class="text-[#82080c]">
+            vision
+          </span>
+          to an institution.
+        </h2>
+
+        <p
+          class="about-reveal mt-6 max-w-md leading-8 text-[#746761]"
+        >
+          The vision of education and character development inspired
+          generations of Arya Samajists to establish institutions dedicated
+          to higher learning.
+        </p>
+
+      </div>
+
+
+      <!-- RIGHT TIMELINE -->
+
+      <div class="relative">
+
+        <!-- Vertical timeline line -->
+
+        <div
+          class="absolute left-[11px] top-2 h-[calc(100%-20px)] w-px bg-[#e5c175]"
+        ></div>
+
+
+        <!-- =================================================
+             1875
+             ================================================= -->
+
+        <div
+          class="timeline-item relative pb-16 pl-12"
+        >
+
+          <span
+            class="absolute left-0 top-1 flex h-6 w-6 items-center justify-center rounded-full border-4 border-[#f8f5ef] bg-[#82080c]"
+          ></span>
+
+          <p
+            class="text-sm font-bold tracking-[0.2em] text-[#82080c]"
+          >
+            1875
+          </p>
+
+          <h3
+            class="mt-2 font-playfair text-3xl font-semibold"
+          >
+            Arya Samaj Founded
+          </h3>
+
+          <p
+            class="mt-3 leading-8 text-[#746761]"
+          >
+            Maharishi Dayanand Saraswati founded Arya Samaj at Mumbai,
+            beginning a movement centred around Vedic knowledge, truth,
+            social reform and education.
+          </p>
+
+        </div>
+
+
+        <!-- =================================================
+             1877
+             ================================================= -->
+
+        <div
+          class="timeline-item relative pb-16 pl-12"
+        >
+
+          <span
+            class="absolute left-0 top-1 flex h-6 w-6 items-center justify-center rounded-full border-4 border-[#f8f5ef] bg-[#82080c]"
+          ></span>
+
+          <p
+            class="text-sm font-bold tracking-[0.2em] text-[#82080c]"
+          >
+            1877
+          </p>
+
+          <h3
+            class="mt-2 font-playfair text-3xl font-semibold"
+          >
+            Arya Samaj in Lahore
+          </h3>
+
+          <p
+            class="mt-3 leading-8 text-[#746761]"
+          >
+            The movement expanded to Lahore, strengthening the spread of
+            Vedic values, education and social reform across the region.
+          </p>
+
+        </div>
+
+
+        <!-- =================================================
+             VEDIC EDUCATION
+             ================================================= -->
+
+        <div
+          class="timeline-item relative pb-16 pl-12"
+        >
+
+          <span
+            class="absolute left-0 top-1 flex h-6 w-6 items-center justify-center rounded-full border-4 border-[#f8f5ef] bg-[#82080c]"
+          ></span>
+
+          <p
+            class="text-sm font-bold tracking-[0.2em] text-[#82080c]"
+          >
+            VEDIC EDUCATION
+          </p>
+
+          <h3
+            class="mt-2 font-playfair text-3xl font-semibold"
+          >
+            Schools & Gurukuls
+          </h3>
+
+          <p
+            class="mt-3 leading-8 text-[#746761]"
+          >
+            The educational vision took shape through Vedic Schools and
+            Gurukuls, emphasizing knowledge, culture, values and the
+            development of character.
+          </p>
+
+        </div>
+
+
+        <!-- =================================================
+             1952 — R.K. ARYA COLLEGE
+             ================================================= -->
+
+        <div
+          class="timeline-item relative pl-12"
+        >
+
+          <!-- Timeline dot -->
+
+          <span
+            class="absolute left-0 top-1 flex h-6 w-6 items-center justify-center rounded-full border-4 border-[#f8f5ef] bg-[#e5c175]"
+          ></span>
+
+
+          <!-- Year -->
+
+          <p
+            class="text-sm font-bold tracking-[0.2em] text-[#82080c]"
+          >
+            1952
+          </p>
+
+
+          <!-- Title -->
+
+          <h3
+            class="mt-2 font-playfair text-3xl font-semibold"
+          >
+            R.K. Arya College
+          </h3>
+
+
+          <!-- Description -->
+
+          <p
+            class="mt-3 leading-8 text-[#746761]"
+          >
+            As a result of the dedication of Arya Samajists to the cause of
+            education, Radha Krishan Arya College was founded in Nawanshahr
+            Doaba in 1952, carrying forward the vision of education,
+            character and social progress.
+          </p>
+
+
+          <!-- =================================================
+               COLLEGE PHOTO SHOWCASE
+               ================================================= -->
+
+          <div
+            class="college-gallery mt-10"
+          >
+
+            <!-- Main college image -->
+
+            <div
+              class="college-gallery-main group relative h-[420px] overflow-hidden rounded-[1.5rem] bg-[#e9dfd2] shadow-2xl"
+            >
+
+              <img
+                id="college-main-image"
+                src="https://rkac.ac.in/wp-content/uploads/2026/02/a54023a5-52c5-4605-83da-919cce9d027d-1-copy.jpg"
+                alt="R.K. Arya College campus"
+                class="college-gallery-image absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+
+              <!-- Overlay -->
+
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+              ></div>
+
+
+              <!-- Image information -->
+
+              <div
+                class="absolute bottom-0 left-0 right-0 p-7 text-white"
+              >
+
+                <p
+                  class="text-xs font-semibold uppercase tracking-[0.25em] text-[#e5c175]"
+                >
+                  Since 1952
+                </p>
+
+                <h4
+                  class="mt-2 font-playfair text-3xl font-semibold"
+                >
+                  R.K. Arya College
+                </h4>
+
+                <p
+                  class="mt-1 text-sm text-white/80"
+                >
+                  Nawanshahr, Punjab
+                </p>
+
+              </div>
+
+
+              <!-- Previous button -->
+
+              <button
+                type="button"
+                class="college-gallery-control absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/20 text-xl text-white backdrop-blur-md transition hover:bg-white hover:text-[#82080c]"
+                data-gallery-prev
+                aria-label="Previous college image"
+              >
+                ←
+              </button>
+
+
+              <!-- Next button -->
+
+              <button
+                type="button"
+                class="college-gallery-control absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/20 text-xl text-white backdrop-blur-md transition hover:bg-white hover:text-[#82080c]"
+                data-gallery-next
+                aria-label="Next college image"
+              >
+                →
+              </button>
+
+            </div>
+
+
+            <!-- Thumbnail gallery -->
+
+            <div
+              class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4"
+            >
+
+              <!-- Thumbnail 1 -->
+
+              <button
+                type="button"
+                class="college-thumbnail group relative h-28 overflow-hidden rounded-xl border-2 border-[#82080c]"
+                data-gallery-image="http://rkarya.online/wp-content/uploads/2026/02/DSC_6140-scaled.jpg"
+                aria-label="Show college campus image 1"
+              >
+
+                <img
+                  src="http://rkarya.online/wp-content/uploads/2026/02/DSC_6140-scaled.jpg"
+                  alt="R.K. Arya College campus"
+                  class="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+
+              </button>
+
+
+              <!-- Thumbnail 2 -->
+
+              <button
+                type="button"
+                class="college-thumbnail group relative h-28 overflow-hidden rounded-xl border-2 border-transparent"
+                data-gallery-image="http://rkarya.online/wp-content/uploads/2026/02/DSC_6158-scaled.jpg"
+                aria-label="Show college campus image 2"
+              >
+
+                <img
+                  src="http://rkarya.online/wp-content/uploads/2026/02/DSC_6158-scaled.jpg"
+                  alt="R.K. Arya College building"
+                  class="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+
+              </button>
+
+
+              <!-- Thumbnail 3 -->
+
+              <button
+                type="button"
+                class="college-thumbnail group relative h-28 overflow-hidden rounded-xl border-2 border-transparent"
+                data-gallery-image="/assets/images/about/college/campus-03.webp"
+                aria-label="Show college campus image 3"
+              >
+
+                <img
+                  src="https://rkac.ac.in/wp-content/uploads/2026/01/f1430868-7e37-4215-8b0f-6f256742ee9e-1-1536x1152.jpg"
+                  alt="R.K. Arya College campus view"
+                  class="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+
+              </button>
+
+
+              <!-- Thumbnail 4 -->
+
+              <button
+                type="button"
+                class="college-thumbnail group relative h-28 overflow-hidden rounded-xl border-2 border-transparent"
+                data-gallery-image="https://rkac.ac.in/wp-content/uploads/2026/02/DSC_6142-1536x1017.jpg"
+                aria-label="Show college campus image 4"
+              >
+
+                <img
+                  src="https://rkac.ac.in/wp-content/uploads/2026/02/DSC_6142-1536x1017.jpg"
+                  alt="R.K. Arya College"
+                  class="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+
+              </button>
+
+            </div>
+
+
+            <!-- Gallery link -->
+
+            <a
+              href="https://rkac.ac.in/media.php"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-5 inline-flex items-center gap-3 rounded-full border border-[#82080c] px-6 py-3 text-sm font-semibold text-[#82080c] transition duration-300 hover:bg-[#82080c] hover:text-white"
+            >
+              View College Gallery
+
+              <span aria-hidden="true">
+                →
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       COLLEGE LEGACY BANNER
+       ========================================================= -->
+
+  <div
+    class="relative overflow-hidden bg-[#82080c]"
+  >
+
+    <div
+      class="absolute -left-32 -top-32 h-96 w-96 rounded-full border border-white/10"
+    ></div>
+
+    <div
+      class="absolute -right-40 -bottom-40 h-[500px] w-[500px] rounded-full border border-white/10"
+    ></div>
+
+
+    <div
+      class="relative mx-auto max-w-5xl px-6 py-24 text-center sm:px-10"
+    >
+
+      <p
+        class="about-reveal text-sm font-semibold uppercase tracking-[0.35em] text-[#e5c175]"
+      >
+        Since 1952
+      </p>
+
+      <h2
+        class="about-reveal mt-5 font-playfair text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl"
+      >
+        A legacy built on
+        <span class="text-[#e5c175]">
+          knowledge, character & service.
+        </span>
+      </h2>
+
+      <p
+        class="about-reveal mx-auto mt-7 max-w-3xl text-base leading-8 text-white/75 sm:text-lg"
+      >
+        Radha Krishan Arya College continues to carry forward the educational
+        vision that inspired its foundation — nurturing individuals through
+        knowledge, values, discipline and responsible citizenship.
+      </p>
+
+      <div
+        class="about-reveal mt-10 flex flex-wrap justify-center gap-4"
+      >
+
+        <span
+          class="rounded-full border border-white/20 px-6 py-3 text-sm text-white"
+        >
+          Knowledge
+        </span>
+
+        <span
+          class="rounded-full border border-white/20 px-6 py-3 text-sm text-white"
+        >
+          Character
+        </span>
+
+        <span
+          class="rounded-full border border-white/20 px-6 py-3 text-sm text-white"
+        >
+          Values
+        </span>
+
+        <span
+          class="rounded-full border border-white/20 px-6 py-3 text-sm text-white"
+        >
+          Service
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT SECTION STYLES
+     ========================================================= -->
+
+
+
+<!-- =========================================================
+     ABOUT SECTION JAVASCRIPT
+     ========================================================= -->
+
+
+
+<!-- =========================================================
+     LEADERSHIP & VISION
+     ========================================================= -->
+
+<section
+  id="leadership"
+  class="message message-box relative overflow-hidden bg-[#82080c] py-24 md:py-32"
+>
+
+  <!-- =======================================================
+       DECORATIVE BACKGROUND
+       ======================================================= -->
+
+  <div
+    class="pointer-events-none absolute -left-48 -top-48 h-[500px] w-[500px] rounded-full border border-white/10"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute -right-64 top-1/3 h-[600px] w-[600px] rounded-full border border-white/10"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-[#e5c175]/5 blur-3xl"
+  ></div>
+
+
+  <!-- Subtle pattern -->
+
+  <div
+    class="leadership-pattern pointer-events-none absolute inset-0 opacity-[0.035]"
+  ></div>
+
+
+  <!-- =======================================================
+       CONTENT CONTAINER
+       ======================================================= -->
+
+  <div
+    class="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-12"
+  >
+
+
+    <!-- =====================================================
+         SECTION HEADING
+         ===================================================== -->
+
+    <div class="mx-auto mb-16 max-w-3xl text-center md:mb-20">
+
+      <span
+        class="leadership-reveal inline-flex items-center gap-3 rounded-full border border-[#e5c175]/30 bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#e5c175] backdrop-blur-sm"
+      >
+
+        <span
+          class="h-1.5 w-1.5 rounded-full bg-[#e5c175]"
+        ></span>
+
+        Leadership & Vision
+
+      </span>
+
+
+      <h2
+        class="leadership-reveal mt-6 font-playfair text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl"
+      >
+        Messages from
+        <span class="text-[#e5c175]">
+          Leadership
+        </span>
+      </h2>
+
+
+      <div
+        class="leadership-reveal mx-auto mt-7 h-px w-20 bg-[#e5c175]"
+      ></div>
+
+
+      <p
+        class="leadership-reveal mx-auto mt-7 max-w-2xl text-sm leading-7 text-white/65 sm:text-base"
+      >
+        Guidance, vision and values from the leadership that continues to
+        shape the institution's journey.
+      </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LEADERSHIP CARDS
+         ===================================================== -->
+
+    <div
+      class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10"
+    >
+
+
+      <!-- ===================================================
+           PRINCIPAL
+           =================================================== -->
+
+      <article
+        class="leadership-card group relative flex flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.07] p-7 shadow-2xl backdrop-blur-md transition duration-700 hover:-translate-y-2 hover:border-[#e5c175]/30 md:p-9"
+      >
+
+        <!-- Top accent -->
+
+        <div
+          class="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#e5c175] to-transparent opacity-70"
+        ></div>
+
+
+        <!-- Decorative quote -->
+
+        <div
+          class="pointer-events-none absolute right-7 top-4 font-serif text-[9rem] leading-none text-white/[0.035]"
+          aria-hidden="true"
+        >
+          “
+        </div>
+
+
+        <!-- Role -->
+
+        <div class="relative z-10 flex items-center gap-3">
+
+          <span
+            class="h-px w-8 bg-[#e5c175]"
+          ></span>
+
+          <span
+            class="text-xs font-semibold uppercase tracking-[0.25em] text-[#e5c175]"
+          >
+            Principal's Message
+          </span>
+
+        </div>
+
+
+        <!-- Quote icon -->
+
+        <div
+          class="relative z-10 mt-8 flex h-12 w-12 items-center justify-center rounded-full border border-[#e5c175]/25 bg-[#e5c175]/10 text-[#e5c175]"
+        >
+
+          <svg
+            class="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <!-- Message -->
+
+        <div class="relative z-10 mt-7 flex-1">
+
+          <p
+            class="leadership-message text-base font-light leading-8 text-white/80 md:text-[17px]"
+          >
+
+            Working with our students has been the greatest pleasure.
+            We've built something truly special—a space where excellence
+            isn't just taught, it's lived. From our classrooms to our
+            grounds, every resource exists to help you become not just
+            successful, but responsible and grounded.
+
+            <br /><br />
+
+            Swami Dayanand Sarswati's ideals guide us: hard work,
+            brotherhood, scientific thinking. Our legacy speaks for
+            itself—achievers across business, sports, politics, and beyond.
+
+            <br /><br />
+
+            I'd be lost without this team and their hunger to build
+            something great. Join us. Let's shape your future together.
+
+          </p>
+
+        </div>
+
+
+        <!-- Author -->
+
+        <div
+          class="relative z-10 mt-10 flex items-center gap-5 border-t border-white/10 pt-7"
+        >
+
+          <!-- Portrait -->
+
+          <div
+            class="relative h-[72px] w-[72px] shrink-0"
+          >
+
+            <div
+              class="absolute -inset-1 rounded-full border border-[#e5c175]/30"
+            ></div>
+
+            <img
+              src="https://rkac.ac.in/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-11-at-12.10.53-PM-1536x1017.jpeg"
+              alt="Dr. Puneet Aneja, Principal"
+              class="message-author-img h-full w-full rounded-full object-cover object-center"
+              loading="lazy"
+            />
+
+          </div>
+
+
+          <!-- Author details -->
+
+          <div>
+
+            <h3
+              class="font-playfair text-xl font-semibold text-[#e5c175] md:text-2xl"
+            >
+              Dr. Puneet Aneja
+            </h3>
+
+            <p
+              class="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/55"
+            >
+              Principal
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ===================================================
+           PRESIDENT
+           =================================================== -->
+
+      <article
+        class="leadership-card group relative flex flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.07] p-7 shadow-2xl backdrop-blur-md transition duration-700 hover:-translate-y-2 hover:border-[#e5c175]/30 md:p-9"
+      >
+
+        <!-- Top accent -->
+
+        <div
+          class="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#e5c175] to-transparent opacity-70"
+        ></div>
+
+
+        <!-- Decorative quote -->
+
+        <div
+          class="pointer-events-none absolute right-7 top-4 font-serif text-[9rem] leading-none text-white/[0.035]"
+          aria-hidden="true"
+        >
+          “
+        </div>
+
+
+        <!-- Role -->
+
+        <div class="relative z-10 flex items-center gap-3">
+
+          <span
+            class="h-px w-8 bg-[#e5c175]"
+          ></span>
+
+          <span
+            class="text-xs font-semibold uppercase tracking-[0.25em] text-[#e5c175]"
+          >
+            President's Message
+          </span>
+
+        </div>
+
+
+        <!-- Quote icon -->
+
+        <div
+          class="relative z-10 mt-8 flex h-12 w-12 items-center justify-center rounded-full border border-[#e5c175]/25 bg-[#e5c175]/10 text-[#e5c175]"
+        >
+
+          <svg
+            class="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <!-- Message -->
+
+        <div class="relative z-10 mt-7 flex-1">
+
+          <p
+            class="leadership-message text-base font-light leading-8 text-white/80 md:text-[17px]"
+          >
+
+            A pioneer in quality education since 1946. We excel in
+            academics, sports, and co-curricular activities, rooted in
+            Swami Dayanand Sarswati's ideals of hard work, brotherhood,
+            scientific thinking, and discipline.
+
+            <br /><br />
+
+            Our mission is to transform students into achievers who are
+            self-reliant, progressive, socially responsible, and morally
+            strong. We provide modern infrastructure—cutting-edge
+            laboratories, high-tech facilities, vast grounds, and a
+            dedicated Women Wing.
+
+            <br /><br />
+
+            Our alumni have excelled across business, politics,
+            international sports, education, art, cinema, and theater.
+            Join us—a unique portal blending tradition and modernity to
+            launch your future.
+
+          </p>
+
+        </div>
+
+
+        <!-- Author -->
+
+        <div
+          class="relative z-10 mt-10 flex items-center gap-5 border-t border-white/10 pt-7"
+        >
+
+          <!-- Portrait -->
+
+          <div
+            class="relative h-[72px] w-[72px] shrink-0"
+          >
+
+            <div
+              class="absolute -inset-1 rounded-full border border-[#e5c175]/30"
+            ></div>
+
+            <img
+              src="https://rkac.ac.in/wp-content/uploads/2026/02/Vinod-Bhardwaj.jpg"
+              alt="Shri Vinod Bhardwaj, President Managing Committee"
+              class="message-author-img h-full w-full rounded-full object-cover object-center"
+              loading="lazy"
+            />
+
+          </div>
+
+
+          <!-- Author details -->
+
+          <div>
+
+            <h3
+              class="font-playfair text-xl font-semibold text-[#e5c175] md:text-2xl"
+            >
+              Shri Vinod Bhardwaj
+            </h3>
+
+            <p
+              class="mt-1 max-w-[220px] text-xs font-semibold uppercase tracking-[0.18em] leading-5 text-white/55"
+            >
+              President, Managing Committee
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <!-- =====================================================
+         BOTTOM STATEMENT
+         ===================================================== -->
+
+    <div
+      class="leadership-reveal mx-auto mt-16 max-w-4xl text-center"
+    >
+
+      <div
+        class="mx-auto mb-6 h-px w-16 bg-[#e5c175]/50"
+      ></div>
+
+      <p
+        class="font-playfair text-xl italic leading-8 text-white/70 md:text-2xl"
+      >
+        “Tradition gives us our roots. Education gives us our direction.”
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     LEADERSHIP SECTION STYLES
+     ========================================================= -->
+
+
+
+<!-- =========================================================
+     LEADERSHIP SECTION JAVASCRIPT
+     ========================================================= -->
+
+
+
+    <!-- =========================================================
+     FEATURED COURSES
+     ========================================================= -->
+
+<section
+  id="courses"
+  class="courses-section bg-[#f8f5ef] py-20 px-6 md:px-12 md:py-24"
+>
+  <div class="mx-auto max-w-7xl">
+
+    <!-- Section Header -->
+
+    <div class="mx-auto mb-12 max-w-3xl text-center md:mb-16">
+
+      <span
+        class="inline-flex items-center gap-2 rounded-full border border-[#82080c]/20 bg-[#82080c]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#82080c]"
+      >
+        <span class="h-1.5 w-1.5 rounded-full bg-[#82080c]"></span>
+        Academic Programmes
+      </span>
+
+      <h2
+        class="mt-5 font-playfair text-4xl font-bold leading-tight text-gray-900 sm:text-5xl md:text-6xl"
+      >
+        Our Featured
+        <span class="text-[#82080c]">Courses</span>
+      </h2>
+
+      <p
+        class="mx-auto mt-5 max-w-2xl text-base font-light leading-relaxed text-gray-600 md:text-lg"
+      >
+        Discover degree programmes designed to develop technical expertise,
+        practical knowledge, and leadership skills for your future.
+      </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         COURSE GRID
+         ===================================================== -->
+
+    <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
+
+
+      <!-- ===================================================
+           BCA
+           =================================================== -->
+
+      <article
+        class="course-card-enhanced group flex flex-col overflow-hidden rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+      >
+
+        <!-- Image -->
+
+        <div
+          class="relative mb-6 aspect-video overflow-hidden rounded-2xl"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1699495592088-f63b5d1b1e83?q=80&w=870&auto=format&fit=crop"
+            alt="Bachelor of Computer Applications"
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"
+          ></div>
+
+          <span
+            class="course-badge absolute left-3 top-3 rounded-full bg-[#82080c] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-lg"
+          >
+            UG Degree
+          </span>
+
+        </div>
+
+
+        <!-- Content -->
+
+        <div class="flex flex-1 flex-col">
+
+          <div class="flex-1">
+
+            <h3
+              class="mb-3 font-playfair text-2xl font-bold leading-tight text-gray-900 transition-colors duration-300 group-hover:text-[#82080c]"
+            >
+              Bachelor of Computer Applications
+              <span class="text-[#82080c]">(BCA)</span>
+            </h3>
+
+            <p
+              class="text-sm leading-7 text-gray-600"
+            >
+              Gain essential business knowledge, programming expertise,
+              and practical technology skills to prepare for opportunities
+              across the corporate and technology sectors.
+            </p>
+
+          </div>
+
+
+          <!-- Course Meta -->
+
+          <div
+            class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs font-semibold text-gray-500"
+          >
+
+            <span>Duration: 3 Years</span>
+
+            <span>Full Time</span>
+
+          </div>
+
+
+          <!-- Button -->
+
+          <a
+            href="https://rkac.ac.in/bca"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="course-btn-action mt-5 flex w-full items-center justify-center gap-2 rounded-full border border-[#82080c] px-6 py-3 text-sm font-semibold text-[#82080c] transition-all duration-300 hover:bg-[#82080c] hover:text-white"
+          >
+
+            <span>Read More</span>
+
+            <svg
+              class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14M13 6l6 6-6 6"
+              />
+
+            </svg>
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ===================================================
+           M.SC
+           =================================================== -->
+
+      <article
+        class="course-card-enhanced group flex flex-col overflow-hidden rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+      >
+
+        <!-- Image -->
+
+        <div
+          class="relative mb-6 aspect-video overflow-hidden rounded-2xl"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1612214495858-4f32b96155a7?q=80&w=873&auto=format&fit=crop"
+            alt="Master of Science in Computer Science"
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"
+          ></div>
+
+          <span
+            class="course-badge absolute left-3 top-3 rounded-full bg-[#82080c] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-lg"
+          >
+            PG Degree
+          </span>
+
+        </div>
+
+
+        <!-- Content -->
+
+        <div class="flex flex-1 flex-col">
+
+          <div class="flex-1">
+
+            <h3
+              class="mb-3 font-playfair text-2xl font-bold leading-tight text-gray-900 transition-colors duration-300 group-hover:text-[#82080c]"
+            >
+              Master's in Computer Science
+              <span class="text-[#82080c]">(M.Sc.)</span>
+            </h3>
+
+            <p
+              class="text-sm leading-7 text-gray-600"
+            >
+              Master advanced computing, emerging technologies, and
+              complex problem-solving skills to innovate across the
+              technology sector.
+            </p>
+
+          </div>
+
+
+          <!-- Course Meta -->
+
+          <div
+            class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs font-semibold text-gray-500"
+          >
+
+            <span>Duration: 2 Years</span>
+
+            <span>Full Time</span>
+
+          </div>
+
+
+          <!-- Button -->
+
+          <a
+            href="https://rkac.ac.in/msc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="course-btn-action mt-5 flex w-full items-center justify-center gap-2 rounded-full border border-[#82080c] px-6 py-3 text-sm font-semibold text-[#82080c] transition-all duration-300 hover:bg-[#82080c] hover:text-white"
+          >
+
+            <span>Read More</span>
+
+            <svg
+              class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14M13 6l6 6-6 6"
+              />
+
+            </svg>
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ===================================================
+           M.COM
+           =================================================== -->
+
+      <article
+        class="course-card-enhanced group flex flex-col overflow-hidden rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+      >
+
+        <!-- Image -->
+
+        <div
+          class="relative mb-6 aspect-video overflow-hidden rounded-2xl"
+        >
+
+          <img
+            src="https://plus.unsplash.com/premium_photo-1661347859297-859b8ae1d7c5?w=500&auto=format&fit=crop"
+            alt="Master of Commerce"
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"
+          ></div>
+
+          <span
+            class="course-badge absolute left-3 top-3 rounded-full bg-[#82080c] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-lg"
+          >
+            PG Degree
+          </span>
+
+        </div>
+
+
+        <!-- Content -->
+
+        <div class="flex flex-1 flex-col">
+
+          <div class="flex-1">
+
+            <h3
+              class="mb-3 font-playfair text-2xl font-bold leading-tight text-gray-900 transition-colors duration-300 group-hover:text-[#82080c]"
+            >
+              Master of Commerce
+              <span class="text-[#82080c]">(M.Com.)</span>
+            </h3>
+
+            <p
+              class="text-sm leading-7 text-gray-600"
+            >
+              Focus on Human Resource Management, Business Studies,
+              Marketing Management, Financial Management, Managerial
+              Economics, and Accounting.
+            </p>
+
+          </div>
+
+
+          <!-- Course Meta -->
+
+          <div
+            class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs font-semibold text-gray-500"
+          >
+
+            <span>Duration: 2 Years</span>
+
+            <span>Full Time</span>
+
+          </div>
+
+
+          <!-- Button -->
+
+          <a
+            href="https://rkac.ac.in/mcom"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="course-btn-action mt-5 flex w-full items-center justify-center gap-2 rounded-full border border-[#82080c] px-6 py-3 text-sm font-semibold text-[#82080c] transition-all duration-300 hover:bg-[#82080c] hover:text-white"
+          >
+
+            <span>Read More</span>
+
+            <svg
+              class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14M13 6l6 6-6 6"
+              />
+
+            </svg>
+
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <!-- =====================================================
+         VIEW ALL PROGRAMMES
+         ===================================================== -->
+
+    <div class="mt-10 text-center">
+
+      <a
+        href="https://rkac.ac.in/programme-directory"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-[#82080c] transition-colors duration-300 hover:text-[#5c0003]"
+      >
+
+        View All Programmes
+
+        <span
+          class="transition-transform duration-300 hover:translate-x-1"
+        >
+          →
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
+</section>
+<!-- =========================================================
+     WHY CHOOSE R.K. ARYA COLLEGE
+     ========================================================= -->
+
+<section
+  id="why-choose"
+  class="why bg-white py-20 px-6 md:py-24 md:px-12"
+>
+  <div class="mx-auto max-w-7xl">
+
+    <!-- =======================================================
+         SECTION HEADER
+         ======================================================= -->
+
+    <div class="mx-auto mb-12 max-w-3xl text-center md:mb-16">
+
+      <span
+        class="inline-flex items-center gap-2 rounded-full border border-[#82080c]/20 bg-[#82080c]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#82080c]"
+      >
+        <span class="h-1.5 w-1.5 rounded-full bg-[#82080c]"></span>
+        Campus Life & Excellence
+      </span>
+
+      <h2
+        class="mt-5 font-playfair text-4xl font-bold leading-tight text-gray-900 sm:text-5xl md:text-6xl"
+      >
+        Why Choose
+        <span class="text-[#82080c]">
+          R.K. Arya College?
+        </span>
+      </h2>
+
+      <p
+        class="mx-auto mt-5 max-w-2xl text-base font-light leading-7 text-gray-600 md:text-lg md:leading-8"
+      >
+        Shaping visionary leaders through academic excellence, practical
+        learning, character building, and timeless values.
+      </p>
+
+    </div>
+
+
+    <!-- =======================================================
+         VIDEO SHOWCASE
+         ======================================================= -->
+
+    <div
+      class="why-video-box mb-16 overflow-hidden rounded-3xl bg-black shadow-xl md:mb-20"
+    >
+
+      <video
+        class="aspect-video w-full object-cover"
+        src="assets/videos/sec.mp4"
+        controls
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="metadata"
+        poster="https://rkac.ac.in/wp-content/uploads/2026/02/DSC_6142-1536x1017.jpg"
+      ></video>
+
+    </div>
+
+
+    <!-- =======================================================
+         FEATURES
+         ======================================================= -->
+
+    <div
+      class="mb-14 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 md:mb-16"
+    >
+
+
+      <!-- =====================================================
+           FEATURE 01
+           ===================================================== -->
+
+      <article
+        class="why-feature-card group flex items-start gap-5 rounded-2xl border border-gray-200 bg-[#f8f5ef] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-[#82080c]/20 hover:shadow-lg md:p-7"
+      >
+
+        <div
+          class="why-icon-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#82080c] transition-transform duration-300 group-hover:scale-105"
+        >
+
+          <svg
+            class="h-6 w-6 text-[#e5c175]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div>
+
+          <p
+            class="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#82080c]"
+          >
+            01
+          </p>
+
+          <h3
+            class="font-playfair text-xl font-bold text-gray-900 md:text-2xl"
+          >
+            Modern Learning Environment
+          </h3>
+
+          <p
+            class="mt-3 text-sm leading-7 text-gray-600"
+          >
+            Experience modern classrooms, laboratories, and facilities
+            designed to support creativity, collaboration, and innovation.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =====================================================
+           FEATURE 02
+           ===================================================== -->
+
+      <article
+        class="why-feature-card group flex items-start gap-5 rounded-2xl border border-gray-200 bg-[#f8f5ef] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-[#82080c]/20 hover:shadow-lg md:p-7"
+      >
+
+        <div
+          class="why-icon-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#82080c] transition-transform duration-300 group-hover:scale-105"
+        >
+
+          <svg
+            class="h-6 w-6 text-[#e5c175]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div>
+
+          <p
+            class="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#82080c]"
+          >
+            02
+          </p>
+
+          <h3
+            class="font-playfair text-xl font-bold text-gray-900 md:text-2xl"
+          >
+            Dedicated Faculty
+          </h3>
+
+          <p
+            class="mt-3 text-sm leading-7 text-gray-600"
+          >
+            Learn from dedicated educators who support, mentor, and
+            encourage students throughout their academic journey.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =====================================================
+           FEATURE 03
+           ===================================================== -->
+
+      <article
+        class="why-feature-card group flex items-start gap-5 rounded-2xl border border-gray-200 bg-[#f8f5ef] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-[#82080c]/20 hover:shadow-lg md:p-7"
+      >
+
+        <div
+          class="why-icon-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#82080c] transition-transform duration-300 group-hover:scale-105"
+        >
+
+          <svg
+            class="h-6 w-6 text-[#e5c175]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M12 4.354a4 4 0 110 5.292M19.5 13H4.5M12 20v-4m0-4V8"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div>
+
+          <p
+            class="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#82080c]"
+          >
+            03
+          </p>
+
+          <h3
+            class="font-playfair text-xl font-bold text-gray-900 md:text-2xl"
+          >
+            Inclusive Community
+          </h3>
+
+          <p
+            class="mt-3 text-sm leading-7 text-gray-600"
+          >
+            Become part of a welcoming college community that encourages
+            participation, collaboration, respect, and lasting connections.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =====================================================
+           FEATURE 04
+           ===================================================== -->
+
+      <article
+        class="why-feature-card group flex items-start gap-5 rounded-2xl border border-gray-200 bg-[#f8f5ef] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-[#82080c]/20 hover:shadow-lg md:p-7"
+      >
+
+        <div
+          class="why-icon-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#82080c] transition-transform duration-300 group-hover:scale-105"
+        >
+
+          <svg
+            class="h-6 w-6 text-[#e5c175]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div>
+
+          <p
+            class="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#82080c]"
+          >
+            04
+          </p>
+
+          <h3
+            class="font-playfair text-xl font-bold text-gray-900 md:text-2xl"
+          >
+            Career-Focused Education
+          </h3>
+
+          <p
+            class="mt-3 text-sm leading-7 text-gray-600"
+          >
+            Connect academic learning with practical projects, skills,
+            and experiences that help prepare students for their future.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <!-- =======================================================
+         CALL TO ACTION
+         ======================================================= -->
+
+    <div
+      class="flex flex-col items-center justify-center gap-4 sm:flex-row"
+    >
+
+      <a
+        href="https://rkac.ac.in/admissions"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex w-full items-center justify-center gap-2 rounded-full bg-[#82080c] px-8 py-3.5 text-center text-sm font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5c0003] sm:w-auto"
+      >
+
+        <span>Apply Now</span>
+
+        <svg
+          class="h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"
+          />
+
+        </svg>
+
+      </a>
+
+
+      <a
+        href="https://rkac.ac.in/programme-directory"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full rounded-full border-2 border-[#82080c] bg-white px-8 py-3.5 text-center text-sm font-bold text-[#82080c] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f8f5ef] sm:w-auto"
+      >
+        Explore Programmes
+      </a>
+
+    </div>
+
+  </div>
+</section>
     <footer class="bg-[#82080C] text-white">
       <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -872,61 +2649,61 @@
 
             <ul class="space-y-3 text-sm text-white/70">
               <li>
-                <a href="#" class="hover:text-white transition-colors">
+                <a href="pages/about/index.html" class="hover:text-white transition-colors">
                   About Us
                 </a>
               </li>
 
               <li>
-                <a href="#" class="hover:text-white transition-colors">
+                <a href="pages/about/administration.html" class="hover:text-white transition-colors">
                   Administration
                 </a>
               </li>
 
               <li>
-                <a href="#" class="hover:text-white transition-colors">
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors">
                   Programme
                 </a>
               </li>
 
               <li>
-                <a href="#" class="hover:text-white transition-colors">
+                <a href="pages/facilities/laboratories.html" class="hover:text-white transition-colors">
                   Laboratories
                 </a>
               </li>
 
               <li>
-                <a href="#" class="hover:text-white transition-colors">
+                <a href="pages/facilities/library.html" class="hover:text-white transition-colors">
                   Library
                 </a>
               </li>
 
               <li>
-                <a href="#" class="hover:text-white transition-colors">
+                <a href="pages/facilities/cafeteria.html" class="hover:text-white transition-colors">
                   Cafeteria
                 </a>
               </li>
 
               <li>
-                <a href="#" class="hover:text-white transition-colors">
+                <a href="pages/facilities/anti-ragging.html" class="hover:text-white transition-colors">
                   Anti Ragging
                 </a>
               </li>
 
               <li>
-                <a href="#" class="hover:text-white transition-colors">
+                <a href="pages/about/index.html" class="hover:text-white transition-colors">
                   Code of Ethics
                 </a>
               </li>
 
               <li>
-                <a href="#" class="hover:text-white transition-colors">
+                <a href="pages/contact/index.html" class="hover:text-white transition-colors">
                   Contacts
                 </a>
               </li>
 
               <li>
-                <a href="#" class="hover:text-white transition-colors">
+                <a href="pages/student-resources/study-material.html" class="hover:text-white transition-colors">
                   Study Material
                 </a>
               </li>
@@ -938,57 +2715,57 @@
 
             <ul class="space-y-3 text-sm text-white/70">
               <li>
-                <a href="#" class="hover:text-white transition-colors">B.A</a>
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors">B.A</a>
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors"
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors"
                   >M.A. History</a
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors"
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors"
                   >M.A. Punjabi</a
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors"
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors"
                   >B.C.A.</a
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors">CCA</a>
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors">CCA</a>
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors"
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors"
                   >B.Sc Computer Science</a
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors"
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors"
                   >B.Sc IT</a
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors"
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors"
                   >B.Sc Non Medical</a
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors">PGDCA</a>
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors">PGDCA</a>
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors">B.Com</a>
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors">B.Com</a>
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors">M.Com</a>
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors">M.Com</a>
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors"
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors"
                   >B.Sc Economics</a
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors">M.Sc</a>
+                <a href="pages/programmes/index.html" class="hover:text-white transition-colors">M.Sc</a>
               </li>
             </ul>
           </div>
@@ -1002,11 +2779,11 @@
           </p>
 
           <div class="flex items-center gap-6 text-sm text-white/60">
-            <a href="#" class="hover:text-white transition-colors">
+            <a href="pages/contact/index.html" class="hover:text-white transition-colors">
               Privacy Policy
             </a>
 
-            <a href="#" class="hover:text-white transition-colors">
+            <a href="pages/contact/index.html" class="hover:text-white transition-colors">
               Terms & Conditions
             </a>
           </div>

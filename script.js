@@ -1,101 +1,233 @@
-// Wait for DOM to load before running
-document.addEventListener('DOMContentLoaded', () => {
-  // ===== NAVBAR =====
-  const navLinksContainer = document.querySelector('#nav-links');
-  const overlay = document.querySelector('.overlay');
+/* =========================================================
+   RK ARYA COLLEGE | PAGE INTERACTIONS
+   ========================================================= */
 
-  if (!navLinksContainer) {
-    console.error('ERROR: #nav-links not found!');
-    return; // Stop if navbar container missing
-  }
+(() => {
+  "use strict";
 
-  const navItems = document.querySelectorAll('#nav-links > .nav-item'); // Direct children only
-  const allSubmenus = document.querySelectorAll('#nav-links .submenu');
+  // --- DOM Utilities ---
 
-  const toggleClass = (el, className) => el.classList.toggle(className);
-  const addClass = (el, className) => el.classList.add(className);
-  const removeClass = (el, className) => el.classList.remove(className);
-  const hasClass = (el, className) => el.classList.contains(className);
-
-  const hideAllSubmenus = () => allSubmenus.forEach(s => addClass(s, 'hidden'));
-
-  const showSubmenu = (submenu) => {
-    removeClass(submenu, 'hidden');
-    if (overlay) removeClass(overlay, 'hidden');
+  const toggleVisibility = (element, shouldHide) => {
+    if (element) element.classList.toggle("hidden", shouldHide);
   };
 
-  const hideSubmenu = (submenu) => {
-    addClass(submenu, 'hidden');
-    if (overlay) addClass(overlay, 'hidden');
-  };
+  const getFocusableSubmenus = (navigationLinks) =>
+    navigationLinks.querySelectorAll(".submenu");
 
-  const closeOtherSubmenus = (currentItem) => {
-    navItems.forEach(item => {
-      if (item !== currentItem) {
-        item.querySelectorAll('.submenu').forEach(s => addClass(s, 'hidden'));
+  // --- Navigation ---
+
+  /** Controls desktop dropdowns, nested NAAC links, and outside-click closing. */
+  const initializeNavigation = () => {
+    const navigationLinks = document.querySelector("#nav-links");
+    const navigationOverlay = document.querySelector(".overlay");
+    const menuToggle = document.querySelector("#nav-toggle");
+
+    if (!navigationLinks) return;
+
+    const submenus = getFocusableSubmenus(navigationLinks);
+    const navigationItems =
+      navigationLinks.querySelectorAll(":scope > .nav-item");
+
+    const closeAllSubmenus = () => {
+      submenus.forEach((submenu) => toggleVisibility(submenu, true));
+      toggleVisibility(navigationOverlay, true);
+    };
+
+    const closeMobileMenu = () => {
+      navigationLinks.classList.remove("is-open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      menuToggle?.setAttribute("aria-label", "Open menu");
+    };
+
+    const openSubmenu = (submenu, parentItem) => {
+      navigationItems.forEach((item) => {
+        if (item !== parentItem) {
+          item.querySelectorAll(".submenu").forEach((nestedMenu) => {
+            toggleVisibility(nestedMenu, true);
+          });
+        }
+      });
+      toggleVisibility(submenu, false);
+      toggleVisibility(navigationOverlay, false);
+    };
+
+    navigationLinks.addEventListener("click", (event) => {
+      const nestedToggle = event.target.closest(".submenu-main");
+      if (nestedToggle) {
+        const nestedMenu = nestedToggle.parentElement?.querySelector(".nested");
+        if (nestedMenu) {
+          event.stopPropagation();
+          toggleVisibility(
+            nestedMenu,
+            !nestedMenu.classList.contains("hidden"),
+          );
+        }
+        return;
       }
+
+      const mainToggle = event.target.closest(".nav-main");
+      if (!mainToggle) return;
+
+      const parentItem = mainToggle.closest(".nav-item");
+      const submenu = parentItem?.querySelector(":scope > .submenu");
+      if (!submenu) return;
+
+      event.preventDefault();
+      const shouldOpen = submenu.classList.contains("hidden");
+      shouldOpen ? openSubmenu(submenu, parentItem) : closeAllSubmenus();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (
+        !event.target.closest("#nav-links") &&
+        !event.target.closest("#nav-toggle")
+      ) {
+        closeAllSubmenus();
+        closeMobileMenu();
+      }
+    });
+
+    navigationOverlay?.addEventListener("click", () => {
+      closeAllSubmenus();
+      closeMobileMenu();
+    });
+
+    menuToggle?.addEventListener("click", () => {
+      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+      menuToggle.setAttribute(
+        "aria-label",
+        isExpanded ? "Open menu" : "Close menu",
+      );
+      navigationLinks.classList.toggle("is-open", !isExpanded);
     });
   };
 
-  const handleMainNavClick = (e) => {
-    const btn = e.target.closest('.nav-main');
-    if (!btn) return;
+  // --- Scroll Reveal ---
 
-    const item = btn.closest('.nav-item');
-    const submenu = item?.querySelector('.submenu');
-    if (!submenu) return;
+  /** Adds the visible state as animated sections enter the viewport. */
+  const initializeScrollReveal = () => {
+    const revealElements = document.querySelectorAll(
+      ".about-reveal, .value-card, .timeline-item, .leadership-reveal, .leadership-card",
+    );
 
-    e.preventDefault();
-    closeOtherSubmenus(item);
+    revealElements.forEach((element, index) => {
+      if (element.classList.contains("value-card")) {
+        element.style.transitionDelay = `${index * 100}ms`;
+      }
+      if (element.classList.contains("timeline-item")) {
+        element.style.transitionDelay = `${index * 120}ms`;
+      }
+    });
 
-    const isHidden = hasClass(submenu, 'hidden');
-    isHidden ? showSubmenu(submenu) : hideSubmenu(submenu);
-  };
-
-  const handleNestedSubmenuClick = (e) => {
-    const subMain = e.target.closest('.submenu-main');
-    if (!subMain) return;
-
-    const nested = subMain.parentElement?.querySelector('.nested');
-    if (!nested) return;
-
-    toggleClass(nested, 'hidden');
-    e.stopPropagation();
-  };
-
-  const handleOutsideClick = (e) => {
-    if (!e.target.closest('#nav-links')) {
-      hideAllSubmenus();
-      if (overlay) addClass(overlay, 'hidden');
+    if (!("IntersectionObserver" in window)) {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+      return;
     }
+
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+    );
+
+    revealElements.forEach((element) => revealObserver.observe(element));
   };
 
-  // Attach listeners
-  navLinksContainer.addEventListener('click', handleMainNavClick);
-  navLinksContainer.addEventListener('click', handleNestedSubmenuClick);
-  document.addEventListener('click', handleOutsideClick);
+  // --- Image Sliders ---
 
-  if (overlay) addClass(overlay, 'hidden');
+  /** Rotates the historical portrait images on a five-second interval. */
+  const initializeHistorySlider = () => {
+    const historyImages = document.querySelectorAll(".about-history-image");
+    if (historyImages.length < 2) return;
 
-  console.log('✓ Navigation initialized');
+    let activeImageIndex = 0;
+    historyImages[activeImageIndex].classList.add("is-active");
 
-  // ===== IMAGE CAROUSEL =====
-  const images = document.querySelectorAll('.hero-img');
+    window.setInterval(() => {
+      historyImages[activeImageIndex].classList.remove("is-active");
+      activeImageIndex = (activeImageIndex + 1) % historyImages.length;
+      historyImages[activeImageIndex].classList.add("is-active");
+    }, 5000);
+  };
 
-  if (images.length === 0) {
-    console.error('ERROR: .hero-img images not found!');
-    return;
+  // --- College Gallery ---
+
+  /** Connects thumbnails and previous/next controls to the main campus image. */
+  const initializeCollegeGallery = () => {
+    const mainImage = document.querySelector("#college-main-image");
+    const thumbnails = [...document.querySelectorAll(".college-thumbnail")];
+    const previousButton = document.querySelector("[data-gallery-prev]");
+    const nextButton = document.querySelector("[data-gallery-next]");
+    const gallery = document.querySelector(".college-gallery");
+
+    if (!mainImage || thumbnails.length === 0) return;
+
+    let activeImageIndex = 0;
+    let slideTimer;
+
+    const selectImage = (requestedIndex) => {
+      activeImageIndex =
+        (requestedIndex + thumbnails.length) % thumbnails.length;
+      const selectedThumbnail = thumbnails[activeImageIndex];
+      const selectedImagePath = selectedThumbnail.dataset.galleryImage;
+
+      mainImage.style.opacity = "0";
+      window.setTimeout(() => {
+        mainImage.src = selectedImagePath;
+        mainImage.style.opacity = "1";
+      }, 250);
+
+      thumbnails.forEach((thumbnail, index) => {
+        thumbnail.classList.toggle("is-active", index === activeImageIndex);
+      });
+    };
+
+    const startSlideshow = () => {
+      window.clearInterval(slideTimer);
+      slideTimer = window.setInterval(
+        () => selectImage(activeImageIndex + 1),
+        6000,
+      );
+    };
+
+    thumbnails.forEach((thumbnail, index) => {
+      thumbnail.addEventListener("click", () => selectImage(index));
+    });
+    previousButton?.addEventListener("click", () =>
+      selectImage(activeImageIndex - 1),
+    );
+    nextButton?.addEventListener("click", () =>
+      selectImage(activeImageIndex + 1),
+    );
+    gallery?.addEventListener("mouseenter", () =>
+      window.clearInterval(slideTimer),
+    );
+    gallery?.addEventListener("mouseleave", startSlideshow);
+
+    selectImage(0);
+    startSlideshow();
+  };
+
+  // --- Application Bootstrap ---
+
+  const initializePage = () => {
+    initializeNavigation();
+    initializeScrollReveal();
+    initializeHistorySlider();
+    initializeCollegeGallery();
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializePage, {
+      once: true,
+    });
+  } else {
+    initializePage();
   }
-
-  let current = 0;
-  images[current].classList.add('active');
-
-  setInterval(() => {
-    images[current].classList.remove('active');
-    current = (current + 1) % images.length;
-    images[current].classList.add('active');
-    console.log(`Image switched to: ${current + 1}/${images.length}`);
-  }, 5000);
-
-  console.log('✓ Carousel initialized with', images.length, 'images');
-});
+})();
