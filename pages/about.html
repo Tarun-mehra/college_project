@@ -1,0 +1,1807 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | R.K. Arya College</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.26/dist/lenis.css"
+    />
+    <script src="../lenis.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --maroon: #82080c;
+        --maroon-dark: #5a0508;
+        --maroon-light: #a01518;
+        --gold: #e5c175;
+        --gold-dark: #c9a456;
+        --cream: #faf6ef;
+        --ivory: #f5ede0;
+        --text: #2a1f1a;
+        --text-muted: #6b5d54;
+        --border: #e8ddd0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: var(--text);
+        background: var(--cream);
+        margin: 0;
+        line-height: 1.7;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .display {
+        font-family: "Playfair Display", serif;
+        line-height: 1.2;
+      }
+
+      .serif {
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* ===== NAVBAR (auto-hide on scroll) ===== */
+      #about-page-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      #about-page-nav.nav-hidden {
+        transform: translateY(-100%);
+      }
+
+      .utility-bar {
+        background: var(--maroon-dark);
+        color: white;
+        font-size: 0.75rem;
+      }
+
+      .utility-bar a {
+        transition: color 0.2s;
+      }
+
+      .utility-bar a:hover {
+        color: var(--gold);
+      }
+
+      .main-nav {
+        background: var(--maroon);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem;
+      }
+
+      .nav-item {
+        position: relative;
+      }
+
+      .nav-link,
+      .nav-button {
+        display: block;
+        padding: 0.6rem 0.85rem;
+        color: white;
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        font-family: inherit;
+        transition: color 0.2s;
+        position: relative;
+      }
+
+      .nav-link:hover,
+      .nav-button:hover {
+        color: var(--gold);
+      }
+
+      .nav-link::after,
+      .nav-button::after {
+        content: "";
+        position: absolute;
+        bottom: 0.3rem;
+        left: 0.85rem;
+        right: 0.85rem;
+        height: 2px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-button:hover::after {
+        transform: scaleX(1);
+      }
+
+      .nav-button::after {
+        right: 0.85rem;
+      }
+
+      .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 13rem;
+        background: var(--maroon-dark);
+        padding: 0.5rem;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        border-top: 2px solid var(--gold);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: all 0.25s ease;
+      }
+
+      .nav-item:hover .submenu,
+      .nav-item:focus-within .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .submenu a {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        color: white;
+        text-decoration: none;
+        font-size: 0.82rem;
+        transition: all 0.2s;
+        border-radius: 4px;
+      }
+
+      .submenu a:hover {
+        background: rgba(229, 193, 117, 0.15);
+        color: var(--gold);
+        padding-left: 1rem;
+      }
+
+      .menu-toggle {
+        display: none;
+        width: 2.75rem;
+        height: 2.75rem;
+        border: 1px solid rgba(229, 193, 117, 0.5);
+        background: transparent;
+        cursor: pointer;
+        border-radius: 6px;
+      }
+
+      .menu-toggle span {
+        display: block;
+        height: 2px;
+        margin: 0.35rem auto;
+        background: var(--gold);
+        transition: 0.3s;
+      }
+
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+          width: 100%;
+          flex-direction: column;
+          align-items: stretch;
+          padding: 0.5rem 0;
+        }
+        .nav-links.is-open {
+          display: flex;
+        }
+        .nav-link,
+        .nav-button {
+          width: 100%;
+          text-align: left;
+        }
+        .submenu {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          background: rgba(0, 0, 0, 0.2);
+          margin: 0.25rem 0;
+          display: none;
+        }
+        .submenu.is-open {
+          display: block;
+        }
+        .menu-toggle {
+          display: block;
+        }
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          var(--maroon-dark) 0%,
+          var(--maroon) 50%,
+          var(--maroon-light) 100%
+        );
+        color: white;
+        padding: 4rem 0 5rem;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(
+            circle at 20% 50%,
+            rgba(229, 193, 117, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(229, 193, 117, 0.06) 0%,
+            transparent 40%
+          );
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 1.5rem;
+      }
+
+      .breadcrumb a {
+        color: var(--gold);
+        text-decoration: none;
+      }
+      .breadcrumb a:hover {
+        text-decoration: underline;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        margin: 0 0 1rem;
+      }
+
+      .hero p {
+        font-size: 1.15rem;
+        max-width: 40rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+      }
+
+      /* ===== LAYOUT ===== */
+      .about-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+        padding: 4rem 0;
+        align-items: start;
+      }
+
+      @media (max-width: 900px) {
+        .about-layout {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+
+      /* ===== SIDEBAR ===== */
+      .sidebar {
+        position: sticky;
+        top: 7rem;
+      }
+
+      @media (max-width: 900px) {
+        .sidebar {
+          position: static;
+        }
+      }
+
+      .sidebar-card {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(130, 8, 12, 0.06);
+      }
+
+      .sidebar-header {
+        background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+        color: white;
+        padding: 1.25rem 1.5rem;
+        border-bottom: 3px solid var(--gold);
+      }
+
+      .sidebar-header h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      .sidebar-header p {
+        margin: 0.25rem 0 0;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.6);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .sidebar-nav {
+        list-style: none;
+        margin: 0;
+        padding: 0.5rem;
+      }
+
+      .sidebar-nav li {
+        margin: 0;
+      }
+
+      .sidebar-nav a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border-radius: 8px;
+        transition: all 0.25s ease;
+        position: relative;
+      }
+
+      .sidebar-nav a .nav-num {
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        font-weight: 700;
+        width: 1.5rem;
+        transition: color 0.25s;
+      }
+
+      .sidebar-nav a:hover {
+        background: var(--ivory);
+        color: var(--maroon);
+      }
+
+      .sidebar-nav a:hover .nav-num {
+        color: var(--gold-dark);
+      }
+
+      .sidebar-nav a.active {
+        background: linear-gradient(90deg, var(--maroon), var(--maroon-light));
+        color: white;
+        box-shadow: 0 4px 12px rgba(130, 8, 12, 0.25);
+      }
+
+      .sidebar-nav a.active .nav-num {
+        color: var(--gold);
+      }
+
+      .sidebar-nav a.active::before {
+        content: "";
+        position: absolute;
+        left: -0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 60%;
+        background: var(--gold);
+        border-radius: 0 4px 4px 0;
+      }
+
+      /* Mobile sidebar dropdown */
+      .sidebar-mobile-toggle {
+        display: none;
+      }
+
+      @media (max-width: 900px) {
+        .sidebar-mobile-toggle {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: 1rem 1.5rem;
+          background: var(--maroon);
+          color: white;
+          border: 0;
+          cursor: pointer;
+          font-family: inherit;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        .sidebar-nav {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+          padding: 0 0.5rem;
+        }
+        .sidebar-nav.is-open {
+          max-height: 500px;
+          padding: 0.5rem;
+        }
+      }
+
+      /* ===== CONTENT AREA ===== */
+      .content-area {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 3rem;
+        box-shadow: 0 4px 20px rgba(130, 8, 12, 0.06);
+        min-height: 400px;
+      }
+
+      @media (max-width: 600px) {
+        .content-area {
+          padding: 1.5rem;
+        }
+      }
+
+      .content-header {
+        margin-bottom: 2.5rem;
+      }
+
+      .content-header .eyebrow {
+        color: var(--gold-dark);
+      }
+
+      .content-header h2 {
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        font-weight: 700;
+        color: var(--maroon);
+        margin: 0 0 0.75rem;
+      }
+
+      .content-header p {
+        color: var(--text-muted);
+        font-size: 1rem;
+        max-width: 50rem;
+        margin: 0;
+      }
+
+      .content-header::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: var(--gold);
+        margin-top: 1.25rem;
+        border-radius: 2px;
+      }
+
+      /* View transitions */
+      .about-view {
+        display: none;
+        animation: fadeIn 0.4s ease;
+      }
+      .about-view.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* About content */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 2.5rem;
+        align-items: start;
+      }
+
+      @media (max-width: 768px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .about-text p {
+        margin: 0 0 1rem;
+        color: var(--text);
+        font-size: 0.95rem;
+      }
+
+      .about-text p:first-of-type::first-letter {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        float: left;
+        line-height: 0.9;
+        margin: 0.25rem 0.5rem 0 0;
+        color: var(--maroon);
+      }
+
+      .highlight-card {
+        background: linear-gradient(160deg, var(--ivory), white);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.75rem;
+        border-left: 4px solid var(--gold);
+      }
+
+      .highlight-card .card-eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--gold-dark);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .highlight-card h4 {
+        font-size: 1.25rem;
+        color: var(--maroon);
+        margin: 0 0 1.25rem;
+      }
+
+      .journey-item {
+        display: flex;
+        flex-direction: column;
+        padding: 0.85rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .journey-item:last-child {
+        border-bottom: 0;
+      }
+
+      .journey-item strong {
+        font-size: 1.5rem;
+        color: var(--maroon);
+        font-family: "Playfair Display", serif;
+      }
+
+      .journey-item span {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 0.15rem;
+      }
+
+      /* Message layout */
+      .message-layout {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 2.5rem;
+        align-items: start;
+      }
+
+      @media (max-width: 600px) {
+        .message-layout {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+      }
+
+      .message-person {
+        text-align: center;
+      }
+
+      .person-placeholder {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 1rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        font-weight: 700;
+        font-family: "Playfair Display", serif;
+        border: 4px solid var(--gold);
+        box-shadow: 0 8px 24px rgba(130, 8, 12, 0.2);
+      }
+
+      .message-person h3 {
+        font-size: 1.25rem;
+        color: var(--maroon);
+        margin: 0 0 0.25rem;
+      }
+
+      .message-person p {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .message-content p {
+        margin: 0 0 1rem;
+        font-size: 0.95rem;
+      }
+
+      .message-content p:first-of-type {
+        font-size: 1.05rem;
+        color: var(--maroon);
+        font-weight: 500;
+        border-left: 3px solid var(--gold);
+        padding-left: 1rem;
+      }
+
+      /* Vision Mission */
+      .vm-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .principles-card {
+        background: linear-gradient(160deg, var(--ivory), white);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+
+      .principles-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(130, 8, 12, 0.12);
+      }
+
+      .principles-card .card-num {
+        position: absolute;
+        top: -0.5rem;
+        right: 1rem;
+        font-size: 4rem;
+        font-weight: 800;
+        color: rgba(130, 8, 12, 0.08);
+        font-family: "Playfair Display", serif;
+      }
+
+      .principles-card h3 {
+        font-size: 1.5rem;
+        color: var(--maroon);
+        margin: 0 0 1.25rem;
+        position: relative;
+      }
+
+      .principles-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .principles-card li {
+        padding: 0.5rem 0 0.5rem 1.5rem;
+        font-size: 0.875rem;
+        color: var(--text);
+        position: relative;
+        border-bottom: 1px solid rgba(232, 221, 208, 0.5);
+      }
+
+      .principles-card li:last-child {
+        border-bottom: 0;
+      }
+
+      .principles-card li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.85rem;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      /* Objectives */
+      .obj-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .obj-card {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.75rem;
+        position: relative;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+
+      .obj-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--maroon), var(--gold));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s;
+      }
+
+      .obj-card:hover {
+        border-color: var(--gold);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(130, 8, 12, 0.1);
+      }
+
+      .obj-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .obj-card .obj-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 8px;
+        background: var(--ivory);
+        color: var(--maroon);
+        font-weight: 700;
+        font-size: 1rem;
+        font-family: "Playfair Display", serif;
+        margin-bottom: 1rem;
+        border: 1px solid var(--border);
+      }
+
+      .obj-card h3 {
+        font-size: 1.1rem;
+        color: var(--maroon);
+        margin: 0 0 0.5rem;
+      }
+
+      .obj-card p {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      /* Management */
+      .mgmt-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .mgmt-card {
+        background: linear-gradient(160deg, var(--ivory), white);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+
+      .mgmt-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(130, 8, 12, 0.12);
+      }
+
+      .mgmt-avatar {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 1rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        font-weight: 700;
+        font-family: "Playfair Display", serif;
+        border: 3px solid var(--gold);
+      }
+
+      .mgmt-card h3 {
+        font-size: 1.1rem;
+        color: var(--maroon);
+        margin: 0 0 0.25rem;
+      }
+
+      .mgmt-card p {
+        font-size: 0.8rem;
+        color: var(--gold-dark);
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+      }
+
+      /* Administration table */
+      .table-wrapper {
+        overflow-x: auto;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+      }
+
+      .admin-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      .admin-table thead {
+        background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+      }
+
+      .admin-table th {
+        padding: 1rem 1.25rem;
+        text-align: left;
+        color: white;
+        font-weight: 600;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .admin-table td {
+        padding: 0.9rem 1.25rem;
+        border-bottom: 1px solid var(--border);
+        color: var(--text);
+      }
+
+      .admin-table tbody tr {
+        transition: background 0.2s;
+      }
+
+      .admin-table tbody tr:hover {
+        background: var(--ivory);
+      }
+
+      .admin-table tbody tr:last-child td {
+        border-bottom: 0;
+      }
+
+      /* ===== FOOTER ===== */
+      .footer {
+        background: var(--maroon-dark);
+        color: white;
+        padding: 4rem 1.5rem 2rem;
+      }
+
+      .footer-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        gap: 2.5rem;
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .footer h3 {
+        font-size: 1.1rem;
+        margin: 0 0 1.25rem;
+        color: var(--gold);
+      }
+
+      .footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer ul li {
+        margin-bottom: 0.6rem;
+      }
+
+      .footer a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: color 0.2s;
+      }
+
+      .footer a:hover {
+        color: var(--gold);
+      }
+
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 2.5rem auto 0;
+        padding-top: 1.75rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== NAVBAR (auto-hides on scroll) ===== -->
+    <div id="about-page-nav">
+      <!-- Utility Bar -->
+      <div class="utility-bar">
+        <div class="container flex items-center justify-between py-2">
+          <div class="flex items-center gap-5">
+            <a href="student-resources.html">News &amp; Announcements</a>
+            <a href="student-resources.html">Notice Board</a>
+            <a href="programme.html">Admissions</a>
+            <a href="student-resources.html">Results</a>
+          </div>
+          <div class="hidden md:flex items-center gap-5">
+            <a href="student-resources.html">Examination</a>
+            <a href="student-resources.html">Student Login</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Nav -->
+      <nav class="main-nav">
+        <div
+          class="container flex flex-wrap items-center justify-between gap-4 py-3"
+        >
+          <a
+            href="../index.html"
+            class="flex shrink-0 items-center gap-3 text-white no-underline"
+          >
+            <img
+              src="../assets/icons/icon.svg"
+              alt="College Logo"
+              class="h-12 w-12 object-contain md:h-14 md:w-14"
+            />
+            <span>
+              <strong class="block text-lg leading-none md:text-xl font-bold"
+                >RK ARYA COLLEGE</strong
+              >
+              <small
+                class="mt-1 block text-[10px] font-semibold uppercase tracking-widest"
+                style="color: var(--gold)"
+                >Nawanshahr · Est. 1952</small
+              >
+            </span>
+          </a>
+
+          <div class="nav-links" id="page-nav-links">
+            <div class="nav-item">
+              <a href="../index.html" class="nav-link">Home</a>
+            </div>
+
+            <div class="nav-item">
+              <button class="nav-button">About</button>
+              <div class="submenu">
+                <a href="#about" data-view="about">About Us</a>
+                <a href="#president" data-view="president">President Message</a>
+                <a href="#principal" data-view="principal">Principal Message</a>
+                <a href="#vision-mission" data-view="vision-mission"
+                  >Mission and Vision</a
+                >
+                <a href="#objectives" data-view="objectives">Objectives</a>
+                <a href="#management" data-view="management">Management</a>
+                <a href="#administration" data-view="administration"
+                  >Administration</a
+                >
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <button class="nav-button">Programme</button>
+              <div class="submenu">
+                <a href="programme.html">Programme Directory</a>
+                <a href="programme.html">Course Outcome</a>
+                <a href="programme.html">Reservation Policy</a>
+                <a href="programme.html">Prospectus</a>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <button class="nav-button">Faculty</button>
+              <div class="submenu">
+                <a href="faculty.html#commerce">Faculty of Commerce</a>
+                <a href="faculty.html#computer-science"
+                  >Faculty of Computer Science</a
+                >
+                <a href="faculty.html#sciences">Faculty of Sciences</a>
+                <a href="faculty.html#humanities">Faculty of Humanities</a>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <button class="nav-button">Facilities</button>
+              <div class="submenu">
+                <a href="facilities.html">Standard Club</a>
+                <a href="facilities.html">NSS</a>
+                <a href="facilities.html">NCC</a>
+                <a href="facilities.html">Infrastructure</a>
+                <a href="facilities.html">Seminar Halls</a>
+                <a href="facilities.html">Anti Ragging</a>
+                <a href="facilities.html">Cafeteria</a>
+                <a href="facilities.html">Library</a>
+                <a href="facilities.html">Scholarships</a>
+                <a href="facilities.html">Sports</a>
+                <a href="facilities.html">Laboratories</a>
+                <a href="facilities.html">Gym</a>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <button class="nav-button">Student Resources</button>
+              <div class="submenu">
+                <a href="student-resources.html">Old Ques Paper</a>
+                <a href="student-resources.html">Study Material</a>
+                <a href="student-resources.html">Rules of Library</a>
+                <a href="student-resources.html">General Rules</a>
+                <a href="student-resources.html">Policy for Examination</a>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <button class="nav-button">Feedback</button>
+              <div class="submenu">
+                <a href="feedback.html">Student Feedback</a>
+                <a href="feedback.html">Alumni Feedback</a>
+                <a href="feedback.html">Teacher Feedback</a>
+                <a href="feedback.html">Employers Feedback</a>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <button class="nav-button">NAAC</button>
+              <div class="submenu">
+                <a href="naac.html">AQAR 2020-2021</a>
+                <a href="naac.html">AQAR 2021-2022</a>
+                <a href="naac.html">AQAR 2022-2023</a>
+                <a href="naac.html">AQAR 2023-2024</a>
+                <a href="naac.html">DVV</a>
+                <a href="naac.html">SSR</a>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+          </div>
+
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container hero-content">
+        <nav class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <span>›</span>
+          <span>About Us</span>
+        </nav>
+        <span class="eyebrow">R.K. Arya College · Nawanshahr</span>
+        <h1>About Us</h1>
+        <p>
+          Educating today's students for tomorrow's world through knowledge,
+          values, discipline and excellence since 1952.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== MAIN LAYOUT ===== -->
+    <main class="container">
+      <div class="about-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-header">
+              <h3>Explore About</h3>
+              <p>Navigate Sections</p>
+            </div>
+            <button class="sidebar-mobile-toggle" id="sidebar-toggle">
+              <span>Explore About</span>
+              <span>▾</span>
+            </button>
+            <ul class="sidebar-nav" id="sidebar-nav">
+              <li>
+                <a href="#about" class="active" data-view="about"
+                  ><span class="nav-num">01</span> About Us</a
+                >
+              </li>
+              <li>
+                <a href="#president" data-view="president"
+                  ><span class="nav-num">02</span> President's Message</a
+                >
+              </li>
+              <li>
+                <a href="#principal" data-view="principal"
+                  ><span class="nav-num">03</span> Principal's Message</a
+                >
+              </li>
+              <li>
+                <a href="#vision-mission" data-view="vision-mission"
+                  ><span class="nav-num">04</span> Vision &amp; Mission</a
+                >
+              </li>
+              <li>
+                <a href="#objectives" data-view="objectives"
+                  ><span class="nav-num">05</span> Objectives</a
+                >
+              </li>
+              <li>
+                <a href="#management" data-view="management"
+                  ><span class="nav-num">06</span> Management</a
+                >
+              </li>
+              <li>
+                <a href="#administration" data-view="administration"
+                  ><span class="nav-num">07</span> Administration</a
+                >
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Content -->
+        <div class="content-area">
+          <!-- ABOUT -->
+          <section id="about" class="about-view active" data-view="about">
+            <div class="content-header">
+              <span class="eyebrow">Our Legacy</span>
+              <h2>About R.K. Arya College</h2>
+            </div>
+            <div class="about-grid">
+              <div class="about-text">
+                <p>
+                  Maharishi Dayanand Saraswati, in pursuance of Vedic values of
+                  tolerance, compassion, sharing and respect, founded Arya Samaj
+                  on April 10, 1875 at Mumbai and in 1877 at Lahore.
+                </p>
+                <p>
+                  The attempt took the form of "Vedic Schools" and "Gurukuls"
+                  which put emphasis on Vedic values, culture and religion to
+                  students. Maharishi, a pioneer of social reforms and ardent
+                  advocate of Vedic culture, insisted on physical, moral and
+                  social progress of humanity by laying emphasis upon education
+                  as a means of character development.
+                </p>
+                <p>
+                  Development of character is based on achieving knowledge. The
+                  aim of education is to give true knowledge to the individual
+                  and thus enable him to conduct properly. His teachings
+                  insisted society to admit that education is a primary concern
+                  of the state.
+                </p>
+                <p>
+                  Following his philosophy and the eighth principle of Arya
+                  Samaj, a number of staunch Arya Samajists realized the need
+                  for an institution of higher learning in Nawanshahr Doaba. As
+                  a result of their dedication to the cause of education, Radha
+                  Krishan Arya College was founded in the year 1952.
+                </p>
+                <p>
+                  A great philanthropist, Dr. Radha Krishan, donated a major
+                  share of his property and the college got its name after him.
+                  The college is affiliated to Guru Nanak Dev University,
+                  Amritsar, for Undergraduate and Postgraduate courses.
+                </p>
+                <p>
+                  Under dynamic leadership, postgraduate courses including M.A.
+                  in Punjabi, M.A. in History, M.Com, M.Sc. (Computer Science)
+                  and PGDCA are running successfully. The college has national
+                  as well as international viewership.
+                </p>
+              </div>
+              <aside class="highlight-card">
+                <span class="card-eyebrow">Our Journey</span>
+                <h4>Milestones</h4>
+                <div class="journey-item">
+                  <strong>1952</strong>
+                  <span>College founded</span>
+                </div>
+                <div class="journey-item">
+                  <strong>GNDU</strong>
+                  <span>Affiliated to Guru Nanak Dev University</span>
+                </div>
+                <div class="journey-item">
+                  <strong>6+ Decades</strong>
+                  <span>Of growth and contribution to education</span>
+                </div>
+                <div class="journey-item">
+                  <strong>UG + PG</strong>
+                  <span>Arts, Science, Commerce &amp; Computer Science</span>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+          <!-- PRESIDENT -->
+          <section id="president" class="about-view" data-view="president">
+            <div class="content-header">
+              <span class="eyebrow">Leadership</span>
+              <h2>President's Message</h2>
+            </div>
+            <div class="message-layout">
+              <div class="message-person">
+                <div class="person-placeholder">VB</div>
+                <h3>Sh. Vinod Bhardwaj</h3>
+                <p>President</p>
+              </div>
+              <div class="message-content">
+                <p>
+                  Welcome to R.K. Arya College, Nawanshahr—an institution that
+                  has always been a pioneer in the field of Quality Education
+                  since 1946.
+                </p>
+                <p>
+                  We excel in academics, sports and co-curricular activities.
+                  Following the great ideals of Swami Dayanand Saraswati Ji, the
+                  college always strives hard to inculcate values of hard work,
+                  universal brotherhood, scientific outlook, excellence in human
+                  endeavour and above all discipline.
+                </p>
+                <p>
+                  We make earnest efforts to transform students into high
+                  achievers—economically self-reliant, progressive,
+                  enterprising, socially responsible and morally strong.
+                </p>
+                <p>
+                  We provide our students the best and the latest academic
+                  infrastructure, sports facilities and professional guidance
+                  for cultural and social activities.
+                </p>
+                <p>
+                  The college offers airy and comfortable classrooms, vast
+                  playgrounds, well-equipped science and computer laboratories,
+                  a technologically advanced high-tech AC Seminar Room and a
+                  beautiful and spacious auditorium for the all-round
+                  development of students.
+                </p>
+                <p>
+                  We also have a separate Women Wing exclusively for girl
+                  students. Join Arya College—a unique portal of knowledge,
+                  blending tradition and modernity to give a big push to your
+                  future career.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- PRINCIPAL -->
+          <section id="principal" class="about-view" data-view="principal">
+            <div class="content-header">
+              <span class="eyebrow">Academic Leadership</span>
+              <h2>Principal's Message</h2>
+            </div>
+            <div class="message-layout">
+              <div class="message-person">
+                <div class="person-placeholder">PA</div>
+                <h3>Dr. Puneet Aneja</h3>
+                <p>Principal</p>
+              </div>
+              <div class="message-content">
+                <p>
+                  At R.K. Arya College, we believe education is the most
+                  powerful tool for transforming lives and society.
+                </p>
+                <p>
+                  We excel in academics, sports and co-curricular activities.
+                  Following the great ideals of Swami Dayanand Saraswati Ji, the
+                  college always strives hard to inculcate values of hard work,
+                  universal brotherhood, scientific outlook, excellence in human
+                  endeavour and above all discipline.
+                </p>
+                <p>
+                  We make earnest efforts to transform students into high
+                  achievers—economically self-reliant, progressive,
+                  enterprising, socially responsible and morally strong.
+                </p>
+                <p>
+                  The college offers airy and comfortable classrooms, vast
+                  playgrounds, well-equipped science and computer laboratories,
+                  a technologically advanced high-tech AC Seminar Room and a
+                  beautiful and spacious auditorium for the all-round
+                  development of students.
+                </p>
+                <p>
+                  You are welcome to join this alma mater of renowned
+                  personalities from diverse fields. Join Arya College—a unique
+                  portal of knowledge, blending tradition and modernity to give
+                  a big push to your future career.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- VISION & MISSION -->
+          <section
+            id="vision-mission"
+            class="about-view"
+            data-view="vision-mission"
+          >
+            <div class="content-header">
+              <span class="eyebrow">Our Direction</span>
+              <h2>Vision &amp; Mission</h2>
+            </div>
+            <div class="vm-grid">
+              <article class="principles-card">
+                <span class="card-num">01</span>
+                <h3>Vision</h3>
+                <ul>
+                  <li>
+                    To prepare students to be sensible citizens of "New India".
+                  </li>
+                  <li>
+                    To empower young people, especially the underprivileged, by
+                    realizing their hidden potential.
+                  </li>
+                  <li>
+                    To achieve excellence in education and help students display
+                    their latent talent.
+                  </li>
+                  <li>
+                    To consistently move ahead with innovation and academic
+                    pursuits.
+                  </li>
+                  <li>
+                    To prepare youth for self-employment through theoretical and
+                    practical courses.
+                  </li>
+                  <li>To impart leadership qualities in students.</li>
+                </ul>
+              </article>
+              <article class="principles-card">
+                <span class="card-num">02</span>
+                <h3>Mission</h3>
+                <ul>
+                  <li>
+                    To impart character-oriented and value-based education
+                    anchored in human values.
+                  </li>
+                  <li>
+                    To provide a well-balanced futuristic teaching-learning
+                    environment.
+                  </li>
+                  <li>
+                    To be liberal and emancipatory by nature, suitable to the
+                    needs of society.
+                  </li>
+                  <li>
+                    To uplift and provide education to girls in the rural area,
+                    blending modernity with tradition.
+                  </li>
+                  <li>
+                    To highlight problems, concerns and needs of the poor.
+                  </li>
+                  <li>
+                    To provide activities for inculcating social, moral and
+                    ethical values.
+                  </li>
+                  <li>
+                    To work for youth, women, scheduled caste and scheduled
+                    tribes.
+                  </li>
+                  <li>
+                    To work for conservation, enrichment and protection of
+                    environment.
+                  </li>
+                  <li>
+                    To undertake development projects improving socio-economic
+                    conditions of society.
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <!-- OBJECTIVES -->
+          <section id="objectives" class="about-view" data-view="objectives">
+            <div class="content-header">
+              <span class="eyebrow">Our Commitment</span>
+              <h2>Objectives</h2>
+              <p>
+                The institution works towards education, social responsibility,
+                character development and the socio-economic advancement of
+                society.
+              </p>
+            </div>
+            <div class="obj-grid">
+              <article class="obj-card">
+                <span class="obj-num">01</span>
+                <h3>Education for Girls</h3>
+                <p>
+                  To uplift and provide education to girls in the rural area,
+                  blending modernity with tradition.
+                </p>
+              </article>
+              <article class="obj-card">
+                <span class="obj-num">02</span>
+                <h3>Support for the Poor</h3>
+                <p>To highlight problems, concerns and needs of the poor.</p>
+              </article>
+              <article class="obj-card">
+                <span class="obj-num">03</span>
+                <h3>Values &amp; Character</h3>
+                <p>
+                  To provide activities that inculcate social, moral and ethical
+                  values.
+                </p>
+              </article>
+              <article class="obj-card">
+                <span class="obj-num">04</span>
+                <h3>Youth &amp; Social Development</h3>
+                <p>
+                  To work for youth, women, scheduled caste and scheduled
+                  tribes.
+                </p>
+              </article>
+              <article class="obj-card">
+                <span class="obj-num">05</span>
+                <h3>Environment</h3>
+                <p>
+                  To work for conservation, environmental enrichment and
+                  protection.
+                </p>
+              </article>
+              <article class="obj-card">
+                <span class="obj-num">06</span>
+                <h3>Community Development</h3>
+                <p>
+                  To undertake development projects that improve socio-economic
+                  conditions of society.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <!-- MANAGEMENT -->
+          <section id="management" class="about-view" data-view="management">
+            <div class="content-header">
+              <span class="eyebrow">Leadership</span>
+              <h2>Management</h2>
+              <p>
+                The institution is guided by dedicated leadership committed to
+                the cause of Arya Samaj education.
+              </p>
+            </div>
+            <div class="mgmt-grid">
+              <article class="mgmt-card">
+                <div class="mgmt-avatar">VB</div>
+                <h3>Sh. Vinod Bhardwaj</h3>
+                <p>President</p>
+              </article>
+              <article class="mgmt-card">
+                <div class="mgmt-avatar">SB</div>
+                <h3>Sh. S.K. Brutta</h3>
+                <p>Vice-President</p>
+              </article>
+              <article class="mgmt-card">
+                <div class="mgmt-avatar">SP</div>
+                <h3>Sh. Sushil Puri</h3>
+                <p>Secretary</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- ADMINISTRATION -->
+          <section
+            id="administration"
+            class="about-view"
+            data-view="administration"
+          >
+            <div class="content-header">
+              <span class="eyebrow">Administration</span>
+              <h2>Administration</h2>
+            </div>
+            <div class="table-wrapper">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Contact No.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Dr. Puneet Aneja</td>
+                    <td>Principal</td>
+                    <td>01823-220031</td>
+                  </tr>
+                  <tr>
+                    <td>Sh. Shrikant Pathak</td>
+                    <td>Office Superintendent</td>
+                    <td>01823-220031</td>
+                  </tr>
+                  <tr>
+                    <td>Sh. Sanjay Kumar</td>
+                    <td>Clerk (Accounts)</td>
+                    <td>01823-220031 PABX-603</td>
+                  </tr>
+                  <tr>
+                    <td>Sh. Rajesh Bhagat</td>
+                    <td>Clerk (Admission)</td>
+                    <td>01823-220031 PABX-602</td>
+                  </tr>
+                  <tr>
+                    <td>Mrs. Meenakshi</td>
+                    <td>Clerk</td>
+                    <td>01823-220031 PABX-601</td>
+                  </tr>
+                  <tr>
+                    <td>Sh. Sunil Kumar</td>
+                    <td>Clerk (Admission)</td>
+                    <td>—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img
+              src="../assets/icons/icon.svg"
+              alt="RK Arya College Logo"
+              class="h-12 w-12 object-contain"
+            />
+            <div>
+              <h2
+                class="text-xl font-bold m-0"
+                style="font-family: &quot;Playfair Display&quot;, serif"
+              >
+                R.K. Arya College
+              </h2>
+              <p class="text-sm m-0" style="color: rgba(255, 255, 255, 0.6)">
+                Nawanshahr, Punjab
+              </p>
+            </div>
+          </div>
+          <p
+            style="
+              max-width: 28rem;
+              font-size: 0.875rem;
+              color: rgba(255, 255, 255, 0.7);
+              line-height: 1.8;
+              margin: 0;
+            "
+          >
+            RK Arya is an innovative, student-focused institution dedicated to
+            academic excellence, leadership, and community impact since 1952.
+          </p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programme.html">Programme</a></li>
+            <li><a href="facilities.html">Facilities</a></li>
+            <li><a href="student-resources.html">Study Material</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Featured Courses</h3>
+          <ul>
+            <li><a href="programme.html">B.A</a></li>
+            <li><a href="programme.html">B.C.A.</a></li>
+            <li><a href="programme.html">B.Com</a></li>
+            <li><a href="programme.html">M.Com</a></li>
+            <li><a href="programme.html">M.Sc</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 R.K. Arya College. All Rights Reserved.
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const nav = document.getElementById("about-page-nav");
+        const navLinks = document.getElementById("page-nav-links");
+        const menuToggle = document.getElementById("menu-toggle");
+        const sidebarNav = document.getElementById("sidebar-nav");
+        const sidebarToggle = document.getElementById("sidebar-toggle");
+        const views = document.querySelectorAll(".about-view");
+        const sidebarItems = document.querySelectorAll(".sidebar-nav a");
+        const navSubmenuLinks = document.querySelectorAll(
+          ".submenu a[data-view]",
+        );
+
+        // ===== AUTO-HIDE NAVBAR ON SCROLL =====
+        let lastScroll = 0;
+        let scrollTimer;
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            const currentScroll = window.scrollY;
+
+            // Add a small threshold to prevent jitter
+            if (currentScroll > 150 && currentScroll > lastScroll + 5) {
+              // Scrolling down → hide navbar
+              nav.classList.add("nav-hidden");
+              // Close any open mobile menu when hiding
+              navLinks.classList.remove("is-open");
+            } else if (currentScroll < lastScroll - 5 || currentScroll < 150) {
+              // Scrolling up → show navbar
+              nav.classList.remove("nav-hidden");
+            }
+
+            lastScroll = currentScroll;
+          },
+          { passive: true },
+        );
+
+        // ===== MOBILE MENU TOGGLE =====
+        menuToggle.addEventListener("click", () => {
+          const isOpen = navLinks.classList.toggle("is-open");
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        // ===== MOBILE SIDEBAR TOGGLE =====
+        if (sidebarToggle) {
+          sidebarToggle.addEventListener("click", () => {
+            sidebarNav.classList.toggle("is-open");
+          });
+        }
+
+        // ===== VIEW SWITCHING =====
+        function switchView(viewName) {
+          views.forEach((v) => {
+            v.classList.toggle("active", v.dataset.view === viewName);
+          });
+
+          sidebarItems.forEach((item) => {
+            item.classList.toggle("active", item.dataset.view === viewName);
+          });
+
+          // Close mobile sidebar after selection
+          sidebarNav.classList.remove("is-open");
+
+          // Close mobile nav menu
+          navLinks.classList.remove("is-open");
+
+          // Update URL hash without jumping
+          if (history.replaceState) {
+            history.replaceState(null, null, "#" + viewName);
+          }
+
+          // Smooth scroll to top of content on mobile
+          if (window.innerWidth < 900) {
+            const contentArea = document.querySelector(".content-area");
+            if (contentArea) {
+              const offset = 100;
+              const top =
+                contentArea.getBoundingClientRect().top +
+                window.scrollY -
+                offset;
+              window.scrollTo({ top, behavior: "smooth" });
+            }
+          } else {
+            // On desktop, scroll to top of content area
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+        }
+
+        // Sidebar click handler
+        sidebarItems.forEach((item) => {
+          item.addEventListener("click", (e) => {
+            e.preventDefault();
+            switchView(item.dataset.view);
+          });
+        });
+
+        // Navbar submenu link handler (About section links)
+        navSubmenuLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            switchView(link.dataset.view);
+            nav.classList.remove("nav-hidden");
+          });
+        });
+
+        // ===== INITIAL LOAD: Check URL hash =====
+        const hash = window.location.hash.replace("#", "");
+        if (hash) {
+          const validView = document.querySelector(
+            `.about-view[data-view="${hash}"]`,
+          );
+          if (validView) {
+            switchView(hash);
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

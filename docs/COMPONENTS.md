@@ -14,23 +14,6 @@ Contains the main website header and institutional branding.
 
 The header should be reused across pages instead of being duplicated.
 
-## Navbar
-
-File:
-
-`components/navbar.html`
-
-Purpose:
-
-Contains the primary website navigation.
-
-Responsibilities may include:
-
-- Main navigation links
-- Dropdown menus
-- Mobile navigation
-- Navigation states
-
 ## Breadcrumb
 
 File:

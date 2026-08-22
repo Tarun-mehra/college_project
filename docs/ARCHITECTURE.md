@@ -5,6 +5,7 @@
 This project is a frontend website for R.K. Arya College.
 
 The project uses:
+
 - HTML for structure and content
 - CSS for styling
 - JavaScript for interactions
@@ -15,24 +16,31 @@ The project uses:
 ## Directory Structure
 
 ### assets/
+
 Contains images, documents, icons and videos.
 
 ### components/
+
 Contains reusable HTML components such as header, navbar, footer and breadcrumbs.
 
 ### css/
+
 Contains the organized CSS architecture.
 
 ### docs/
+
 Contains project documentation.
 
 ### js/
+
 Contains JavaScript functionality.
 
 ### pages/
+
 Contains internal website pages organized by section.
 
 ### index.html
+
 Main homepage.
 
 ## CSS Architecture
@@ -52,7 +60,6 @@ The CSS system is organized into:
 
 JavaScript is organized by responsibility:
 
-- `components.js` — reusable HTML component handling
 - `navigation.js` — navigation and menu interactions
 - `forms.js` — form functionality
 

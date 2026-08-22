@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback | R.K. Arya College</title>
+    <style>
+      :root {
+        --maroon: #810609;
+        --gold: #e5c175;
+        --cream: #faf6ef;
+        --ink: #261d1a;
+        --line: #dfd3c5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--cream);
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .site-nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--maroon);
+        color: white;
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+      }
+
+      .brand {
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .nav-links a,
+      .nav-links button {
+        border: 0;
+        color: white;
+        background: transparent;
+        font: inherit;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .nav-item {
+        position: relative;
+      }
+
+      .submenu {
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        right: 0;
+        display: grid;
+        min-width: 14rem;
+        padding: 0.75rem;
+        background: var(--maroon);
+        box-shadow: 0 0.75rem 1.5rem rgb(0 0 0 / 20%);
+      }
+
+      .submenu[hidden] {
+        display: none;
+      }
+
+      .submenu a {
+        padding: 0.5rem;
+      }
+
+      .submenu a:hover,
+      .submenu a:focus-visible {
+        color: var(--gold);
+      }
+
+      .page-header {
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 5rem 1.5rem 2rem;
+        text-align: center;
+      }
+
+      .eyebrow {
+        color: var(--maroon);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0.75rem 0 1rem;
+        color: var(--maroon);
+        font-size: clamp(2.25rem, 6vw, 4.5rem);
+        line-height: 1;
+      }
+
+      .page-header p {
+        margin: 0;
+        color: #66564d;
+        font-family: Arial, sans-serif;
+        line-height: 1.7;
+      }
+
+      .forms {
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem 6rem;
+      }
+
+      .feedback-form {
+        display: none;
+        padding: clamp(1.25rem, 4vw, 2.5rem);
+        border: 1px solid var(--line);
+        background: white;
+        box-shadow: 0 1rem 2.5rem rgb(73 42 25 / 8%);
+      }
+
+      .feedback-form.is-active {
+        display: block;
+        animation: reveal 0.35s ease both;
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+          transform: translateY(0.75rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .form-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.75rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--gold);
+      }
+
+      h2 {
+        margin: 0;
+        color: var(--maroon);
+        font-size: clamp(1.5rem, 4vw, 2.25rem);
+      }
+
+      .form-number {
+        color: #998678;
+        font-family: Arial, sans-serif;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .field-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+      }
+
+      .field {
+        display: grid;
+        gap: 0.45rem;
+        font-family: Arial, sans-serif;
+      }
+
+      .field-wide {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        color: #493a32;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        padding: 0.8rem 0.85rem;
+        color: var(--ink);
+        background: #fffdf9;
+        font: inherit;
+      }
+
+      textarea {
+        min-height: 8rem;
+        resize: vertical;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 2px solid var(--gold);
+        outline-offset: 2px;
+      }
+
+      .submit-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 1.75rem;
+      }
+
+      .submit-button {
+        border: 0;
+        padding: 0.85rem 1.5rem;
+        color: white;
+        background: var(--maroon);
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .submit-button:hover,
+      .submit-button:focus-visible {
+        background: #5e0407;
+      }
+
+      .form-status {
+        color: #55704f;
+        font-family: Arial, sans-serif;
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 700px) {
+        .nav-inner,
+        .nav-links {
+          align-items: flex-start;
+        }
+
+        .nav-inner {
+          flex-direction: column;
+        }
+
+        .nav-links {
+          flex-wrap: wrap;
+          gap: 0.75rem 1rem;
+        }
+
+        .submenu {
+          position: static;
+          margin-top: 0.75rem;
+        }
+
+        .field-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .field-wide {
+          grid-column: auto;
+        }
+
+        .submit-row {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="brand" href="../index.html">R.K. Arya College</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li class="nav-item">
+            <button
+              id="feedback-menu-button"
+              type="button"
+              aria-expanded="false"
+              aria-controls="feedback-menu"
+            >
+              Feedback
+            </button>
+            <div id="feedback-menu" class="submenu" hidden>
+              <a
+                href="feedback.html#student-feedback"
+                data-feedback="student-feedback"
+                >Student Feedback</a
+              >
+              <a
+                href="feedback.html#alumni-feedback"
+                data-feedback="alumni-feedback"
+                >Alumni Feedback</a
+              >
+              <a
+                href="feedback.html#teacher-feedback"
+                data-feedback="teacher-feedback"
+                >Teacher Feedback</a
+              >
+              <a
+                href="feedback.html#employer-feedback"
+                data-feedback="employer-feedback"
+                >Employers Feedback</a
+              >
+            </div>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <span class="eyebrow">R.K. Arya College</span>
+      <h1>Share Your Feedback</h1>
+      <p>
+        Your experience helps us strengthen teaching, services, and the
+        relationship between the college and its community.
+      </p>
+    </header>
+
+    <main id="feedback" class="forms">
+      <form
+        id="student-feedback"
+        class="feedback-form"
+        data-form="student-feedback"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="5e5e9208-5f2b-49f0-a05b-417857d3810c"
+        />
+        <input
+          type="hidden"
+          name="subject"
+          value="Student Feedback - R.K. Arya College"
+        />
+        <div class="form-heading">
+          <h2>Student Feedback</h2>
+          <span class="form-number">01 / 04</span>
+        </div>
+        <div class="field-grid">
+          <div class="field">
+            <label for="student-name">Full name</label
+            ><input id="student-name" name="name" required />
+          </div>
+          <div class="field">
+            <label for="student-enrollment">Enrollment number</label
+            ><input id="student-enrollment" name="enrollment" required />
+          </div>
+          <div class="field">
+            <label for="student-programme">Programme</label
+            ><input id="student-programme" name="programme" required />
+          </div>
+          <div class="field">
+            <label for="student-rating">Teaching quality</label
+            ><select id="student-rating" name="rating" required>
+              <option value="">Select rating</option>
+              <option>Excellent</option>
+              <option>Good</option>
+              <option>Needs improvement</option>
+            </select>
+          </div>
+          <div class="field field-wide">
+            <label for="student-comments">Your comments</label
+            ><textarea id="student-comments" name="message" required></textarea>
+          </div>
+        </div>
+        <div class="submit-row">
+          <button class="submit-button" type="submit">Submit feedback</button
+          ><span class="form-status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <form
+        id="alumni-feedback"
+        class="feedback-form"
+        data-form="alumni-feedback"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="5e5e9208-5f2b-49f0-a05b-417857d3810c"
+        />
+        <input
+          type="hidden"
+          name="subject"
+          value="Alumni Feedback - R.K. Arya College"
+        />
+        <div class="form-heading">
+          <h2>Alumni Feedback</h2>
+          <span class="form-number">02 / 04</span>
+        </div>
+        <div class="field-grid">
+          <div class="field">
+            <label for="alumni-name">Full name</label
+            ><input id="alumni-name" name="name" required />
+          </div>
+          <div class="field">
+            <label for="alumni-year">Year of graduation</label
+            ><input
+              id="alumni-year"
+              name="graduation-year"
+              type="number"
+              min="1952"
+              max="2100"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="alumni-email">Email address</label
+            ><input id="alumni-email" name="email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="alumni-rating">College experience</label
+            ><select id="alumni-rating" name="rating" required>
+              <option value="">Select rating</option>
+              <option>Excellent</option>
+              <option>Good</option>
+              <option>Needs improvement</option>
+            </select>
+          </div>
+          <div class="field field-wide">
+            <label for="alumni-comments"
+              >How has the college prepared you?</label
+            ><textarea id="alumni-comments" name="message" required></textarea>
+          </div>
+        </div>
+        <div class="submit-row">
+          <button class="submit-button" type="submit">Submit feedback</button
+          ><span class="form-status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <form
+        id="teacher-feedback"
+        class="feedback-form"
+        data-form="teacher-feedback"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="5e5e9208-5f2b-49f0-a05b-417857d3810c"
+        />
+        <input
+          type="hidden"
+          name="subject"
+          value="Teacher Feedback - R.K. Arya College"
+        />
+        <div class="form-heading">
+          <h2>Teacher Feedback</h2>
+          <span class="form-number">03 / 04</span>
+        </div>
+        <div class="field-grid">
+          <div class="field">
+            <label for="teacher-name">Full name</label
+            ><input id="teacher-name" name="name" required />
+          </div>
+          <div class="field">
+            <label for="teacher-department">Department</label
+            ><input id="teacher-department" name="department" required />
+          </div>
+          <div class="field">
+            <label for="teacher-email">Email address</label
+            ><input id="teacher-email" name="email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="teacher-rating">Academic environment</label
+            ><select id="teacher-rating" name="rating" required>
+              <option value="">Select rating</option>
+              <option>Excellent</option>
+              <option>Good</option>
+              <option>Needs improvement</option>
+            </select>
+          </div>
+          <div class="field field-wide">
+            <label for="teacher-comments">Suggestions for improvement</label
+            ><textarea id="teacher-comments" name="message" required></textarea>
+          </div>
+        </div>
+        <div class="submit-row">
+          <button class="submit-button" type="submit">Submit feedback</button
+          ><span class="form-status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <form
+        id="employer-feedback"
+        class="feedback-form"
+        data-form="employer-feedback"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="5e5e9208-5f2b-49f0-a05b-417857d3810c"
+        />
+        <input
+          type="hidden"
+          name="subject"
+          value="Employers Feedback - R.K. Arya College"
+        />
+        <div class="form-heading">
+          <h2>Employers Feedback</h2>
+          <span class="form-number">04 / 04</span>
+        </div>
+        <div class="field-grid">
+          <div class="field">
+            <label for="employer-organization">Organization</label
+            ><input id="employer-organization" name="organization" required />
+          </div>
+          <div class="field">
+            <label for="employer-contact">Contact person</label
+            ><input id="employer-contact" name="contact" required />
+          </div>
+          <div class="field">
+            <label for="employer-email">Email address</label
+            ><input id="employer-email" name="email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="employer-rating">Graduate performance</label
+            ><select id="employer-rating" name="rating" required>
+              <option value="">Select rating</option>
+              <option>Excellent</option>
+              <option>Good</option>
+              <option>Needs improvement</option>
+            </select>
+          </div>
+          <div class="field field-wide">
+            <label for="employer-comments"
+              >Skills or improvements you recommend</label
+            ><textarea
+              id="employer-comments"
+              name="message"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <div class="submit-row">
+          <button class="submit-button" type="submit">Submit feedback</button
+          ><span class="form-status" aria-live="polite"></span>
+        </div>
+      </form>
+    </main>
+
+    <script>
+      const menuButton = document.getElementById("feedback-menu-button");
+      const menu = document.getElementById("feedback-menu");
+      const forms = [...document.querySelectorAll(".feedback-form")];
+      const feedbackLinks = [...document.querySelectorAll("[data-feedback]")];
+
+      const showFeedbackForm = (formId) => {
+        const selectedForm =
+          forms.find((form) => form.id === formId) || forms[0];
+        forms.forEach((form) =>
+          form.classList.toggle("is-active", form === selectedForm),
+        );
+        window.history.replaceState(null, "", `#${selectedForm.id}`);
+      };
+
+      menuButton.addEventListener("click", () => {
+        menu.hidden = !menu.hidden;
+        menuButton.setAttribute("aria-expanded", String(!menu.hidden));
+      });
+
+      feedbackLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          showFeedbackForm(link.dataset.feedback);
+          menu.hidden = true;
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      showFeedbackForm(window.location.hash.slice(1));
+    </script>
+  </body>
+</html>

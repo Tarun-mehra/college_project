@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import "../style.css";
+
+@source "../*.html";
+@source "../pages/**/*.html";
+@source "../components/**/*.html";
+@source "../js/**/*.js";
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-accent: "Cormorant Garamond", serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --color-college-maroon: #82080c;
+  --color-college-maroon-dark: #5c0003;
+  --color-college-gold: #e5c175;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+  }
+}

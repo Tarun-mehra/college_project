@@ -1,0 +1,14 @@
+{
+  "name": "rkac-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tailwindcss -i ./css/main.css -o ./dist/assets/site.css --watch",
+    "build:css": "tailwindcss -i ./css/main.css -o ./dist/assets/site.css --minify",
+    "build:html": "node ./build.js",
+    "build": "npm run build:css && npm run build:html"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.12"
+  }
+}

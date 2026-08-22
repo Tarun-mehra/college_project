@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faculty | R.K. Arya College</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.26/dist/lenis.css"
+    />
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="../lenis.js" defer></script>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --page-maroon: #82080c;
+        --page-gold: #e5c175;
+      }
+      #about-page-nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      #about-page-nav #page-nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.5rem;
+      }
+      #about-page-nav .page-nav-item {
+        position: relative;
+      }
+      #about-page-nav .page-nav-button {
+        border: 0;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        font: inherit;
+      }
+      #about-page-nav .page-submenu {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 60;
+        min-width: 14rem;
+        margin-top: 1rem;
+        padding: 0.75rem;
+        background: var(--page-maroon);
+        box-shadow: 0 12px 24px rgb(0 0 0 / 20%);
+      }
+      #about-page-nav .page-submenu a,
+      #about-page-nav .page-submenu button {
+        display: block;
+        width: 100%;
+        padding: 0.4rem 0.5rem;
+        color: white;
+        text-align: left;
+        text-decoration: none;
+      }
+      #about-page-nav .page-submenu a:hover,
+      #about-page-nav .page-submenu button:hover {
+        color: var(--page-gold);
+      }
+      #about-page-nav .page-submenu[hidden] {
+        display: none;
+      }
+      #about-page-nav .page-menu-toggle {
+        display: none;
+        width: 2.75rem;
+        height: 2.75rem;
+        border: 1px solid rgb(229 193 117 / 65%);
+        background: transparent;
+        cursor: pointer;
+      }
+      #about-page-nav .page-menu-toggle span {
+        display: block;
+        height: 2px;
+        margin: 0.3rem;
+        background: var(--page-gold);
+      }
+
+      /* Custom List Styles */
+      .listelem {
+        cursor: pointer;
+      }
+      .listelem .picture {
+        pointer-events: none;
+      }
+
+      @media (max-width: 900px) {
+        #about-page-nav #page-nav-links {
+          display: none;
+          order: 3;
+          width: 100%;
+          flex-direction: column;
+          align-items: stretch;
+          padding: 0.5rem 0;
+        }
+        #about-page-nav #page-nav-links.is-open {
+          display: flex;
+        }
+        #about-page-nav .page-nav-item,
+        #about-page-nav .page-nav-button,
+        #about-page-nav .page-nav-item > a {
+          width: 100%;
+          text-align: left;
+        }
+        #about-page-nav .page-nav-item > a,
+        #about-page-nav .page-nav-button {
+          display: block;
+          padding: 0.7rem 0.75rem;
+        }
+        #about-page-nav .page-submenu {
+          position: static;
+          margin: 0.15rem 0 0.35rem;
+          box-shadow: none;
+        }
+        #about-page-nav .page-menu-toggle {
+          display: block;
+          order: 2;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-['Plus_Jakarta_Sans'] bg-white">
+    <div id="about-page-nav">
+      <div
+        class="flex h-9 items-center justify-between bg-[#7a0000] px-4 text-xs text-white md:px-8"
+      >
+        <div class="flex items-center gap-5">
+          <a href="student-resources.html">News &amp; Announcements</a
+          ><a href="student-resources.html">Notice Board</a
+          ><a href="programme.html">Admissions</a
+          ><a href="student-resources.html">Results</a>
+        </div>
+        <div class="flex items-center gap-5">
+          <a href="student-resources.html">Examination</a
+          ><a href="student-resources.html">Student Login</a
+          ><a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <nav
+        class="flex min-h-10 flex-wrap items-center justify-between gap-4 bg-[#810609] px-4 py-2 md:px-8"
+      >
+        <a
+          href="../index.html"
+          class="flex shrink-0 items-center gap-3 text-white no-underline"
+        >
+          <img
+            src="../assets/icons/icon.svg"
+            alt="College Logo"
+            class="h-14 w-14 object-contain md:h-16 md:w-16"
+          />
+          <span
+            ><strong class="site-title block text-xl leading-none md:text-2xl"
+              >RK ARYA COLLEGE</strong
+            ><small
+              class="mt-1 block text-[11px] font-semibold uppercase tracking-widest text-college-gold"
+              >Nawanshahr 1952</small
+            ></span
+          >
+        </a>
+        <div id="page-nav-links">
+          <div class="page-nav-item">
+            <a
+              href="../index.html"
+              class="px-3 py-2 text-sm font-medium text-white"
+              >Home</a
+            >
+          </div>
+          <div class="page-nav-item">
+            <button
+              class="page-nav-button px-3 py-2 text-sm font-medium"
+              data-menu="about-menu"
+            >
+              About
+            </button>
+            <div id="about-menu" class="page-submenu" hidden>
+              <a href="about.html#about">About Us</a
+              ><a href="about.html#president">President Message</a
+              ><a href="about.html#principal">Principal Message</a
+              ><a href="about.html#vision-mission">Mission and Vision</a
+              ><a href="about.html#administration">Administration</a
+              ><a href="about.html#objectives">Academic Committees</a
+              ><a href="about.html#management">Organogram</a>
+            </div>
+          </div>
+          <div class="page-nav-item">
+            <button
+              class="page-nav-button px-3 py-2 text-sm font-medium"
+              data-menu="programme-menu"
+            >
+              Programme
+            </button>
+            <div id="programme-menu" class="page-submenu" hidden>
+              <a href="programme.html#programme-directory"
+                >Programme Directory</a
+              ><a href="programme.html#programme-directory">Course Outcome</a
+              ><a href="programme.html#reservation-policy">Reservation Policy</a
+              ><a href="programme.html#reservation-policy">Prospectus</a>
+            </div>
+          </div>
+          <div class="page-nav-item">
+            <button
+              class="page-nav-button px-3 py-2 text-sm font-medium"
+              data-menu="faculty-menu"
+            >
+              Faculty
+            </button>
+            <div id="faculty-menu" class="page-submenu" hidden>
+              <a href="faculty.html#commerce" data-department="commerce"
+                >Faculty of Commerce</a
+              ><a
+                href="faculty.html#computer-science"
+                data-department="computer-science"
+                >Faculty of Computer Science</a
+              ><a href="faculty.html#sciences" data-department="sciences"
+                >Faculty of Sciences</a
+              ><a href="faculty.html#humanities" data-department="humanities"
+                >Faculty of Humanities</a
+              >
+            </div>
+          </div>
+          <div class="page-nav-item">
+            <button
+              class="page-nav-button px-3 py-2 text-sm font-medium"
+              data-menu="facilities-menu"
+            >
+              Facilities
+            </button>
+            <div id="facilities-menu" class="page-submenu" hidden>
+              <a href="facilities.html#infrastructure">Standard Club</a
+              ><a href="facilities.html#nss">NSS</a
+              ><a href="facilities.html#ncc">NCC</a
+              ><a href="facilities.html#infrastructure">Infrastructure</a
+              ><a href="facilities.html#infrastructure">Seminar Halls</a
+              ><a href="facilities.html#infrastructure">Anti Ragging</a
+              ><a href="facilities.html#infrastructure">Cafeteria</a
+              ><a href="facilities.html#library">Library</a
+              ><a href="facilities.html#infrastructure">Scholarships</a
+              ><a href="facilities.html#sports">Sports</a
+              ><a href="facilities.html#infrastructure">Laboratories</a
+              ><a href="facilities.html#sports">Gym</a>
+            </div>
+          </div>
+          <div class="page-nav-item">
+            <button
+              class="page-nav-button px-3 py-2 text-sm font-medium"
+              data-menu="student-menu"
+            >
+              Student Resources
+            </button>
+            <div id="student-menu" class="page-submenu" hidden>
+              <a href="student-resources.html#student-resources"
+                >Old Ques Paper</a
+              ><a href="student-resources.html#student-resources"
+                >Study Material</a
+              ><a href="student-resources.html#student-resources"
+                >Rules of Library</a
+              ><a href="student-resources.html#student-resources"
+                >General Rules</a
+              ><a href="student-resources.html#student-resources"
+                >Policy for Examination</a
+              >
+            </div>
+          </div>
+          <div class="page-nav-item">
+            <button
+              class="page-nav-button px-3 py-2 text-sm font-medium"
+              data-menu="feedback-menu"
+            >
+              Feedback
+            </button>
+            <div id="feedback-menu" class="page-submenu" hidden>
+              <a href="feedback.html#feedback">Student Feedback</a
+              ><a href="feedback.html#feedback">Alumni Feedback</a
+              ><a href="feedback.html#feedback">Teacher Feedback</a
+              ><a href="feedback.html#feedback">Employers Feedback</a>
+            </div>
+          </div>
+          <div class="page-nav-item">
+            <button
+              class="page-nav-button px-3 py-2 text-sm font-medium"
+              data-menu="naac-menu"
+            >
+              NAAC
+            </button>
+            <div id="naac-menu" class="page-submenu" hidden>
+              <a href="naac.html#naac">AQAR 2020-2021</a
+              ><a href="naac.html#naac">AQAR 2021-2022</a
+              ><a href="naac.html#naac">AQAR 2022-2023</a
+              ><a href="naac.html#naac">AQAR 2023-2024</a
+              ><a href="naac.html#naac">DVV</a><a href="naac.html#naac">SSR</a>
+            </div>
+          </div>
+          <div class="page-nav-item">
+            <a
+              href="contact.html"
+              class="px-3 py-2 text-sm font-medium text-white"
+              >Contact</a
+            >
+          </div>
+        </div>
+        <button
+          id="page-menu-toggle"
+          class="page-menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="page-nav-links"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Faculty Page Content -->
+    <main id="faculty" class="bg-white text-black overflow-hidden">
+      <div
+        class="section text-center font-medium text-6xl py-20 px-4 md:px-0 font-['Space_Mono',sans-serif]"
+      >
+        <h1 class="mb-20 text-4xl md:text-6xl">Our Esteemed Faculty</h1>
+
+        <!-- Container for all departments -->
+        <div
+          id="faculty-container"
+          class="max-w-[1400px] mx-auto px-5 md:px-10 text-left"
+        >
+          <!-- Departments will be injected here by JS -->
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-[#810609] px-6 py-16 text-white lg:px-10">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-4">
+              <img
+                src="../assets/icons/icon.svg"
+                alt="RK Arya College Logo"
+                class="h-12 w-12 object-contain"
+              />
+              <div>
+                <h2 class="text-2xl font-bold">R.K. Arya College</h2>
+                <p class="text-sm text-white/70">Nawanshahr, Punjab</p>
+              </div>
+            </div>
+            <p class="mt-6 max-w-xl text-sm leading-7 text-white/75">
+              RK Arya is an innovative, student-focused institution dedicated to
+              academic excellence, leadership, and community impact.
+            </p>
+          </div>
+          <div>
+            <h3 class="mb-6 text-lg font-semibold">Quick Links</h3>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="programme.html">Programme</a></li>
+              <li><a href="facilities.html">Facilities</a></li>
+              <li><a href="student-resources.html">Study Material</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-6 text-lg font-semibold">Featured Courses</h3>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li><a href="programme.html">B.A</a></li>
+              <li><a href="programme.html">B.C.A.</a></li>
+              <li><a href="programme.html">B.Com</a></li>
+              <li><a href="programme.html">M.Com</a></li>
+              <li><a href="programme.html">M.Sc</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-14 border-t border-white/15 pt-7 text-sm text-white/60">
+          &copy; 2026 R.K. Arya College. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Nav Logic
+      (() => {
+        const nav = document.querySelector("#about-page-nav");
+        const links = nav.querySelector("#page-nav-links");
+        const toggle = nav.querySelector("#page-menu-toggle");
+        const menus = [...nav.querySelectorAll(".page-submenu")];
+        const closeMenus = () =>
+          menus.forEach((menu) => {
+            menu.hidden = true;
+          });
+        nav.addEventListener("click", (event) => {
+          const button = event.target.closest("[data-menu]");
+          if (button) {
+            const menu = nav.querySelector(`#${button.dataset.menu}`);
+            const shouldOpen = menu.hidden;
+            closeMenus();
+            menu.hidden = !shouldOpen;
+            return;
+          }
+          if (event.target.closest("a")) closeMenus();
+        });
+        toggle.addEventListener("click", () => {
+          const open = links.classList.toggle("is-open");
+          toggle.setAttribute("aria-expanded", String(open));
+          toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        });
+        document.addEventListener("click", (event) => {
+          if (!nav.contains(event.target)) closeMenus();
+        });
+      })();
+
+      // Grouped Faculty Data
+      const departments = [
+        {
+          id: "commerce",
+          title: "Faculty of Commerce",
+          members: [
+            {
+              name: "Dr. Neeraj Kumar Saddy",
+              role: "Asst. Prof.-in-Commerce",
+              img: "../assets/teacher/neeraj.jpg",
+            },
+            {
+              name: "Dr. Rajinder Kumar Gupta",
+              role: "Asst. Prof.-in-Commerce",
+              img: "../assets/teacher/ranjinder.jpg",
+            },
+            {
+              name: "Ms. Anika Sharma",
+              role: "Asst. Prof.-in-Commerce",
+              img: "../assets/teacher/anika.jpg",
+            },
+          ],
+        },
+        {
+          id: "computer-science",
+          title: "Faculty of Computer Science & I.T.",
+          members: [
+            {
+              name: "Sh. Kewal Krishan",
+              role: "Assistant Prof.",
+              img: "../assets/teacher/kewal.jpg",
+            },
+            {
+              name: "Sh. Nirdesh Karam Chaudhary",
+              role: "Assistant Prof.",
+              img: "../assets/teacher/nirdesh.jpg",
+            },
+            {
+              name: "Sh. Jasvir Singh",
+              role: "Assistant Prof.",
+              img: "../assets/teacher/jasveer.jpg",
+            },
+            {
+              name: "Mrs. Heena Khanna",
+              role: "Assistant Prof.",
+              img: "../assets/teacher/heena.jpg",
+            },
+            {
+              name: "Amrit Kaur",
+              role: "Assistant Prof",
+              img: "../assets/teacher/amrit.jpg",
+            },
+            {
+              name: "Simranjeet Kaur",
+              role: "Assistant Prof",
+              img: "../assets/teacher/simranjeet.jpg",
+            },
+            {
+              name: "Ramanpreet Kaur",
+              role: "Assistant Prof",
+              img: "../assets/teacher/ramanpreet.jpeg",
+            },
+            {
+              name: "Mrs. Satbir Kaur",
+              role: "Comp. Programmer",
+              img: "../assets/teacher/satbir.jpg",
+            },
+          ],
+        },
+        {
+          id: "sciences",
+          title: "Faculty of Sciences",
+          members: [
+            {
+              name: "Sh. Manish Manik",
+              role: "Associate Prof.",
+              img: "../assets/teacher/manish.jpg",
+            },
+            {
+              name: "Dr. Renu Karra",
+              role: "Associate Prof.",
+              img: "../assets/teacher/renu.jpg",
+            },
+            {
+              name: "Sh. Robin Kumar",
+              role: "Asstt. Prof.",
+              img: "../assets/teacher/robin.jpg",
+            },
+            {
+              name: "Dr. Vishal Pathak",
+              role: "Asstt. Prof.",
+              img: "../assets/teacher/vishal.jpg",
+            },
+            {
+              name: "Mrs. Amandeep Kaur",
+              role: "Asstt. Prof.",
+              img: "../assets/teacher/amandeep.jpg",
+            },
+          ],
+        },
+        {
+          id: "humanities",
+          title: "Faculty of Humanities",
+          members: [
+            {
+              name: "Dr. Puneet Aneja",
+              role: "Principal- Travel & Tourism",
+              img: "../assets/teacher/principal.jpg",
+            },
+            {
+              name: "Dr. Sanjeev Dawar",
+              role: "Assoc. Prof.-in-Hindi",
+              img: "../assets/teacher/sanjeev.jpg",
+            },
+            {
+              name: "Dr. Vinay Sophat",
+              role: "Assoc. Prof.-in-History",
+              img: "../assets/teacher/vinay.jpg",
+            },
+            {
+              name: "Mrs. Mridula Pushkarna",
+              role: "Assoc. Prof.-in-Geography",
+              img: "../assets/teacher/mridula.jpg",
+            },
+            {
+              name: "Dr. Ambika Sharma",
+              role: "Asst. Prof.-in-English",
+              img: "../assets/teacher/ambika.jpg",
+            },
+            {
+              name: "Mrs. Navdeep Kaur",
+              role: "Asst. Prof.-in-Pol. Sci",
+              img: "../assets/teacher/navdeep.jpg",
+            },
+            {
+              name: "Dr. Jasvir Singh",
+              role: "Asst. Prof.-in-Punjabi",
+              img: "../assets/teacher/jasvir.jpg",
+            },
+            {
+              name: "Dr. Jaspreet Kaur",
+              role: "Asst. Prof.-in-Punjabi",
+              img: "../assets/teacher/jaspreet.jpg",
+            },
+            {
+              name: "Mrs. Surjeet Kaur",
+              role: "Asst. Prof.-in-Economics",
+              img: "../assets/teacher/surjeet.jpg",
+            },
+            {
+              name: "Ms. Neeraj Kataria",
+              role: "Asst. Prof.-in-English",
+              img: "../assets/teacher/neeraj.jpg",
+            },
+            {
+              name: "Ms. Monika",
+              role: "Asst. Prof.-in- Punjabi",
+              img: "../assets/teacher/monika.jpg",
+            },
+          ],
+        },
+      ];
+
+      // Render Faculty Sections
+      const container = document.getElementById("faculty-container");
+
+      departments.forEach((dept, d_index) => {
+        // Create Section Wrapper
+        const sectionWrapper = document.createElement("section");
+        sectionWrapper.className = "mb-24";
+        sectionWrapper.id = dept.id;
+        sectionWrapper.dataset.department = dept.id;
+
+        // Section Header
+        const header = `
+            <div class="flex justify-between items-end mb-8 flex-wrap gap-4">
+              <h2 class="text-3xl md:text-5xl font-bold text-[#810609] uppercase tracking-wider">
+                ${dept.title}
+              </h2>
+              <span class="text-xl text-gray-400 font-bold">0${d_index + 1}</span>
+            </div>
+          `;
+
+        // List Container
+        const listWrapper = document.createElement("div");
+        listWrapper.className = "list relative w-full";
+
+        // Render Items
+        dept.members.forEach((member, index) => {
+          const num = String(index + 1).padStart(2, "0");
+          const isLast = index === dept.members.length - 1;
+          const borderClass = isLast ? "border-b-2" : "border-b-2";
+
+          const item = `
+                  <div class="listelem w-full ${borderClass} border-black flex items-center justify-between gap-5 py-[2rem] md:py-[2.5rem] relative">
+                      <div class="left flex gap-5 md:gap-20 relative z-[3]">
+                          <h3 class="text-2xl md:text-4xl font-bold">${num}</h3>
+                          <h1 class="text-2xl md:text-4xl font-bold text-left">${member.name}</h1>
+                      </div>
+                      <h3 class="text-sm md:text-2xl text-right font-medium">${member.role}</h3>
+                      <div class="picture overlay-0 absolute w-[10rem] h-[10rem] rounded-full z-[4] top-0 left-0 overflow-hidden opacity-0">
+                          ${
+                            member.img
+                              ? `<img src="${member.img}" alt="${member.name}" class="w-full h-full object-cover">`
+                              : `<span class="flex h-full w-full items-center justify-center bg-[#810609] text-3xl font-bold text-white">${member.name
+                                  .split(" ")
+                                  .filter(Boolean)
+                                  .slice(-2)
+                                  .map((part) => part[0])
+                                  .join("")}</span>`
+                          }
+                      </div>
+                      <div class="bluelayer w-full absolute z-[2] bottom-0 left-0 h-[0%] bg-[#810609]"></div>
+                  </div>
+              `;
+          listWrapper.innerHTML += item;
+        });
+
+        sectionWrapper.innerHTML = header;
+        sectionWrapper.appendChild(listWrapper);
+        container.appendChild(sectionWrapper);
+      });
+
+      const departmentLinks = document.querySelectorAll(
+        "#faculty-menu [data-department]",
+      );
+      const departmentSections = document.querySelectorAll(
+        "#faculty-container [data-department]",
+      );
+
+      const showDepartment = (departmentId) => {
+        departmentSections.forEach((section) => {
+          section.hidden =
+            departmentId && section.dataset.department !== departmentId;
+        });
+      };
+
+      departmentLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          showDepartment(link.dataset.department);
+        });
+      });
+
+      const selectedDepartment = window.location.hash.slice(1);
+      if (
+        [...departmentSections].some(
+          (section) => section.dataset.department === selectedDepartment,
+        )
+      ) {
+        showDepartment(selectedDepartment);
+      }
+
+      // GSAP Animation Logic (Re-applied to all items)
+      const listElements = document.querySelectorAll(".listelem");
+
+      listElements.forEach((elem) => {
+        const picture = elem.querySelector(".picture");
+        const bluelayer = elem.querySelector(".bluelayer");
+
+        // Initialize picture position to center using GSAP
+        gsap.set(picture, { xPercent: -50, yPercent: -50, scale: 0.5 });
+
+        elem.addEventListener("mousemove", (e) => {
+          const rect = elem.getBoundingClientRect();
+
+          gsap.to(picture, {
+            opacity: 1,
+            scale: 1,
+            ease: Power4.easeOut,
+            duration: 0.5,
+          });
+
+          gsap.to(bluelayer, {
+            height: "100%",
+            ease: Power4.easeOut,
+            duration: 0.4,
+          });
+
+          // Move picture with mouse
+          gsap.to(picture, {
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top,
+            ease: Power1.easeOut,
+            duration: 0.5,
+          });
+
+          // Change text color for contrast
+          gsap.to(elem.querySelectorAll("h1, h3"), {
+            color: "white",
+            duration: 0.3,
+          });
+        });
+
+        elem.addEventListener("mouseleave", () => {
+          gsap.to(picture, {
+            opacity: 0,
+            scale: 0.5,
+            ease: Power4.easeOut,
+            duration: 0.5,
+          });
+
+          gsap.to(bluelayer, {
+            height: "0%",
+            ease: Power4.easeOut,
+            duration: 0.4,
+          });
+
+          // Revert text color
+          gsap.to(elem.querySelectorAll("h1, h3"), {
+            color: "black",
+            duration: 0.3,
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -111,15 +111,6 @@
       ".about-reveal, .value-card, .timeline-item, .leadership-reveal, .leadership-card",
     );
 
-    revealElements.forEach((element, index) => {
-      if (element.classList.contains("value-card")) {
-        element.style.transitionDelay = `${index * 100}ms`;
-      }
-      if (element.classList.contains("timeline-item")) {
-        element.style.transitionDelay = `${index * 120}ms`;
-      }
-    });
-
     if (!("IntersectionObserver" in window)) {
       revealElements.forEach((element) => element.classList.add("is-visible"));
       return;
