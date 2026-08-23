@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feedback | R.K. Arya College</title>
+    <meta name="description" content="Share feedback with R.K. Arya College to help improve the student, alumni, and teaching experience." />
     <style>
       :root {
         --maroon: #810609;
@@ -580,8 +581,6 @@
     </main>
 
     <script>
-      const menuButton = document.getElementById("feedback-menu-button");
-      const menu = document.getElementById("feedback-menu");
       const forms = [...document.querySelectorAll(".feedback-form")];
       const feedbackLinks = [...document.querySelectorAll("[data-feedback]")];
 
@@ -594,16 +593,9 @@
         window.history.replaceState(null, "", `#${selectedForm.id}`);
       };
 
-      menuButton.addEventListener("click", () => {
-        menu.hidden = !menu.hidden;
-        menuButton.setAttribute("aria-expanded", String(!menu.hidden));
-      });
-
       feedbackLinks.forEach((link) => {
         link.addEventListener("click", () => {
           showFeedbackForm(link.dataset.feedback);
-          menu.hidden = true;
-          menuButton.setAttribute("aria-expanded", "false");
         });
       });
 

@@ -16,6 +16,30 @@
 
   // --- Navigation ---
 
+  const loadSharedNavigation = async () => {
+    const navigationPlaceholder = document.querySelector("#nav");
+    if (!navigationPlaceholder || navigationPlaceholder.children.length) return;
+
+    const currentScript = document.currentScript;
+    if (!currentScript?.src) return;
+
+    try {
+      const navigationUrl = new URL("components/navbar.html", currentScript.src);
+      const response = await fetch(
+        navigationUrl,
+      );
+      if (!response.ok) return;
+      navigationPlaceholder.innerHTML = await response.text();
+      navigationPlaceholder.querySelectorAll("[href]").forEach((link) => {
+        const href = link.getAttribute("href");
+        if (href && !href.startsWith("#") && !/^[a-z][a-z\d+.-]*:/i.test(href)) {
+          link.setAttribute("href", new URL(href, navigationUrl).href);
+        }
+      });
+      initializeNavigation();
+    } catch {}
+  };
+
   /** Controls desktop dropdowns, nested NAAC links, and outside-click closing. */
   const initializeNavigation = () => {
     const navigationLinks = document.querySelector("#nav-links");
@@ -208,6 +232,7 @@
   // --- Application Bootstrap ---
 
   const initializePage = () => {
+    loadSharedNavigation();
     initializeNavigation();
     initializeScrollReveal();
     initializeHistorySlider();

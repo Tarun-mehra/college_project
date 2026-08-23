@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Resources | R.K. Arya College</title>
+    <meta name="description" content="Find previous-year question papers and official study resources by programme and semester at R.K. Arya College." />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.26/dist/lenis.css"
+    />
+    <script src="../lenis.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div id="nav"></div>
+
+    <main id="student-resources" class="site-page-main">
+      <p class="site-page-eyebrow">Academic support</p>
+      <h1>Student Resources</h1>
+      <p class="site-page-intro">
+        Find previous-year question papers and official study documents by
+        programme and semester.
+      </p>
+
+      <section
+        class="mb-12 grid gap-4 sm:grid-cols-2"
+        aria-label="Resource filters"
+      >
+        <label class="font-semibold text-[#2b1712]" for="programme-select">
+          Programme
+          <select
+            id="programme-select"
+            class="mt-2 block w-full rounded-lg border border-[#2b1712]/15 bg-white px-4 py-3 font-normal"
+          ></select>
+        </label>
+        <label class="font-semibold text-[#2b1712]" for="semester-select">
+          Semester
+          <select
+            id="semester-select"
+            class="mt-2 block w-full rounded-lg border border-[#2b1712]/15 bg-white px-4 py-3 font-normal"
+          ></select>
+        </label>
+      </section>
+
+      <p
+        id="resource-status"
+        class="mb-4 text-sm font-semibold text-[#746761]"
+        role="status"
+      ></p>
+      <section
+        id="resource-list"
+        class="site-page-grid"
+        aria-label="Available student resources"
+      ></section>
+    </main>
+    <script src="../script.js" defer></script>
+    <script type="module" src="../js/student-resources.js"></script>
+  </body>
+</html>

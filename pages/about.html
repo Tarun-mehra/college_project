@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About | R.K. Arya College</title>
+    <meta name="description" content="Learn about R.K. Arya College, its history, leadership, mission, vision, and academic community in Nawanshahr." />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
     <link
@@ -666,6 +667,21 @@
         box-shadow: 0 8px 24px rgba(130, 8, 12, 0.2);
       }
 
+      .person-image {
+        display: block;
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 1rem;
+        border: 4px solid var(--gold);
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 8px 24px rgba(130, 8, 12, 0.2);
+      }
+
+      .person-image.principal-photo {
+        object-position: 62% center;
+      }
+
       .message-person h3 {
         font-size: 1.25rem;
         color: var(--maroon);
@@ -868,6 +884,13 @@
         font-weight: 700;
         font-family: "Playfair Display", serif;
         border: 3px solid var(--gold);
+      }
+
+      .mgmt-avatar img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
       }
 
       .mgmt-card h3 {
@@ -1128,12 +1151,12 @@
             <div class="nav-item">
               <button class="nav-button">NAAC</button>
               <div class="submenu">
-                <a href="naac.html">AQAR 2020-2021</a>
-                <a href="naac.html">AQAR 2021-2022</a>
-                <a href="naac.html">AQAR 2022-2023</a>
-                <a href="naac.html">AQAR 2023-2024</a>
-                <a href="naac.html">DVV</a>
-                <a href="naac.html">SSR</a>
+                <a href="../assets/documents/AQAR_2020-21.pdf">AQAR 2020-2021</a>
+                <a href="../assets/documents/AQAR-2021-2022.pdf">AQAR 2021-2022</a>
+                <a href="../assets/documents/AQAR-2022-2023.pdf">AQAR 2022-2023</a>
+                <a href="../assets/documents/AQAR-23-24.pdf">AQAR 2023-2024</a>
+                <a href="../assets/documents/DVVClarificationHistory.pdf">DVV</a>
+                <a href="../assets/documents/SSR.pdf">SSR</a>
               </div>
             </div>
 
@@ -1306,7 +1329,13 @@
             </div>
             <div class="message-layout">
               <div class="message-person">
-                <div class="person-placeholder">VB</div>
+                <img
+                  class="person-image"
+                  src="../assets/teacher/vinod.jpg"
+                  alt="Sh. Vinod Bhardwaj, President"
+                  width="180"
+                  height="180"
+                />
                 <h3>Sh. Vinod Bhardwaj</h3>
                 <p>President</p>
               </div>
@@ -1358,7 +1387,13 @@
             </div>
             <div class="message-layout">
               <div class="message-person">
-                <div class="person-placeholder">PA</div>
+                <img
+                  class="person-image principal-photo"
+                  src="../assets/teacher/principal.jpg"
+                  alt="Dr. Puneet Aneja, Principal"
+                  width="180"
+                  height="180"
+                />
                 <h3>Dr. Puneet Aneja</h3>
                 <p>Principal</p>
               </div>
@@ -1547,23 +1582,31 @@
                 the cause of Arya Samaj education.
               </p>
             </div>
-            <div class="mgmt-grid">
-              <article class="mgmt-card">
-                <div class="mgmt-avatar">VB</div>
-                <h3>Sh. Vinod Bhardwaj</h3>
-                <p>President</p>
-              </article>
-              <article class="mgmt-card">
-                <div class="mgmt-avatar">SB</div>
-                <h3>Sh. S.K. Brutta</h3>
-                <p>Vice-President</p>
-              </article>
-              <article class="mgmt-card">
-                <div class="mgmt-avatar">SP</div>
-                <h3>Sh. Sushil Puri</h3>
-                <p>Secretary</p>
-              </article>
-            </div>
+          <div class="mgmt-grid">
+  <article class="mgmt-card">
+    <div class="mgmt-avatar">
+      <img src="../assets/teacher/vinod.jpg" alt="Sh. Vinod Bhardwaj">
+    </div>
+    <h3>Sh. Vinod Bhardwaj</h3>
+    <p>President</p>
+  </article>
+
+  <article class="mgmt-card">
+    <div class="mgmt-avatar">
+      <img src="../assets/teacher/sk.jpg" alt="Sh. S.K. Brutta">
+    </div>
+    <h3>Sh. S.K. Brutta</h3>
+    <p>Vice-President</p>
+  </article>
+
+  <article class="mgmt-card">
+    <div class="mgmt-avatar">
+      <img src="../assets/teacher/sp.jpg" alt="Sh. Sushil Puri">
+    </div>
+    <h3>Sh. Sushil Puri</h3>
+    <p>Secretary</p>
+  </article>
+</div>
           </section>
 
           <!-- ADMINISTRATION -->
@@ -1687,47 +1730,10 @@
 
     <script>
       (() => {
-        const nav = document.getElementById("about-page-nav");
-        const navLinks = document.getElementById("page-nav-links");
-        const menuToggle = document.getElementById("menu-toggle");
         const sidebarNav = document.getElementById("sidebar-nav");
         const sidebarToggle = document.getElementById("sidebar-toggle");
         const views = document.querySelectorAll(".about-view");
         const sidebarItems = document.querySelectorAll(".sidebar-nav a");
-        const navSubmenuLinks = document.querySelectorAll(
-          ".submenu a[data-view]",
-        );
-
-        // ===== AUTO-HIDE NAVBAR ON SCROLL =====
-        let lastScroll = 0;
-        let scrollTimer;
-
-        window.addEventListener(
-          "scroll",
-          () => {
-            const currentScroll = window.scrollY;
-
-            // Add a small threshold to prevent jitter
-            if (currentScroll > 150 && currentScroll > lastScroll + 5) {
-              // Scrolling down → hide navbar
-              nav.classList.add("nav-hidden");
-              // Close any open mobile menu when hiding
-              navLinks.classList.remove("is-open");
-            } else if (currentScroll < lastScroll - 5 || currentScroll < 150) {
-              // Scrolling up → show navbar
-              nav.classList.remove("nav-hidden");
-            }
-
-            lastScroll = currentScroll;
-          },
-          { passive: true },
-        );
-
-        // ===== MOBILE MENU TOGGLE =====
-        menuToggle.addEventListener("click", () => {
-          const isOpen = navLinks.classList.toggle("is-open");
-          menuToggle.setAttribute("aria-expanded", String(isOpen));
-        });
 
         // ===== MOBILE SIDEBAR TOGGLE =====
         if (sidebarToggle) {
@@ -1748,9 +1754,6 @@
 
           // Close mobile sidebar after selection
           sidebarNav.classList.remove("is-open");
-
-          // Close mobile nav menu
-          navLinks.classList.remove("is-open");
 
           // Update URL hash without jumping
           if (history.replaceState) {
@@ -1779,15 +1782,6 @@
           item.addEventListener("click", (e) => {
             e.preventDefault();
             switchView(item.dataset.view);
-          });
-        });
-
-        // Navbar submenu link handler (About section links)
-        navSubmenuLinks.forEach((link) => {
-          link.addEventListener("click", (e) => {
-            e.preventDefault();
-            switchView(link.dataset.view);
-            nav.classList.remove("nav-hidden");
           });
         });
 

@@ -23,10 +23,196 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .preloader-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-paper, #f8f5ef);
+        transition: opacity 0.8s var(--ease-smooth), visibility 0.8s;
+      }
+
+      .preloader-overlay.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      body.preloader-active #main {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      #main.page-ready {
+        animation: page-enter 1s var(--ease-smooth) both;
+      }
+
+      .preloader-seal {
+        position: relative;
+        width: 140px;
+        height: 140px;
+      }
+
+      .preloader-ring {
+        position: absolute;
+        inset: 0;
+        border: 2px solid transparent;
+        border-top-color: var(--color-maroon, #82080c);
+        border-right-color: var(--color-maroon, #82080c);
+        border-radius: 50%;
+        animation: preloader-spin 1.8s var(--ease-smooth) infinite;
+      }
+
+      .preloader-ring:nth-child(2) {
+        inset: 8px;
+        border-top-color: var(--color-gold, #e5c175);
+        border-right-color: var(--color-gold, #e5c175);
+        animation-duration: 1.4s;
+        animation-direction: reverse;
+      }
+
+      .preloader-ring:nth-child(3) {
+        inset: 16px;
+        border-top-color: var(--color-maroon, #82080c);
+        border-right-color: transparent;
+        animation-duration: 2.2s;
+      }
+
+      .preloader-inner {
+        position: absolute;
+        inset: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 50%;
+        background: var(--color-maroon-nav, #810609);
+        box-shadow: 0 20px 50px rgba(130, 8, 12, 0.15);
+      }
+
+      .preloader-logo {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+      }
+
+      .preloader-title,
+      .preloader-subtitle,
+      .preloader-progress-track,
+      .preloader-percent {
+        opacity: 0;
+        animation: preloader-fade-in 0.8s var(--ease-smooth) forwards;
+      }
+
+      .preloader-title {
+        margin-top: 2.5rem;
+        color: var(--color-ink, #2b1712);
+        font-family: var(--font-display, "Playfair Display", serif);
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        animation-delay: 0.3s;
+      }
+
+      .preloader-subtitle {
+        margin-top: 0.5rem;
+        color: var(--color-muted, #746761);
+        font-family: var(--font-accent, "Cormorant Garamond", serif);
+        font-size: 1.1rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        animation-delay: 0.5s;
+      }
+
+      .preloader-progress-track {
+        width: 200px;
+        height: 2px;
+        margin-top: 2rem;
+        overflow: hidden;
+        border-radius: 2px;
+        background: #e8e1d8;
+        animation-delay: 0.6s;
+      }
+
+      .preloader-progress-bar {
+        width: 0;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--color-maroon, #82080c), var(--color-gold, #e5c175));
+        transition: width 0.15s linear;
+      }
+
+      .preloader-percent {
+        margin-top: 0.75rem;
+        color: var(--color-muted, #746761);
+        font-family: var(--font-body, "Plus Jakarta Sans", sans-serif);
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        animation-delay: 0.7s;
+      }
+
+      @keyframes preloader-spin {
+        to { transform: rotate(360deg); }
+      }
+
+      @keyframes preloader-fade-in {
+        to { opacity: 1; }
+      }
+
+      @keyframes page-enter {
+        from { opacity: 0; transform: translateY(18px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        body.preloader-active #main {
+          opacity: 1;
+          transform: none;
+        }
+
+        #main.page-ready {
+          animation: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .preloader-title {
+          font-size: 1.2rem;
+          letter-spacing: 2px;
+        }
+
+        .preloader-subtitle {
+          font-size: 0.85rem;
+          letter-spacing: 2px;
+        }
+      }
+    </style>
 
   </head>
 
-  <body>
+  <body class="preloader-active">
+    <div id="site-preloader" class="preloader-overlay" aria-label="Loading R.K. Arya College">
+      <div class="preloader-seal" aria-hidden="true">
+        <div class="preloader-ring"></div>
+        <div class="preloader-ring"></div>
+        <div class="preloader-ring"></div>
+        <div class="preloader-inner">
+          <img class="preloader-logo" src="assets/icons/icon.svg" alt="" />
+        </div>
+      </div>
+      <div class="preloader-title">R.K. Arya College</div>
+      <div class="preloader-subtitle">Shaping Futures Since 1952</div>
+      <div class="preloader-progress-track" aria-hidden="true">
+        <div id="preloader-bar" class="preloader-progress-bar"></div>
+      </div>
+      <div id="preloader-pct" class="preloader-percent" aria-live="polite">0%</div>
+    </div>
+
     <div id="main" class="relative w-full">
       <div id="nav" class="w-full z-50 sticky top-0">
         <div
@@ -251,15 +437,15 @@
                   <div
                     class="submenu nested hidden ml-2 mt-1 bg-white rounded p-2"
                   >
-                    <a href="pages/naac.html#naac" class="block px-2 py-1">2020-2021</a>
-                    <a href="pages/naac.html#naac" class="block px-2 py-1">2021-2022</a>
-                    <a href="pages/naac.html#naac" class="block px-2 py-1">2022-2023</a>
-                    <a href="pages/naac.html#naac" class="block px-2 py-1">2023-2024</a>
+                    <a href="assets/documents/AQAR_2020-21.pdf" class="block px-2 py-1">2020-2021</a>
+                    <a href="assets/documents/AQAR-2021-2022.pdf" class="block px-2 py-1">2021-2022</a>
+                    <a href="assets/documents/AQAR-2022-2023.pdf" class="block px-2 py-1">2022-2023</a>
+                    <a href="assets/documents/AQAR-23-24.pdf" class="block px-2 py-1">2023-2024</a>
                   </div>
                 </div>
 
-                <a href="pages/naac.html#naac" class="block px-2 py-1">DVV</a>
-                <a href="pages/naac.html#naac" class="block px-2 py-1">SSR</a>
+                <a href="assets/documents/DVVClarificationHistory.pdf" class="block px-2 py-1">DVV</a>
+                <a href="assets/documents/SSR.pdf" class="block px-2 py-1">SSR</a>
               </div>
             </div>
 
@@ -643,7 +829,7 @@
 
           <!-- Maharishi image 1 -->
           <img
-            src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202402/remembering-maharshi-dayanand-saraswati--arya-samaj-founder-and-social-reformer-125351156-3x4.jpg?VersionId=A_itSMPA9LxzyiPugkWuAGcvtlmGN6YE"
+            src="assets/teacher/Dayananda_Saraswati.jpg"
             alt="Maharishi Dayanand Saraswati"
             class="about-history-image absolute inset-0 h-full w-full object-cover"
             loading="lazy"
@@ -651,7 +837,7 @@
 
           <!-- Maharishi image 2 -->
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Dayanand_Saraswati.jpg"
+            src="https://www.aryasamaj.co.in/wp-content/uploads/2024/03/WhatsApp-Image-2024-03-05-at-11.11.20-AM.jpeg"
             alt="Maharishi Dayanand Saraswati historical portrait"
             class="about-history-image absolute inset-0 h-full w-full object-cover opacity-0"
             loading="lazy"
@@ -1318,7 +1504,7 @@
             <!-- Gallery link -->
 
             <a
-              href="#college-gallery"
+              href="/pages/facilities.html"
               class="mt-5 inline-flex items-center gap-3 rounded-full border border-[#82080c] px-6 py-3 text-sm font-semibold text-[#82080c] transition duration-300 hover:bg-[#82080c] hover:text-white"
             >
               View College Gallery
@@ -1639,7 +1825,7 @@
             ></div>
 
             <img
-              src="https://rkac.ac.in/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-11-at-12.10.53-PM-1536x1017.jpeg"
+              src="assets/teacher/principal.jpg"
               alt="Dr. Puneet Aneja, Principal"
               class="message-author-img h-full w-full rounded-full object-cover object-center"
               loading="lazy"
@@ -1786,7 +1972,7 @@
             ></div>
 
             <img
-              src="https://rkac.ac.in/wp-content/uploads/2026/02/Vinod-Bhardwaj.jpg"
+              src="assets/teacher/vinod.jpg"
               alt="Shri Vinod Bhardwaj, President Managing Committee"
               class="message-author-img h-full w-full rounded-full object-cover object-center"
               loading="lazy"
@@ -1976,7 +2162,7 @@
           <!-- Button -->
 
           <a
-            href="https://rkac.ac.in/bca"
+            href="pages/courses/bca.html"
             target="_blank"
             rel="noopener noreferrer"
             class="course-btn-action mt-5 flex w-full items-center justify-center gap-2 rounded-full border border-[#82080c] px-6 py-3 text-sm font-semibold text-[#82080c] transition-all duration-300 hover:bg-[#82080c] hover:text-white"
@@ -2083,7 +2269,7 @@
           <!-- Button -->
 
           <a
-            href="https://rkac.ac.in/msc"
+            href="pages/courses/msc.html"
             target="_blank"
             rel="noopener noreferrer"
             class="course-btn-action mt-5 flex w-full items-center justify-center gap-2 rounded-full border border-[#82080c] px-6 py-3 text-sm font-semibold text-[#82080c] transition-all duration-300 hover:bg-[#82080c] hover:text-white"
@@ -2190,7 +2376,7 @@
           <!-- Button -->
 
           <a
-            href="https://rkac.ac.in/mcom"
+            href="pages/courses/mcom.html"
             target="_blank"
             rel="noopener noreferrer"
             class="course-btn-action mt-5 flex w-full items-center justify-center gap-2 rounded-full border border-[#82080c] px-6 py-3 text-sm font-semibold text-[#82080c] transition-all duration-300 hover:bg-[#82080c] hover:text-white"
@@ -2231,7 +2417,7 @@
     <div class="mt-10 text-center">
 
       <a
-        href="https://rkac.ac.in/programme-directory"
+        href="pages/programme.html"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 text-sm font-semibold text-[#82080c] transition-colors duration-300 hover:text-[#5c0003]"
@@ -2569,7 +2755,7 @@
     >
 
       <a
-        href="https://rkac.ac.in/admissions"
+        href="/pages/contact.html"
         target="_blank"
         rel="noopener noreferrer"
         class="flex w-full items-center justify-center gap-2 rounded-full bg-[#82080c] px-8 py-3.5 text-center text-sm font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5c0003] sm:w-auto"
@@ -2598,7 +2784,7 @@
 
 
       <a
-        href="https://rkac.ac.in/programme-directory"
+        href="/pages/programmes.html"
         target="_blank"
         rel="noopener noreferrer"
         class="w-full rounded-full border-2 border-[#82080c] bg-white px-8 py-3.5 text-center text-sm font-bold text-[#82080c] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f8f5ef] sm:w-auto"
@@ -2792,5 +2978,43 @@
     </footer>
 
     <script src="script.js" defer></script>
+    <script>
+      (() => {
+        const preloader = document.querySelector("#site-preloader");
+        const bar = document.querySelector("#preloader-bar");
+        const percent = document.querySelector("#preloader-pct");
+        let progress = 0;
+        let interval;
+        let hasFinished = false;
+
+        const finishLoading = () => {
+          if (hasFinished) return;
+          hasFinished = true;
+          window.clearInterval(interval);
+          progress = 100;
+          bar.style.width = "100%";
+          percent.textContent = "100%";
+          const main = document.querySelector("#main");
+          main.classList.add("page-ready");
+          window.setTimeout(() => {
+            preloader.classList.add("is-hidden");
+            document.body.classList.remove("preloader-active");
+          }, 400);
+        };
+
+        const startLoading = () => {
+          interval = window.setInterval(() => {
+            const step = progress < 70 ? Math.random() * 8 + 2 : Math.random() * 3 + 0.5;
+            progress = Math.min(progress + step, 95);
+            bar.style.width = `${progress}%`;
+            percent.textContent = `${Math.floor(progress)}%`;
+          }, 120);
+        };
+
+        startLoading();
+        window.addEventListener("load", finishLoading, { once: true });
+        window.setTimeout(finishLoading, 5000);
+      })();
+    </script>
   </body>
 </html>

@@ -1,0 +1,196 @@
+# Project Architecture Map
+
+Project: `college`
+
+## Statistics
+
+- Nodes: 72
+- Relationships: 145
+
+## Files
+
+- `tailwind.config.cjs` (javascript)
+- `script.js` (javascript)
+- `pages/courses/bca.html` (html)
+- `pages/courses/msc.html` (html)
+- `pages/courses/mcom.html` (html)
+- `build.js` (javascript)
+- `css/admin.css` (css)
+- `css/main.css` (css)
+- `css/utilities/helpers.css` (css)
+- `css/utilities/accessibility.css` (css)
+- `css/sections/why-choose.css` (css)
+- `css/sections/message.css` (css)
+- `css/sections/courses.css` (css)
+- `css/sections/section-header.css` (css)
+- `css/sections/hero.css` (css)
+- `css/components/cards.css` (css)
+- `css/components/forms.css` (css)
+- `css/components/icons.css` (css)
+- `css/components/buttons.css` (css)
+- `css/components/badges.css` (css)
+- `css/layout/footer.css` (css)
+- `css/layout/container.css` (css)
+- `css/layout/header.css` (css)
+- `css/layout/grid.css` (css)
+- `css/foundation/variables.css` (css)
+- `css/foundation/base.css` (css)
+- `css/foundation/typography.css` (css)
+- `css/foundation/reset.css` (css)
+- `js/student-resources.js` (javascript)
+- `pages/courses/bsc-it.html` (html)
+- `pages/courses/bsc.html` (html)
+- `pages/courses/bcom.html` (html)
+- `pages/courses/ba.html` (html)
+- `components/footer.html` (html)
+- `components/breadcrumb.html` (html)
+- `js/student-resources-data.js` (javascript)
+- `js/admin.js` (javascript)
+
+## Relationships
+
+- `file:lenis.js` → **defines** → `function:lenis.js:initLenis`
+- `file:lenis.js` → **defines** → `function:lenis.js:raf`
+- `file:index.html` → **references** → `file:lenis.js`
+- `file:index.html` → **references** → `file:script.js`
+- `file:index.html` → **references** → `file:style.css`
+- `file:index.html` → **references** → `file:pages/student-resources.html`
+- `file:index.html` → **references** → `file:pages/programme.html`
+- `file:index.html` → **references** → `file:pages/contact.html`
+- `file:index.html` → **references** → `file:index.html`
+- `file:index.html` → **references** → `file:pages/about.html`
+- `file:index.html` → **references** → `file:pages/faculty.html`
+- `file:index.html` → **references** → `file:pages/facilities.html`
+- `file:index.html` → **references** → `file:pages/feedback.html`
+- `file:index.html` → **references** → `file:pages/naac.html`
+- `file:index.html` → **references** → `file:pages/courses/bca.html`
+- `file:index.html` → **references** → `file:pages/courses/msc.html`
+- `file:index.html` → **references** → `file:pages/courses/mcom.html`
+- `file:script.js` → **defines** → `function:script.js:closeAllSubmenus`
+- `file:script.js` → **defines** → `function:script.js:closeMobileMenu`
+- `file:script.js` → **defines** → `function:script.js:getFocusableSubmenus`
+- `file:script.js` → **defines** → `function:script.js:initializeCollegeGallery`
+- `file:script.js` → **defines** → `function:script.js:initializeHistorySlider`
+- `file:script.js` → **defines** → `function:script.js:initializeNavigation`
+- `file:script.js` → **defines** → `function:script.js:initializePage`
+- `file:script.js` → **defines** → `function:script.js:initializeScrollReveal`
+- `file:script.js` → **defines** → `function:script.js:openSubmenu`
+- `file:script.js` → **defines** → `function:script.js:selectImage`
+- `file:script.js` → **defines** → `function:script.js:startSlideshow`
+- `file:script.js` → **defines** → `function:script.js:toggleVisibility`
+- `file:pages/student-resources.html` → **references** → `file:lenis.js`
+- `file:pages/student-resources.html` → **references** → `file:js/student-resources.js`
+- `file:pages/student-resources.html` → **references** → `file:style.css`
+- `file:pages/student-resources.html` → **references** → `file:index.html`
+- `file:pages/student-resources.html` → **references** → `file:pages/about.html`
+- `file:pages/student-resources.html` → **references** → `file:pages/programme.html`
+- `file:pages/student-resources.html` → **references** → `file:pages/contact.html`
+- `file:pages/programme.html` → **references** → `file:lenis.js`
+- `file:pages/programme.html` → **references** → `file:index.html`
+- `file:pages/programme.html` → **references** → `file:pages/about.html`
+- `file:pages/programme.html` → **references** → `file:pages/programme.html`
+- `file:pages/programme.html` → **references** → `file:pages/faculty.html`
+- `file:pages/programme.html` → **references** → `file:pages/facilities.html`
+- `file:pages/programme.html` → **references** → `file:pages/student-resources.html`
+- `file:pages/programme.html` → **references** → `file:pages/feedback.html`
+- `file:pages/programme.html` → **references** → `file:pages/naac.html`
+- `file:pages/programme.html` → **references** → `file:pages/contact.html`
+- `file:pages/programme.html` → **references** → `file:pages/courses/bca.html`
+- `file:pages/programme.html` → **references** → `file:pages/courses/bsc-it.html`
+- `file:pages/programme.html` → **references** → `file:docs/Academic-Committees-for-2025-26.pdf`
+- `file:pages/contact.html` → **references** → `file:index.html`
+- `file:pages/contact.html` → **references** → `file:pages/feedback.html`
+- `file:pages/contact.html` → **references** → `file:pages/contact.html`
+- `file:pages/about.html` → **references** → `file:lenis.js`
+- `file:pages/about.html` → **references** → `file:pages/student-resources.html`
+- `file:pages/about.html` → **references** → `file:pages/programme.html`
+- `file:pages/about.html` → **references** → `file:pages/contact.html`
+- `file:pages/about.html` → **references** → `file:index.html`
+- `file:pages/about.html` → **references** → `file:pages/faculty.html`
+- `file:pages/about.html` → **references** → `file:pages/facilities.html`
+- `file:pages/about.html` → **references** → `file:pages/feedback.html`
+- `file:pages/about.html` → **references** → `file:pages/naac.html`
+- `file:pages/about.html` → **references** → `file:pages/about.html`
+- `file:pages/faculty.html` → **references** → `file:lenis.js`
+- `file:pages/faculty.html` → **references** → `file:style.css`
+- `file:pages/faculty.html` → **references** → `file:pages/student-resources.html`
+- `file:pages/faculty.html` → **references** → `file:pages/programme.html`
+- `file:pages/faculty.html` → **references** → `file:pages/contact.html`
+- `file:pages/faculty.html` → **references** → `file:index.html`
+- `file:pages/faculty.html` → **references** → `file:pages/about.html`
+- `file:pages/faculty.html` → **references** → `file:pages/faculty.html`
+- `file:pages/faculty.html` → **references** → `file:pages/facilities.html`
+- `file:pages/faculty.html` → **references** → `file:pages/feedback.html`
+- `file:pages/faculty.html` → **references** → `file:pages/naac.html`
+- `file:pages/facilities.html` → **references** → `file:lenis.js`
+- `file:pages/facilities.html` → **references** → `file:index.html`
+- `file:pages/facilities.html` → **references** → `file:pages/about.html`
+- `file:pages/facilities.html` → **references** → `file:pages/programme.html`
+- `file:pages/facilities.html` → **references** → `file:pages/faculty.html`
+- `file:pages/facilities.html` → **references** → `file:pages/facilities.html`
+- `file:pages/facilities.html` → **references** → `file:pages/student-resources.html`
+- `file:pages/facilities.html` → **references** → `file:pages/feedback.html`
+- `file:pages/facilities.html` → **references** → `file:pages/naac.html`
+- `file:pages/facilities.html` → **references** → `file:pages/contact.html`
+- `file:pages/feedback.html` → **references** → `file:index.html`
+- `file:pages/feedback.html` → **references** → `file:pages/feedback.html`
+- `file:pages/feedback.html` → **references** → `file:pages/contact.html`
+- `file:pages/naac.html` → **references** → `file:lenis.js`
+- `file:pages/naac.html` → **references** → `file:style.css`
+- `file:pages/naac.html` → **references** → `file:index.html`
+- `file:pages/naac.html` → **references** → `file:pages/about.html`
+- `file:pages/naac.html` → **references** → `file:pages/programme.html`
+- `file:pages/naac.html` → **references** → `file:pages/contact.html`
+- `file:pages/courses/bca.html` → **references** → `file:lenis.js`
+- `file:pages/courses/bca.html` → **references** → `file:style.css`
+- `file:pages/courses/bca.html` → **references** → `file:index.html`
+- `file:pages/courses/bca.html` → **references** → `file:pages/about.html`
+- `file:pages/courses/bca.html` → **references** → `file:pages/programme.html`
+- `file:pages/courses/bca.html` → **references** → `file:pages/student-resources.html`
+- `file:pages/courses/msc.html` → **references** → `file:lenis.js`
+- `file:pages/courses/msc.html` → **references** → `file:style.css`
+- `file:pages/courses/msc.html` → **references** → `file:index.html`
+- `file:pages/courses/msc.html` → **references** → `file:pages/about.html`
+- `file:pages/courses/msc.html` → **references** → `file:pages/programme.html`
+- `file:pages/courses/msc.html` → **references** → `file:pages/student-resources.html`
+- `file:pages/courses/mcom.html` → **references** → `file:lenis.js`
+- `file:pages/courses/mcom.html` → **references** → `file:style.css`
+- `file:pages/courses/mcom.html` → **references** → `file:index.html`
+- `file:pages/courses/mcom.html` → **references** → `file:pages/about.html`
+- `file:pages/courses/mcom.html` → **references** → `file:pages/programme.html`
+- `file:pages/courses/mcom.html` → **references** → `file:pages/student-resources.html`
+- `file:build.js` → **depends_on** → `module:node:path`
+- `file:build.js` → **depends_on** → `module:node:fs/promises`
+- `file:build.js` → **defines** → `function:build.js:compilePage`
+- `file:build.js` → **defines** → `function:build.js:relativeAsset`
+- `file:build.js` → **defines** → `function:build.js:walk`
+- `file:css/main.css` → **imports** → `file:style.css`
+- `file:js/student-resources.js` → **imports** → `file:js/student-resources-data.js`
+- `file:js/student-resources.js` → **defines** → `function:js/student-resources.js:createOption`
+- `file:js/student-resources.js` → **defines** → `function:js/student-resources.js:renderResources`
+- `file:js/student-resources.js` → **defines** → `function:js/student-resources.js:renderSemesters`
+- `file:js/student-resources.js` → **defines** → `function:js/student-resources.js:selectedProgramme`
+- `file:pages/courses/bsc-it.html` → **references** → `file:lenis.js`
+- `file:pages/courses/bsc-it.html` → **references** → `file:style.css`
+- `file:pages/courses/bsc-it.html` → **references** → `file:index.html`
+- `file:pages/courses/bsc-it.html` → **references** → `file:pages/about.html`
+- `file:pages/courses/bsc-it.html` → **references** → `file:pages/programme.html`
+- `file:pages/courses/bsc-it.html` → **references** → `file:pages/student-resources.html`
+- `file:pages/courses/bsc.html` → **references** → `file:lenis.js`
+- `file:pages/courses/bsc.html` → **references** → `file:style.css`
+- `file:pages/courses/bsc.html` → **references** → `file:index.html`
+- `file:pages/courses/bsc.html` → **references** → `file:pages/about.html`
+- `file:pages/courses/bsc.html` → **references** → `file:pages/programme.html`
+- `file:pages/courses/bsc.html` → **references** → `file:pages/student-resources.html`
+- `file:pages/courses/bcom.html` → **references** → `file:lenis.js`
+- `file:pages/courses/bcom.html` → **references** → `file:style.css`
+- `file:pages/courses/bcom.html` → **references** → `file:index.html`
+- `file:pages/courses/bcom.html` → **references** → `file:pages/about.html`
+- `file:pages/courses/bcom.html` → **references** → `file:pages/programme.html`
+- `file:pages/courses/bcom.html` → **references** → `file:pages/student-resources.html`
+- `file:pages/courses/ba.html` → **references** → `file:lenis.js`
+- `file:pages/courses/ba.html` → **references** → `file:style.css`
+- `file:pages/courses/ba.html` → **references** → `file:index.html`
+- `file:pages/courses/ba.html` → **references** → `file:pages/about.html`
+- `file:pages/courses/ba.html` → **references** → `file:pages/programme.html`
+- `file:pages/courses/ba.html` → **references** → `file:pages/student-resources.html`

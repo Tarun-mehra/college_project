@@ -1,0 +1,1118 @@
+{
+  "project": "college",
+  "description": "AI-oriented structural map of the project",
+  "nodes": [
+    {
+      "id": "file:lenis.js",
+      "type": "source",
+      "path": "lenis.js"
+    },
+    {
+      "id": "function:lenis.js:initLenis",
+      "type": "function",
+      "path": "lenis.js",
+      "name": "initLenis"
+    },
+    {
+      "id": "function:lenis.js:raf",
+      "type": "function",
+      "path": "lenis.js",
+      "name": "raf"
+    },
+    {
+      "id": "file:tailwind.config.cjs",
+      "type": "javascript",
+      "path": "tailwind.config.cjs"
+    },
+    {
+      "id": "file:index.html",
+      "type": "source",
+      "path": "index.html"
+    },
+    {
+      "id": "file:script.js",
+      "type": "javascript",
+      "path": "script.js"
+    },
+    {
+      "id": "file:style.css",
+      "type": "source",
+      "path": "style.css"
+    },
+    {
+      "id": "file:pages/student-resources.html",
+      "type": "source",
+      "path": "pages/student-resources.html"
+    },
+    {
+      "id": "file:pages/programme.html",
+      "type": "source",
+      "path": "pages/programme.html"
+    },
+    {
+      "id": "file:pages/contact.html",
+      "type": "source",
+      "path": "pages/contact.html"
+    },
+    {
+      "id": "file:pages/about.html",
+      "type": "source",
+      "path": "pages/about.html"
+    },
+    {
+      "id": "file:pages/faculty.html",
+      "type": "source",
+      "path": "pages/faculty.html"
+    },
+    {
+      "id": "file:pages/facilities.html",
+      "type": "source",
+      "path": "pages/facilities.html"
+    },
+    {
+      "id": "file:pages/feedback.html",
+      "type": "source",
+      "path": "pages/feedback.html"
+    },
+    {
+      "id": "file:pages/naac.html",
+      "type": "source",
+      "path": "pages/naac.html"
+    },
+    {
+      "id": "file:pages/courses/bca.html",
+      "type": "html",
+      "path": "pages/courses/bca.html"
+    },
+    {
+      "id": "file:pages/courses/msc.html",
+      "type": "html",
+      "path": "pages/courses/msc.html"
+    },
+    {
+      "id": "file:pages/courses/mcom.html",
+      "type": "html",
+      "path": "pages/courses/mcom.html"
+    },
+    {
+      "id": "file:build.js",
+      "type": "javascript",
+      "path": "build.js"
+    },
+    {
+      "id": "module:node:path",
+      "type": "external_module",
+      "name": "node:path"
+    },
+    {
+      "id": "module:node:fs/promises",
+      "type": "external_module",
+      "name": "node:fs/promises"
+    },
+    {
+      "id": "function:build.js:compilePage",
+      "type": "function",
+      "path": "build.js",
+      "name": "compilePage"
+    },
+    {
+      "id": "function:build.js:relativeAsset",
+      "type": "function",
+      "path": "build.js",
+      "name": "relativeAsset"
+    },
+    {
+      "id": "function:build.js:walk",
+      "type": "function",
+      "path": "build.js",
+      "name": "walk"
+    },
+    {
+      "id": "function:script.js:closeAllSubmenus",
+      "type": "function",
+      "path": "script.js",
+      "name": "closeAllSubmenus"
+    },
+    {
+      "id": "function:script.js:closeMobileMenu",
+      "type": "function",
+      "path": "script.js",
+      "name": "closeMobileMenu"
+    },
+    {
+      "id": "function:script.js:getFocusableSubmenus",
+      "type": "function",
+      "path": "script.js",
+      "name": "getFocusableSubmenus"
+    },
+    {
+      "id": "function:script.js:initializeCollegeGallery",
+      "type": "function",
+      "path": "script.js",
+      "name": "initializeCollegeGallery"
+    },
+    {
+      "id": "function:script.js:initializeHistorySlider",
+      "type": "function",
+      "path": "script.js",
+      "name": "initializeHistorySlider"
+    },
+    {
+      "id": "function:script.js:initializeNavigation",
+      "type": "function",
+      "path": "script.js",
+      "name": "initializeNavigation"
+    },
+    {
+      "id": "function:script.js:initializePage",
+      "type": "function",
+      "path": "script.js",
+      "name": "initializePage"
+    },
+    {
+      "id": "function:script.js:initializeScrollReveal",
+      "type": "function",
+      "path": "script.js",
+      "name": "initializeScrollReveal"
+    },
+    {
+      "id": "function:script.js:openSubmenu",
+      "type": "function",
+      "path": "script.js",
+      "name": "openSubmenu"
+    },
+    {
+      "id": "function:script.js:selectImage",
+      "type": "function",
+      "path": "script.js",
+      "name": "selectImage"
+    },
+    {
+      "id": "function:script.js:startSlideshow",
+      "type": "function",
+      "path": "script.js",
+      "name": "startSlideshow"
+    },
+    {
+      "id": "function:script.js:toggleVisibility",
+      "type": "function",
+      "path": "script.js",
+      "name": "toggleVisibility"
+    },
+    {
+      "id": "file:css/admin.css",
+      "type": "css",
+      "path": "css/admin.css"
+    },
+    {
+      "id": "file:css/main.css",
+      "type": "css",
+      "path": "css/main.css"
+    },
+    {
+      "id": "file:css/utilities/helpers.css",
+      "type": "css",
+      "path": "css/utilities/helpers.css"
+    },
+    {
+      "id": "file:css/utilities/accessibility.css",
+      "type": "css",
+      "path": "css/utilities/accessibility.css"
+    },
+    {
+      "id": "file:css/sections/why-choose.css",
+      "type": "css",
+      "path": "css/sections/why-choose.css"
+    },
+    {
+      "id": "file:css/sections/message.css",
+      "type": "css",
+      "path": "css/sections/message.css"
+    },
+    {
+      "id": "file:css/sections/courses.css",
+      "type": "css",
+      "path": "css/sections/courses.css"
+    },
+    {
+      "id": "file:css/sections/section-header.css",
+      "type": "css",
+      "path": "css/sections/section-header.css"
+    },
+    {
+      "id": "file:css/sections/hero.css",
+      "type": "css",
+      "path": "css/sections/hero.css"
+    },
+    {
+      "id": "file:css/components/cards.css",
+      "type": "css",
+      "path": "css/components/cards.css"
+    },
+    {
+      "id": "file:css/components/forms.css",
+      "type": "css",
+      "path": "css/components/forms.css"
+    },
+    {
+      "id": "file:css/components/icons.css",
+      "type": "css",
+      "path": "css/components/icons.css"
+    },
+    {
+      "id": "file:css/components/buttons.css",
+      "type": "css",
+      "path": "css/components/buttons.css"
+    },
+    {
+      "id": "file:css/components/badges.css",
+      "type": "css",
+      "path": "css/components/badges.css"
+    },
+    {
+      "id": "file:css/layout/footer.css",
+      "type": "css",
+      "path": "css/layout/footer.css"
+    },
+    {
+      "id": "file:css/layout/container.css",
+      "type": "css",
+      "path": "css/layout/container.css"
+    },
+    {
+      "id": "file:css/layout/header.css",
+      "type": "css",
+      "path": "css/layout/header.css"
+    },
+    {
+      "id": "file:css/layout/grid.css",
+      "type": "css",
+      "path": "css/layout/grid.css"
+    },
+    {
+      "id": "file:css/foundation/variables.css",
+      "type": "css",
+      "path": "css/foundation/variables.css"
+    },
+    {
+      "id": "file:css/foundation/base.css",
+      "type": "css",
+      "path": "css/foundation/base.css"
+    },
+    {
+      "id": "file:css/foundation/typography.css",
+      "type": "css",
+      "path": "css/foundation/typography.css"
+    },
+    {
+      "id": "file:css/foundation/reset.css",
+      "type": "css",
+      "path": "css/foundation/reset.css"
+    },
+    {
+      "id": "file:js/student-resources.js",
+      "type": "javascript",
+      "path": "js/student-resources.js"
+    },
+    {
+      "id": "file:pages/courses/bsc-it.html",
+      "type": "html",
+      "path": "pages/courses/bsc-it.html"
+    },
+    {
+      "id": "file:docs/Academic-Committees-for-2025-26.pdf",
+      "type": "source",
+      "path": "docs/Academic-Committees-for-2025-26.pdf"
+    },
+    {
+      "id": "file:pages/courses/bsc.html",
+      "type": "html",
+      "path": "pages/courses/bsc.html"
+    },
+    {
+      "id": "file:pages/courses/bcom.html",
+      "type": "html",
+      "path": "pages/courses/bcom.html"
+    },
+    {
+      "id": "file:pages/courses/ba.html",
+      "type": "html",
+      "path": "pages/courses/ba.html"
+    },
+    {
+      "id": "file:components/footer.html",
+      "type": "html",
+      "path": "components/footer.html"
+    },
+    {
+      "id": "file:components/breadcrumb.html",
+      "type": "html",
+      "path": "components/breadcrumb.html"
+    },
+    {
+      "id": "file:js/student-resources-data.js",
+      "type": "javascript",
+      "path": "js/student-resources-data.js"
+    },
+    {
+      "id": "function:js/student-resources.js:createOption",
+      "type": "function",
+      "path": "js/student-resources.js",
+      "name": "createOption"
+    },
+    {
+      "id": "function:js/student-resources.js:renderResources",
+      "type": "function",
+      "path": "js/student-resources.js",
+      "name": "renderResources"
+    },
+    {
+      "id": "function:js/student-resources.js:renderSemesters",
+      "type": "function",
+      "path": "js/student-resources.js",
+      "name": "renderSemesters"
+    },
+    {
+      "id": "function:js/student-resources.js:selectedProgramme",
+      "type": "function",
+      "path": "js/student-resources.js",
+      "name": "selectedProgramme"
+    },
+    {
+      "id": "file:js/admin.js",
+      "type": "javascript",
+      "path": "js/admin.js"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:lenis.js",
+      "target": "function:lenis.js:initLenis",
+      "relation": "defines"
+    },
+    {
+      "source": "file:lenis.js",
+      "target": "function:lenis.js:raf",
+      "relation": "defines"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:script.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:style.css",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:pages/student-resources.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:pages/contact.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:pages/faculty.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:pages/facilities.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:pages/feedback.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:pages/naac.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:pages/courses/bca.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:pages/courses/msc.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:pages/courses/mcom.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:script.js",
+      "target": "function:script.js:closeAllSubmenus",
+      "relation": "defines"
+    },
+    {
+      "source": "file:script.js",
+      "target": "function:script.js:closeMobileMenu",
+      "relation": "defines"
+    },
+    {
+      "source": "file:script.js",
+      "target": "function:script.js:getFocusableSubmenus",
+      "relation": "defines"
+    },
+    {
+      "source": "file:script.js",
+      "target": "function:script.js:initializeCollegeGallery",
+      "relation": "defines"
+    },
+    {
+      "source": "file:script.js",
+      "target": "function:script.js:initializeHistorySlider",
+      "relation": "defines"
+    },
+    {
+      "source": "file:script.js",
+      "target": "function:script.js:initializeNavigation",
+      "relation": "defines"
+    },
+    {
+      "source": "file:script.js",
+      "target": "function:script.js:initializePage",
+      "relation": "defines"
+    },
+    {
+      "source": "file:script.js",
+      "target": "function:script.js:initializeScrollReveal",
+      "relation": "defines"
+    },
+    {
+      "source": "file:script.js",
+      "target": "function:script.js:openSubmenu",
+      "relation": "defines"
+    },
+    {
+      "source": "file:script.js",
+      "target": "function:script.js:selectImage",
+      "relation": "defines"
+    },
+    {
+      "source": "file:script.js",
+      "target": "function:script.js:startSlideshow",
+      "relation": "defines"
+    },
+    {
+      "source": "file:script.js",
+      "target": "function:script.js:toggleVisibility",
+      "relation": "defines"
+    },
+    {
+      "source": "file:pages/student-resources.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/student-resources.html",
+      "target": "file:js/student-resources.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/student-resources.html",
+      "target": "file:style.css",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/student-resources.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/student-resources.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/student-resources.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/student-resources.html",
+      "target": "file:pages/contact.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:pages/faculty.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:pages/facilities.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:pages/student-resources.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:pages/feedback.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:pages/naac.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:pages/contact.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:pages/courses/bca.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:pages/courses/bsc-it.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/programme.html",
+      "target": "file:docs/Academic-Committees-for-2025-26.pdf",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/contact.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/contact.html",
+      "target": "file:pages/feedback.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/contact.html",
+      "target": "file:pages/contact.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/about.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/about.html",
+      "target": "file:pages/student-resources.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/about.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/about.html",
+      "target": "file:pages/contact.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/about.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/about.html",
+      "target": "file:pages/faculty.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/about.html",
+      "target": "file:pages/facilities.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/about.html",
+      "target": "file:pages/feedback.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/about.html",
+      "target": "file:pages/naac.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/about.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/faculty.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/faculty.html",
+      "target": "file:style.css",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/faculty.html",
+      "target": "file:pages/student-resources.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/faculty.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/faculty.html",
+      "target": "file:pages/contact.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/faculty.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/faculty.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/faculty.html",
+      "target": "file:pages/faculty.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/faculty.html",
+      "target": "file:pages/facilities.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/faculty.html",
+      "target": "file:pages/feedback.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/faculty.html",
+      "target": "file:pages/naac.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/facilities.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/facilities.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/facilities.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/facilities.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/facilities.html",
+      "target": "file:pages/faculty.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/facilities.html",
+      "target": "file:pages/facilities.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/facilities.html",
+      "target": "file:pages/student-resources.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/facilities.html",
+      "target": "file:pages/feedback.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/facilities.html",
+      "target": "file:pages/naac.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/facilities.html",
+      "target": "file:pages/contact.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/feedback.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/feedback.html",
+      "target": "file:pages/feedback.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/feedback.html",
+      "target": "file:pages/contact.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/naac.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/naac.html",
+      "target": "file:style.css",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/naac.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/naac.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/naac.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/naac.html",
+      "target": "file:pages/contact.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bca.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bca.html",
+      "target": "file:style.css",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bca.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bca.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bca.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bca.html",
+      "target": "file:pages/student-resources.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/msc.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/msc.html",
+      "target": "file:style.css",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/msc.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/msc.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/msc.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/msc.html",
+      "target": "file:pages/student-resources.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/mcom.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/mcom.html",
+      "target": "file:style.css",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/mcom.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/mcom.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/mcom.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/mcom.html",
+      "target": "file:pages/student-resources.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:build.js",
+      "target": "module:node:path",
+      "relation": "depends_on"
+    },
+    {
+      "source": "file:build.js",
+      "target": "module:node:fs/promises",
+      "relation": "depends_on"
+    },
+    {
+      "source": "file:build.js",
+      "target": "function:build.js:compilePage",
+      "relation": "defines"
+    },
+    {
+      "source": "file:build.js",
+      "target": "function:build.js:relativeAsset",
+      "relation": "defines"
+    },
+    {
+      "source": "file:build.js",
+      "target": "function:build.js:walk",
+      "relation": "defines"
+    },
+    {
+      "source": "file:css/main.css",
+      "target": "file:style.css",
+      "relation": "imports"
+    },
+    {
+      "source": "file:js/student-resources.js",
+      "target": "file:js/student-resources-data.js",
+      "relation": "imports"
+    },
+    {
+      "source": "file:js/student-resources.js",
+      "target": "function:js/student-resources.js:createOption",
+      "relation": "defines"
+    },
+    {
+      "source": "file:js/student-resources.js",
+      "target": "function:js/student-resources.js:renderResources",
+      "relation": "defines"
+    },
+    {
+      "source": "file:js/student-resources.js",
+      "target": "function:js/student-resources.js:renderSemesters",
+      "relation": "defines"
+    },
+    {
+      "source": "file:js/student-resources.js",
+      "target": "function:js/student-resources.js:selectedProgramme",
+      "relation": "defines"
+    },
+    {
+      "source": "file:pages/courses/bsc-it.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bsc-it.html",
+      "target": "file:style.css",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bsc-it.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bsc-it.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bsc-it.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bsc-it.html",
+      "target": "file:pages/student-resources.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bsc.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bsc.html",
+      "target": "file:style.css",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bsc.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bsc.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bsc.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bsc.html",
+      "target": "file:pages/student-resources.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bcom.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bcom.html",
+      "target": "file:style.css",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bcom.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bcom.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bcom.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/bcom.html",
+      "target": "file:pages/student-resources.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/ba.html",
+      "target": "file:lenis.js",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/ba.html",
+      "target": "file:style.css",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/ba.html",
+      "target": "file:index.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/ba.html",
+      "target": "file:pages/about.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/ba.html",
+      "target": "file:pages/programme.html",
+      "relation": "references"
+    },
+    {
+      "source": "file:pages/courses/ba.html",
+      "target": "file:pages/student-resources.html",
+      "relation": "references"
+    }
+  ],
+  "statistics": {
+    "nodes": 72,
+    "edges": 145
+  }
+}
