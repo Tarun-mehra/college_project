@@ -11,8 +11,8 @@
     />
     <meta name="theme-color" content="#82080c" />
 
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.26/dist/lenis.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="lenis.js" defer></script>
@@ -23,6 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="assets/images/hero-poster.jpg" fetchpriority="high" />
     <style>
       .preloader-overlay {
         position: fixed;
@@ -202,7 +203,7 @@
         <div class="preloader-ring"></div>
         <div class="preloader-ring"></div>
         <div class="preloader-inner">
-          <img class="preloader-logo" src="assets/icons/icon.svg" alt="" />
+          <img class="preloader-logo" src="assets/icons/icon.svg" alt="" width="64" height="64" />
         </div>
       </div>
       <div class="preloader-title">R.K. Arya College</div>
@@ -269,11 +270,11 @@
             />
 
             <div class="flex flex-col justify-center">
-              <h1
+                <div
                 class="site-title text-white text-xl md:text-2xl font-bold tracking-tight leading-none"
               >
                 RK ARYA COLLEGE
-              </h1>
+                </div>
               <p
                 class="text-[11px] text-[#e5c175] tracking-widest font-semibold uppercase mt-1"
               >
@@ -496,7 +497,7 @@
     loop
     playsinline
     preload="metadata"
-    poster="https://rkac.ac.in/wp-content/uploads/2026/02/DSC_6142-1536x1017.jpg"
+    poster="assets/images/hero-poster.jpg"
     aria-hidden="true"
   >
 
@@ -507,8 +508,11 @@
 
     <!-- Fallback -->
     <img
-      src="https://rkac.ac.in/wp-content/uploads/2026/02/DSC_6142-1536x1017.jpg"
+      src="assets/images/hero-poster.jpg"
       alt="R.K. Arya College campus building"
+      width="1280"
+      height="720"
+      decoding="async"
       class="absolute inset-0 h-full w-full object-cover"
     />
 
@@ -775,12 +779,12 @@
         Our Heritage • Our Foundation
       </p>
 
-      <h1
+      <h2
         class="about-reveal font-playfair text-6xl font-semibold uppercase leading-[0.9] tracking-tight sm:text-7xl md:text-8xl lg:text-[10rem]"
       >
         About
         <span class="block text-[#82080c]">Us</span>
-      </h1>
+      </h2>
 
       <div
         class="about-reveal mx-auto mt-10 h-px w-24 bg-[#e5c175]"

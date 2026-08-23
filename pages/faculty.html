@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Faculty | R.K. Arya College</title>
     <meta name="description" content="Meet the teaching faculty of R.K. Arya College across commerce, computer science, sciences, and humanities." />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
     <link
       rel="stylesheet"
       href="https://unpkg.com/lenis@1.3.26/dist/lenis.css"
     />
     <!-- GSAP for Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="../lenis.js" defer></script>
     <link rel="stylesheet" href="../style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -591,13 +591,13 @@
                   <div class="listelem w-full ${borderClass} border-black flex items-center justify-between gap-5 py-[2rem] md:py-[2.5rem] relative">
                       <div class="left flex gap-5 md:gap-20 relative z-[3]">
                           <h3 class="text-2xl md:text-4xl font-bold">${num}</h3>
-                          <h1 class="text-2xl md:text-4xl font-bold text-left">${member.name}</h1>
+                          <h3 class="text-2xl md:text-4xl font-bold text-left">${member.name}</h3>
                       </div>
                       <h3 class="text-sm md:text-2xl text-right font-medium">${member.role}</h3>
                       <div class="picture overlay-0 absolute w-[10rem] h-[10rem] rounded-full z-[4] top-0 left-0 overflow-hidden opacity-0">
                           ${
                             member.img
-                              ? `<img src="${member.img}" alt="${member.name}" class="w-full h-full object-cover">`
+                              ? `<img src="${member.img}" alt="${member.name}" width="160" height="160" loading="lazy" decoding="async" class="w-full h-full object-cover">`
                               : `<span class="flex h-full w-full items-center justify-center bg-[#810609] text-3xl font-bold text-white">${member.name
                                   .split(" ")
                                   .filter(Boolean)

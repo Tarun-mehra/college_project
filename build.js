@@ -1,4 +1,4 @@
-import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { dirname, extname, join, relative, resolve } from "node:path";
 
 const root = resolve(".");
@@ -84,6 +84,89 @@ const routeAliases = {
   "pages/student-resources/study-material.html": "pages/student-resources.html",
 };
 
+const imageDimensions = async (source) => {
+  try {
+    const buffer = await readFile(source);
+    const svg = buffer.toString("utf8").match(/<svg\b[^>]*\bviewBox="[^"]*"[^>]*>/i)?.[0];
+    if (svg) {
+      const [, width, height] = svg.match(/viewBox="\s*[^\s]+\s+[^\s]+\s+([\d.]+)\s+([\d.]+)/i) || [];
+      if (width && height) return { width, height };
+    }
+    if (
+      buffer[0] === 0x89 &&
+      buffer[1] === 0x50 &&
+      buffer[2] === 0x4e &&
+      buffer[3] === 0x47
+    ) {
+      return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+    }
+
+    if (buffer[0] !== 0xff || buffer[1] !== 0xd8) return null;
+    let offset = 2;
+    while (offset < buffer.length) {
+      if (buffer[offset] !== 0xff) {
+        offset += 1;
+        continue;
+      }
+      const marker = buffer[offset + 1];
+      const length = buffer.readUInt16BE(offset + 2);
+      if (marker >= 0xc0 && marker <= 0xc3) {
+        return {
+          width: buffer.readUInt16BE(offset + 7),
+          height: buffer.readUInt16BE(offset + 5),
+        };
+      }
+      offset += 2 + length;
+    }
+  } catch {}
+  return null;
+};
+
+const normalizeImages = async (html, page) => {
+  const imageTags = [...html.matchAll(/<img\b[^>]*>/gi)];
+  const dimensions = new Map();
+  await Promise.all(
+    imageTags.map(async ([tag]) => {
+      const source = tag.match(/\bsrc="([^"]+)"/i)?.[1];
+      if (!source || /^(?:https?:|data:|#)/i.test(source)) return;
+      const file = join(dirname(page), source);
+      if (!(await stat(file).catch(() => null))) return;
+      const size = await imageDimensions(file);
+      if (size) dimensions.set(tag, size);
+    }),
+  );
+
+  return html.replace(/<img\b[^>]*>/gi, (tag) => {
+    const isHero = /hero|preloader/i.test(tag) || /hero-poster/i.test(tag);
+    const size = dimensions.get(tag) || (/(?:logo|icon)/i.test(tag)
+      ? { width: 64, height: 64 }
+      : { width: 800, height: 600 });
+    let normalized = tag;
+    const addAttribute = (value, attribute) =>
+      value.replace(/\s*\/?>(\s*)$/, ` ${attribute}$&`);
+    if (size) {
+      if (!/\bwidth=/i.test(normalized)) normalized = addAttribute(normalized, `width="${size.width}"`);
+      if (!/\bheight=/i.test(normalized)) normalized = addAttribute(normalized, `height="${size.height}"`);
+    }
+    if (!isHero && !/\bloading=/i.test(normalized)) normalized = addAttribute(normalized, 'loading="lazy"');
+    if (!/\bdecoding=/i.test(normalized)) normalized = addAttribute(normalized, 'decoding="async"');
+    return normalized;
+  });
+};
+
+const normalizeHeadResources = (html) => {
+  const externalHosts = [...html.matchAll(/(?:src|href)="https:\/\/([^/"\s]+)/gi)]
+    .map(([, host]) => host)
+    .filter((host, index, hosts) => hosts.indexOf(host) === index);
+  const preconnects = externalHosts
+    .filter((host) => !html.includes(`rel="preconnect" href="https://${host}"`))
+    .map((host) => `    <link rel="preconnect" href="https://${host}" crossorigin />`)
+    .join("\n");
+  return html
+    .replace(/<script\b(?=[^>]*\bsrc=)(?![^>]*\bdefer\b)([^>]*)>/gi, "<script defer$1>")
+    .replace("</head>", `${preconnects}${preconnects ? "\n" : ""}  </head>`);
+};
+
 const compilePage = async (page) => {
   let html = await readFile(page, "utf8");
   const hasPageScript = /<script[^>]+src=["'][^"']*script\.js/.test(html);
@@ -121,6 +204,14 @@ const compilePage = async (page) => {
         ? "</body>"
         : `  <script src="${rootPath}/script.js" defer></script>\n  </body>`,
     );
+
+  html = normalizeHeadResources(await normalizeImages(html, page));
+  if (page === join(root, "index.html") && !html.includes("hero-poster.jpg")) {
+    html = html.replace(
+      "</head>",
+      `    <link rel="preload" as="image" href="assets/images/hero-poster.jpg" fetchpriority="high" />\n  </head>`,
+    );
+  }
 
   const destination = join(output, relative(root, page));
   await mkdir(dirname(destination), { recursive: true });
